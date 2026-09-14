@@ -1,0 +1,292 @@
+---
+/**
+ * SEOHead.astro
+ * Genera todas las meta tags, canonical URL, Open Graph, Twitter Card,
+ * el bloque JSON-LD con @graph unificado y carga gtag.js async.
+ *
+ * Regla: todas las constantes globales vienen de src/config/site.ts.
+ * og:image siempre es URL absoluta >= 1200x630px (requisito WhatsApp preview).
+ * Cero corchetes de placeholder en JSON-LD ni en tags HTML.
+ */
+import { siteUrl, businessName, whatsappNumber, gtagId } from '../config/site';
+
+interface CasoExitoLocal {
+  modeloDetalle: string;
+  barrio: string;
+  problemaResuelto: string;
+  resultado: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  /** Ruta relativa desde la raiz del sitio. Se convierte a URL absoluta aqui. */
+  ogImage?: string;
+  zona?: {
+    nombreZona: string;
+    slug: string;
+    wikidataId: string;
+    tiempoLlegadaEstimado: string;
+    barriosCobertura: string[];
+    viasAccesoPrincipales: string[];
+    casoExitoLocal: CasoExitoLocal;
+  };
+  isHomepage?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage = '/og-default.jpg',
+  zona,
+  isHomepage = false,
+} = Astro.props;
+
+// og:image siempre URL absoluta — WhatsApp no genera preview con rutas relativas
+const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
+
+const WIKIDATA_PEUGEOT_307 = 'https://www.wikidata.org/wiki/Q215286';
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: siteUrl + '/' },
+  ...(zona
+    ? [
+        { name: 'Reparacion Techo 307', url: siteUrl + '/reparacion-techo-peugeot-307/' },
+        { name: zona.nombreZona, url: siteUrl + '/reparacion-techo-peugeot-307/' + zona.slug + '/' },
+      ]
+    : []),
+];
+
+const baseAreas = [
+  { name: 'Ciudad Autonoma de Buenos Aires', wikidataUrl: 'https://www.wikidata.org/wiki/Q1486' },
+  { name: 'La Plata',         wikidataUrl: 'https://www.wikidata.org/wiki/Q44059' },
+  { name: 'Quilmes',          wikidataUrl: 'https://www.wikidata.org/wiki/Q863777' },
+  { name: 'Lanus',            wikidataUrl: 'https://www.wikidata.org/wiki/Q869792' },
+  { name: 'Lomas de Zamora',  wikidataUrl: 'https://www.wikidata.org/wiki/Q924670' },
+  { name: 'Avellaneda',       wikidataUrl: 'https://www.wikidata.org/wiki/Q1031013' },
+  { name: 'Berazategui',      wikidataUrl: 'https://www.wikidata.org/wiki/Q818465' },
+  { name: 'Almirante Brown',  wikidataUrl: 'https://www.wikidata.org/wiki/Q606622' },
+  { name: 'Esteban Echeverria', wikidataUrl: 'https://www.wikidata.org/wiki/Q1483844' },
+  { name: 'Ezeiza',           wikidataUrl: 'https://www.wikidata.org/wiki/Q1386000' },
+  { name: 'Florencio Varela', wikidataUrl: 'https://www.wikidata.org/wiki/Q1483861' },
+  { name: 'La Matanza',       wikidataUrl: 'https://www.wikidata.org/wiki/Q5964293' },
+  { name: 'Moron',            wikidataUrl: 'https://www.wikidata.org/wiki/Q1484196' },
+  { name: 'Tres de Febrero',  wikidataUrl: 'https://www.wikidata.org/wiki/Q1484198' },
+  { name: 'Ituzaingo',        wikidataUrl: 'https://www.wikidata.org/wiki/Q2289656' },
+  { name: 'Vicente Lopez',    wikidataUrl: 'https://www.wikidata.org/wiki/Q1484210' },
+  { name: 'San Isidro',       wikidataUrl: 'https://www.wikidata.org/wiki/Q1484206' },
+  { name: 'General San Martin', wikidataUrl: 'https://www.wikidata.org/wiki/Q1484201' },
+  { name: 'Tigre',            wikidataUrl: 'https://www.wikidata.org/wiki/Q828766' },
+  { name: 'Pilar',            wikidataUrl: 'https://www.wikidata.org/wiki/Q2060205' },
+];
+
+const areaServed = baseAreas.map((a) => ({
+  '@type': 'AdministrativeArea',
+  name: a.name,
+  sameAs: a.wikidataUrl,
+}));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    // 1. AutoRepair / LocalBusiness
+    {
+      '@type': ['AutoRepair', 'LocalBusiness'],
+      '@id': siteUrl + '/#business',
+      name: businessName,
+      description: 'Especialistas en retapizado y reparacion de techos caidos (headliner) de Peugeot 307 a domicilio. Cubrimos CABA, Gran Buenos Aires y La Plata.',
+      url: siteUrl,
+      telephone: '+' + whatsappNumber,
+      priceRange: '',
+      currenciesAccepted: 'ARS',
+      paymentAccepted: 'Cash, Transferencia bancaria, Mercado Pago',
+      areaServed: areaServed,
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+          opens: '08:00',
+          closes: '19:00',
+        },
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        telephone: '+' + whatsappNumber,
+        availableLanguage: 'Spanish',
+      },
+    },
+    // 2. Service
+    {
+      '@type': 'Service',
+      '@id': siteUrl + '/#service',
+      name: 'Reparacion y Retapizado de Techo Caido Peugeot 307 a Domicilio',
+      provider: { '@id': siteUrl + '/#business' },
+      serviceType: 'Auto Interior Repair',
+      about: { '@type': 'Thing', name: 'Peugeot 307', sameAs: WIKIDATA_PEUGEOT_307 },
+      description: 'Servicio especializado de retapizado de techo interior para Peugeot 307 Hatchback y Sedan (variantes con y sin techo solar).',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Servicios para Peugeot 307',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            name: 'Retapizado Techo Peugeot 307',
+            description: 'Para variantes Hatchback (3 y 5 puertas) y Sedan (con y sin techo solar). Incluye desmontaje, remocion de foam degradado, aplicacion de tela foamizada nueva con adhesivo de alta temperatura y reinstalacion.',
+            priceCurrency: 'ARS',
+          },
+        ],
+      },
+    },
+    // 3. HowTo
+    {
+      '@type': 'HowTo',
+      '@id': siteUrl + '/#howto',
+      name: 'Proceso de Retapizado de Techo Caido Peugeot 307',
+      description: 'Procedimiento tecnico de 4 pasos para reparar el headliner del Peugeot 307 a domicilio.',
+      estimatedCost: { '@type': 'MonetaryAmount', currency: 'ARS' },
+      tool: [
+        { '@type': 'HowToTool', name: 'Pistola de calor industrial' },
+        { '@type': 'HowToTool', name: 'Adhesivo de contacto de alta temperatura para tapiceria' },
+        { '@type': 'HowToTool', name: 'Rodillo de presion para tapiceria' },
+        { '@type': 'HowToTool', name: 'Espatula de plastico' },
+        { '@type': 'HowToTool', name: 'Tela foamizada de repuesto' },
+      ],
+      step: [
+        {
+          '@type': 'HowToStep', position: 1,
+          name: 'Desmontaje de accesorios y plafones',
+          text: 'Se retiran los plafones de iluminacion interior, el espejo retrovisor, los parasoles y las agarraderas. Cada pieza se etiqueta y guarda en orden para garantizar la reinstalacion correcta.',
+        },
+        {
+          '@type': 'HowToStep', position: 2,
+          name: 'Remocion del residuo foamizado degradado',
+          text: 'Con espatula de plastico y calor moderado, se elimina el foam pulverizado adherido al sustrato rigido del techo. Cualquier residuo impide la adhesion correcta de la nueva tela.',
+        },
+        {
+          '@type': 'HowToStep', position: 3,
+          name: 'Aplicacion de tela foamizada con adhesivo de alta temperatura',
+          text: 'Se aplica adhesivo de contacto de alta temperatura en el sustrato y en el dorso de la nueva tela foamizada. Con calor controlado se activa el adhesivo y se presiona la tela desde el centro hacia los bordes para una fijacion uniforme.',
+        },
+        {
+          '@type': 'HowToStep', position: 4,
+          name: 'Reinstalacion y chequeo de fijaciones',
+          text: 'Se reinstalan todos los accesorios en el orden inverso al desmontaje. Se verifica el correcto cierre de cada plafon, el funcionamiento de la iluminacion interior y la alineacion OEM de molduras y parasoles.',
+        },
+      ],
+    },
+    // 4. FAQPage
+    {
+      '@type': 'FAQPage',
+      '@id': siteUrl + '/#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Cuanto tiempo demora el trabajo?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Entre 2 y 4 horas (segun version con o sin techo solar). Lo hacemos y lo terminamos en el dia para que no te quedes a pie.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'El adhesivo resiste el calor del verano?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Si. Utilizamos exclusivamente adhesivo de contacto de grado automotriz disenado para soportar calor extremo y humedad sin volver a despegarse.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Que espacio se necesita en el domicilio?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Muy poco. Solo necesitamos el espacio suficiente para poder abrir las puertas y el baul por completo. Si entra en tu cochera o esta estacionado en la calle, podemos trabajar.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'El servicio cuenta con garantia?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Si, te damos una garantia escrita por 12 meses.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Que medios de pago aceptan?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Aceptamos efectivo y transferencia bancaria.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Puedo usar el auto inmediatamente despues?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Si, el auto queda listo para manejar apenas nos vamos, sin tiempos extra de secado.',
+          },
+        },
+      ],
+    },
+    // 5. BreadcrumbList
+    {
+      '@type': 'BreadcrumbList',
+      '@id': canonicalUrl + '#breadcrumb',
+      itemListElement: breadcrumbItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    },
+  ],
+};
+
+const jsonLdString = JSON.stringify(jsonLd);
+---
+
+<!-- Google tag (gtag.js) - unico script de terceros permitido, cargado async -->
+<script async src={"https://www.googletagmanager.com/gtag/js?id=" + gtagId}></script>
+<script define:vars={{ gtagId }} is:inline>
+  window.dataLayer = window.dataLayer || [];
+  // eslint-disable-next-line no-inner-declarations
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', gtagId);
+</script>
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph (og:image siempre URL absoluta >= 1200x630) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImageAbsolute} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content={businessName} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageAbsolute} />
+
+<!-- Robots -->
+<meta name="robots" content="index, follow, max-image-preview:large" />
+
+<!-- Geo Meta -->
+<meta name="geo.region" content="AR-C" />
+<meta name="geo.placename" content={zona ? zona.nombreZona : 'Buenos Aires'} />
+
+<!-- JSON-LD Structured Data @graph unificado -->
+<script type="application/ld+json" set:html={jsonLdString}></script>

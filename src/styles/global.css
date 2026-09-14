@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: #F3F4F6;
+  --color-bg-surface: #FFFFFF;
+  --color-text-main: #111827;
+  --color-text-muted: #4B5563;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1ebe5d;
+  --color-border-line: #E5E7EB;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    background-color: #F3F4F6;
+    color: #111827;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F3F4F6;
+    color: #111827;
+  }
+
+  /* Prevent CLS: reserve space for all media */
+  img,
+  video,
+  iframe,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  address {
+    font-style: normal;
+  }
+}
+
+@layer utilities {
+  .aspect-hero {
+    aspect-ratio: 4 / 3;
+  }
+
+  .aspect-before-after {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cta-whatsapp {
+    background-color: #25D366;
+    color: #111827;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    border-radius: 0.125rem;
+    border: 1px solid #1ebe5d;
+    padding: 0.875rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 48px;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .cta-whatsapp:hover {
+    background-color: #1ebe5d;
+  }
+
+  .touch-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+}

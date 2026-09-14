@@ -1,0 +1,37 @@
+﻿# robots.txt - 307 Techos
+# https://307techos.com.ar/robots.txt
+
+# Motores de busqueda tradicionales
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Rastreadores de motores generativos de IA - explicitamente permitidos
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Archivo de contexto para IA
+# https://307techos.com.ar/llms.txt
+
+Sitemap: https://307techos.com.ar/sitemap-index.xml

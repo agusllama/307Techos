@@ -1,0 +1,209 @@
+---
+/**
+ * Layout.astro
+ * Layout principal: HTML5 semantico, cero JS global, bloque NAP en footer.
+ * Regla DOM: cero divs envolventes innecesarios (anti-div-soup).
+ * No hay restriccion numerica de profundidad — se prioriza la semántica.
+ * Todos los botones de WhatsApp usan waClickHandler() de src/lib/tracking.ts.
+ */
+import SEOHead from '../components/SEOHead.astro';
+import { siteUrl, whatsappNumber, businessName } from '../config/site';
+import { waClickHandler } from '../lib/tracking';
+import '../styles/global.css';
+
+interface CasoExitoLocal {
+  modeloDetalle: string;
+  barrio: string;
+  problemaResuelto: string;
+  resultado: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  ogImage?: string;
+  zona?: {
+    nombreZona: string;
+    slug: string;
+    wikidataId: string;
+    tiempoLlegadaEstimado: string;
+    barriosCobertura: string[];
+    viasAccesoPrincipales: string[];
+    casoExitoLocal: CasoExitoLocal;
+  };
+  isHomepage?: boolean;
+}
+
+const props = Astro.props;
+const WA_BASE = 'https://wa.me/' + whatsappNumber;
+
+const isZone = Boolean(props.zona?.nombreZona);
+const zoneName = props.zona?.nombreZona;
+const trackingZone = isZone && zoneName ? zoneName : 'general';
+
+
+const footerWaUrl = WA_BASE + '?text=' + encodeURIComponent(
+  isZone && zoneName
+    ? `Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en ${zoneName}.`
+    : 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307.'
+);
+const footerWaHandler = waClickHandler(trackingZone, 'footer');
+
+const stickyWaUrl = WA_BASE + '?text=' + encodeURIComponent(
+  isZone && zoneName
+    ? `Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307 en ${zoneName}.`
+    : 'Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307.'
+);
+const stickyWaHandler = waClickHandler(trackingZone, 'sticky-bar');
+
+function formatPhone(num: string) {
+  if (num.startsWith('549221') && num.length === 13) {
+    return `+54 9 221 ${num.slice(6, 9)}-${num.slice(9)}`;
+  }
+  if (num.startsWith('54911') && num.length === 13) {
+    return `+54 9 11 ${num.slice(5, 9)}-${num.slice(9)}`;
+  }
+  if (num.length === 13) {
+    return `+${num.slice(0, 2)} 9 ${num.slice(3, 6)} ${num.slice(6, 9)}-${num.slice(9)}`;
+  }
+  return `+${num}`;
+}
+
+const displayPhone = formatPhone(whatsappNumber);
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#111827" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEOHead {...props} />
+  </head>
+  <body class="bg-[#F3F4F6] text-[#111827] font-sans antialiased selection:bg-[#25D366] selection:text-[#111827]">
+
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-[#111827] text-[#9CA3AF] py-12 border-t border-[#374151]">
+      <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-2">
+        <!-- NAP Block semantico con <address> -->
+        <address class="not-italic space-y-3">
+          <p class="font-black text-[#FFFFFF] text-xl tracking-tighter uppercase">{businessName}</p>
+          <p class="text-[#9CA3AF] text-sm">Retapizado y Reparacion de Techo Caido a Domicilio</p>
+          <p class="pt-2">
+            <a href={"tel:+" + whatsappNumber} class="text-base text-[#FFFFFF] hover:text-[#25D366] transition-colors inline-flex items-center gap-2 py-1.5 min-h-[44px]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" style="aspect-ratio: 1/1;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              {displayPhone}
+            </a>
+          </p>
+          <p>
+            <a
+              href={footerWaUrl}
+              class="text-[#25D366] hover:underline font-bold transition-colors inline-flex items-center gap-2 py-1.5 min-h-[44px]"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick={footerWaHandler}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="aspect-ratio: 1/1;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              WhatsApp: {displayPhone}
+            </a>
+          </p>
+          <p class="text-sm text-[#9CA3AF]">CABA, Gran Buenos Aires y La Plata</p>
+          <p class="text-sm text-[#9CA3AF]">Lunes a Sabado, 8:00 a 19:00 hs</p>
+        </address>
+
+        <!-- Zonas de cobertura organizadas por región -->
+        <nav aria-label="Zonas de cobertura" class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <p class="font-black text-[#FFFFFF] mb-3 text-sm tracking-tighter uppercase">CABA y Zona Norte</p>
+            <ul class="space-y-1 text-xs text-[#9CA3AF]">
+              <li><a href="/reparacion-techo-peugeot-307/capital-federal/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Capital Federal</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/vicente-lopez/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Vicente López</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/san-isidro/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">San Isidro</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/general-san-martin/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Gral. San Martín</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/tigre/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Tigre</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/pilar/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Pilar</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-black text-[#FFFFFF] mb-3 text-sm tracking-tighter uppercase">Zona Oeste</p>
+            <ul class="space-y-1 text-xs text-[#9CA3AF]">
+              <li><a href="/reparacion-techo-peugeot-307/la-matanza/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">La Matanza</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/moron/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Morón</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/tres-de-febrero/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Tres de Febrero</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/ituzaingo/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Ituzaingó</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-black text-[#FFFFFF] mb-3 text-sm tracking-tighter uppercase">Zona Sur y La Plata</p>
+            <ul class="space-y-1 text-xs text-[#9CA3AF]">
+              <li><a href="/reparacion-techo-peugeot-307/avellaneda/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Avellaneda</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/lanus/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Lanús</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/lomas-de-zamora/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Lomas de Zamora</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/quilmes/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Quilmes</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/berazategui/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Berazategui</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/almirante-brown/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Almirante Brown</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/esteban-echeverria/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Esteban Echeverría</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/ezeiza-canning/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Ezeiza / Canning</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/florencio-varela/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Florencio Varela</a></li>
+              <li><a href="/reparacion-techo-peugeot-307/la-plata/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">La Plata</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 mt-10 pt-6 border-t border-[#374151] text-xs text-[#6B7280] flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; {new Date().getFullYear()} {businessName}. Todos los derechos reservados.</p>
+        <p>Servicio especializado para Peugeot 307 Hatchback y Sedan (variantes con y sin techo solar).</p>
+      </div>
+    </footer>
+
+    <!-- Barra fija inferior tecnica en mobile (Oculta en primer viewport, aparece al hacer scroll) -->
+    <div
+      id="mobile-sticky-bar"
+      class="md:hidden fixed inset-x-0 bottom-0 bg-[#FFFFFF] border-t border-[#E5E7EB] p-3 z-50 transition-all duration-300 translate-y-full opacity-0 pointer-events-none"
+    >
+      <a
+        href={stickyWaUrl}
+        class="cta-whatsapp text-xs sm:text-sm py-2.5 px-3.5 w-full min-h-[44px] inline-flex items-center justify-center gap-2 text-center leading-snug"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Cotizar por WhatsApp — Mandá foto del techo"
+        onclick={stickyWaHandler}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span>Cotizar por WhatsApp — Mandá foto del techo</span>
+      </a>
+    </div>
+
+    <script is:inline>
+      (function() {
+        const bar = document.getElementById('mobile-sticky-bar');
+        if (!bar) return;
+        let isShown = false;
+        function updateStickyBar() {
+          const shouldShow = window.scrollY > 80;
+          if (shouldShow !== isShown) {
+            isShown = shouldShow;
+            if (isShown) {
+              bar.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+              bar.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            } else {
+              bar.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+              bar.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            }
+          }
+        }
+        window.addEventListener('scroll', updateStickyBar, { passive: true });
+        updateStickyBar();
+      })();
+    </script>
+  </body>
+</html>
