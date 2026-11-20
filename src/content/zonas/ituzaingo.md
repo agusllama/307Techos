@@ -17,9 +17,9 @@ viasAccesoPrincipales:
   - "Av. Ratti"
   - "Av. Martín Fierro"
   - "Camino del Buen Ayre"
-particularidadZona: "Con amplias zonas residenciales y arboladas como Parque Leloir y Villa Udaondo, los clientes cuentan con garajes y accesos cómodos donde realizar el retapizado técnico sin trasladar el coche ni perder días de trabajo."
+particularidadZona: "Con amplias zonas residenciales y arboladas como Parque Leloir y Villa Udaondo, realizamos el retapizado técnico donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, terminando el trabajo en menos de 2 horas sin trasladar el coche ni perder días."
 casoExitoLocal:
-  modeloDetalle: "307 Sedan 4 puertas"
+  modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -27,4 +27,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Ituzaingó
 
-En Ituzaingó Centro, Parque Leloir y alrededores ofrecemos servicio especializado a domicilio para reparar techos caídos de Peugeot 307. Trabajamos en el garaje o entrada de tu casa con materiales importados de primera línea.
+En Ituzaingó Centro, Parque Leloir y alrededores ofrecemos servicio técnico a domicilio para reparar techos caídos de Peugeot 307 Hatchback. Trabajamos directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, con tela automotriz de primera línea y adhesivos de alta temperatura, terminando la reparación en menos de 2 horas con garantía escrita.

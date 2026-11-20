@@ -1,16 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { whatsappNumber, businessName } from '../config/site';
+import ReviewsMarquee from '../components/ReviewsMarquee.astro';
+import { siteUrl, whatsappNumber, businessName } from '../config/site';
 import { waClickHandler } from '../lib/tracking';
 
 const zonas = await getCollection('zonas');
 
 const heroWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Vi el servicio en la web y consulto para retapizar el techo de mi Peugeot 307 a domicilio.');
 const antesDespuesWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Vi las fotos del retapizado del Peugeot 307 y quiero consultar presupuesto.');
-const canonicalUrl = 'https://307techos.com.ar/';
-const title = 'Reparacion Techo Caido Peugeot 307 a Domicilio | CABA, GBA y La Plata | 307 Techos';
-const description = 'Especialistas en retapizado de techo interior caido (headliner) del Peugeot 307 a domicilio. Cobertura en CABA, Zona Norte, Oeste, Sur y La Plata. Trabajo en el dia con adhesivo de alta temperatura.';
+const canonicalUrl = siteUrl + '/';
+const title = 'Reparación Techo Peugeot 307 a Domicilio | 307 Techos';
+const description = 'Retapizado de techo Peugeot 307 donde tengas el auto (calle, trabajo o cochera). Listo en menos de 2 horas. Cobertura en CABA, GBA y La Plata.';
 
 const heroCTAHandler = waClickHandler('home', 'hero');
 const antesDespuesCTAHandler = waClickHandler('home', 'antes-despues');
@@ -31,9 +32,9 @@ const regiones = [
 ];
 ---
 
-<Layout title={title} description={description} canonicalUrl={canonicalUrl} isHomepage={true}>
+<Layout title={title} description={description} canonicalUrl={canonicalUrl} isHomepage={true} faq={true}>
   <!-- HERO MINIMALISTA: Fondo con la imagen real de Antes y Después + Overlay + Tipografía blanca + CTA WhatsApp -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#111827] text-white border-b border-[#E5E7EB]">
+  <section class="relative min-h-[calc(100vh-130px)] min-h-[calc(100dvh-130px)] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#111827] text-white border-b border-[#E5E7EB]">
     <!-- Imagen de fondo optimizada con carga prioritaria LCP -->
     <picture class="absolute inset-0 w-full h-full pointer-events-none">
       <source media="(max-width: 640px)" srcset="/images/hero-split-bg-mobile.webp" type="image/webp" />
@@ -50,8 +51,8 @@ const regiones = [
       />
     </picture>
 
-    <!-- Overlay oscuro para legibilidad impecable (estilo minimalista) -->
-    <div class="absolute inset-0 bg-[#111827]/70 backdrop-blur-[0.5px]"></div>
+    <!-- Overlay con scrim funcional para legibilidad impecable y visualización del split antes/después -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#111827]/40 via-[#111827]/65 to-[#111827]/85 backdrop-blur-[0.5px]"></div>
 
     <!-- Indicadores discretos de Antes y Después sobre el fondo -->
     <div class="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-4 flex justify-between items-center gap-2 pointer-events-none z-10">
@@ -66,7 +67,7 @@ const regiones = [
       </h1>
       
       <p class="text-sm sm:text-base text-gray-200 mb-6 max-w-lg leading-relaxed font-normal">
-        La tela desprendida del techo interior se retapiza a nuevo en tu cochera o garaje. Sin trasladar tu auto, listo en 3 a 4 horas con materiales que soportan calor extremo y humedad sin despegarse.
+        La tela desprendida del techo interior se retapiza a nuevo donde tengas el auto (en la calle, en el trabajo, cochera o estacionamiento). Sin trasladar tu auto, listo en menos de 2 horas con materiales que soportan calor extremo y humedad sin despegarse.
       </p>
 
       <!-- Escasez pegada al botón -->
@@ -104,6 +105,9 @@ const regiones = [
     </div>
   </section>
 
+  <!-- MARQUEE DE RESEÑAS / SOCIAL PROOF GOOGLE MAPS -->
+  <ReviewsMarquee />
+
   <!-- EVIDENCIA VISUAL: ANTES Y DESPUES + TABLA TECNICA DE COMPARACION -->
   <section class="py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E7EB]">
     <div class="max-w-5xl mx-auto px-4">
@@ -123,12 +127,12 @@ const regiones = [
           <img
             src="/images/techo-antes-caido.webp"
             alt="Techo caido de Peugeot 307 con tela desprendida y espuma degradada"
-            width="600"
-            height="450"
+            width="640"
+            height="360"
             loading="lazy"
             decoding="async"
-            class="w-full h-auto object-cover aspect-[4/3] border-b border-[#E5E7EB]"
-            style="aspect-ratio: 4 / 3;"
+            class="w-full h-auto object-cover aspect-[16/9] border-b border-[#E5E7EB]"
+            style="aspect-ratio: 16 / 9;"
           />
           <div class="p-4 sm:p-5">
             <h3 class="text-xs font-black uppercase tracking-tight text-[#111827] mb-1.5">
@@ -145,12 +149,12 @@ const regiones = [
           <img
             src="/images/techo-despues-restaurado.webp"
             alt="Techo de Peugeot 307 retapizado impecable con acabado OEM de fabrica"
-            width="600"
-            height="450"
+            width="640"
+            height="360"
             loading="lazy"
             decoding="async"
-            class="w-full h-auto object-cover aspect-[4/3] border-b border-[#E5E7EB]"
-            style="aspect-ratio: 4 / 3;"
+            class="w-full h-auto object-cover aspect-[16/9] border-b border-[#E5E7EB]"
+            style="aspect-ratio: 16 / 9;"
           />
           <div class="p-4 sm:p-5">
             <h3 class="text-xs font-black uppercase tracking-tight text-[#111827] mb-1.5">
@@ -172,107 +176,110 @@ const regiones = [
           Frente al desprendimiento de la tela del techo del Peugeot 307 existen diferentes alternativas de reparacion. La siguiente tabla compara de manera objetiva los aspectos clave.
         </p>
         
-        <!-- VISTA MOBILE (OPCIÓN 4: Versus Focalizado de Alto Impacto) -->
-        <div class="block md:hidden space-y-4">
-          <!-- Tarjeta 1: Alternativas Comunes -->
-          <div class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-4 space-y-2.5">
-            <span class="text-[10px] font-black uppercase tracking-widest text-[#EF4444] block">
-              Alternativas Comunes (Casera o Taller General)
-            </span>
-            <h4 class="text-sm font-black uppercase text-[#111827]">Los Riesgos Habituales</h4>
-            <ul class="space-y-2 text-xs text-[#4B5563]">
-              <li class="flex items-start gap-2">
-                <span class="text-[#EF4444] font-bold shrink-0">✕</span>
-                <span><strong>Adhesivos comunes que se desprenden:</strong> No toleran el calor solar intenso (>45°C) y la tela vuelve a caer en semanas.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#EF4444] font-bold shrink-0">✕</span>
-                <span><strong>Inmovilización prolongada:</strong> Dejar el auto de 2 a 5 días estacionado en un taller general.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#EF4444] font-bold shrink-0">✕</span>
-                <span><strong>Riesgo de rotura:</strong> Desarme sin herramientas plásticas específicas para las molduras del Peugeot 307.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#EF4444] font-bold shrink-0">✕</span>
-                <span><strong>Materiales genéricos:</strong> Telas sin tono ni espesor OEM, o sin garantía documentada.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Tarjeta 2: Nuestro Estándar con ® -->
-          <div class="bg-[#FFFFFF] border-2 border-[#111827] rounded-sm p-4 space-y-2.5">
-            <span class="text-[10px] font-black uppercase tracking-widest text-[#16A34A] block">
-              Servicio Especializado 307 Techos®
-            </span>
-            <h4 class="text-sm font-black uppercase text-[#111827]">El Estándar a Domicilio</h4>
-            <ul class="space-y-2 text-xs text-[#111827] font-medium">
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] font-black shrink-0">✓</span>
-                <span><strong>Adhesivo térmico de alta temperatura:</strong> Soporta más de 110°C de calor solar directo sin despegarse.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] font-black shrink-0">✓</span>
-                <span><strong>En tu cochera en 3 a 4 horas:</strong> Servicio en el día en tu domicilio, sin traslados ni días sin vehículo.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] font-black shrink-0">✓</span>
-                <span><strong>Tela foamizada OEM:</strong> Tono y textura original de fábrica calibrada para Peugeot 307.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] font-black shrink-0">✓</span>
-                <span><strong>Herramental plástico dedicado:</strong> Desarme cuidadoso sin marcar molduras ni romper trabas.</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#25D366] font-black shrink-0">✓</span>
-                <span><strong>Garantía escrita de 12 meses:</strong> Respaldo documentado por fijación y adherencia.</span>
-              </li>
-            </ul>
-          </div>
+        <!-- INDICADOR INDUSTRIAL DE DESPLAZAMIENTO MOBILE -->
+        <div class="flex items-center justify-between text-[11px] text-[#4B5563] mb-2 md:hidden">
+          <span class="flex items-center gap-1.5 font-medium">
+            <span class="inline-block w-1.5 h-1.5 bg-[#25D366] rounded-full"></span>
+            Deslizá para ver otras opciones
+          </span>
+          <span class="text-[10px] text-[#4B5563] uppercase tracking-wider font-semibold">Comparativa técnica</span>
         </div>
 
-        <!-- VISTA DESKTOP (TABLA SEMÁNTICA INDUSTRIAL COMPLETA) -->
-        <div class="hidden md:block overflow-x-auto border border-[#E5E7EB] rounded-sm bg-[#FFFFFF]">
-          <table class="w-full text-left text-sm border-collapse">
-            <caption class="sr-only">Comparativa tecnica de soluciones para techo caido Peugeot 307</caption>
+        <!-- TABLA TÉCNICA COMPARATIVA (Responsive Mobile-First con 1° Columna Sticky) -->
+        <div
+          tabindex="0"
+          role="region"
+          aria-label="Comparativa técnica de soluciones para techo Peugeot 307"
+          class="overflow-x-auto border border-[#E5E7EB] rounded-sm bg-[#FFFFFF] focus:outline-none focus:ring-1 focus:ring-[#111827]"
+        >
+          <table class="w-full text-left text-xs sm:text-sm border-separate border-spacing-0">
+            <caption class="sr-only">Comparativa técnica de soluciones para techo caído Peugeot 307</caption>
             <thead class="bg-[#111827] text-[#FFFFFF] text-xs uppercase tracking-tight">
               <tr>
-                <th scope="col" class="p-3.5 sm:p-4 font-black">Criterio técnico</th>
-                <th scope="col" class="p-3.5 sm:p-4 font-bold border-l border-[#374151]">Solución Casera</th>
-                <th scope="col" class="p-3.5 sm:p-4 font-bold border-l border-[#374151]">Tapicería Tradicional</th>
-                <th scope="col" class="p-3.5 sm:p-4 font-black border-l border-[#374151] bg-[#1F2937] text-[#25D366]">Especializado 307 Techos® a Domicilio</th>
+                <th scope="col" class="sticky left-0 z-20 bg-[#111827] text-[#FFFFFF] p-3 sm:p-4 font-black border-b border-r border-[#374151] min-w-[130px] sm:min-w-[160px]">
+                  Criterio técnico
+                </th>
+                <th scope="col" class="p-3 sm:p-4 font-black border-b border-r border-[#374151] bg-[#1F2937] text-[#25D366] min-w-[211px] sm:min-w-[210px]">
+                  Especializado 307 Techos® a Domicilio
+                </th>
+                <th scope="col" class="p-3 sm:p-4 font-bold border-b border-r border-[#374151] min-w-[170px] sm:min-w-[190px]">
+                  Tapicería Tradicional
+                </th>
+                <th scope="col" class="p-3 sm:p-4 font-bold border-b border-[#374151] min-w-[170px] sm:min-w-[190px]">
+                  Solución Casera
+                </th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-[#E5E7EB] text-xs sm:text-sm text-[#4B5563]">
-              <tr class="hover:bg-[#F9FAFB] transition-colors">
-                <th scope="row" class="p-3.5 sm:p-4 font-bold text-[#111827]">Adhesivo y resistencia térmica</th>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Pegamento común en aerosol; se despega con calor solar (>45°C)</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Cemento de contacto universal; resistencia térmica media</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">Adhesivo de contacto de alta temperatura (soporta más de 110°C)</td>
+            <tbody class="text-xs sm:text-sm text-[#4B5563]">
+              <tr>
+                <th scope="row" class="sticky left-0 z-10 bg-[#FFFFFF] p-3 sm:p-4 font-bold text-[#111827] border-b border-r border-[#E5E7EB]">
+                  Adhesivo y resistencia térmica
+                </th>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">
+                  Adhesivo de contacto de alta temperatura (soporta más de 110°C)
+                </td>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB]">
+                  Cemento de contacto universal; resistencia térmica media
+                </td>
+                <td class="p-3 sm:p-4 border-b border-[#E5E7EB]">
+                  Pegamento común en aerosol; se despega con calor solar (&gt;45°C)
+                </td>
               </tr>
-              <tr class="hover:bg-[#F9FAFB] transition-colors">
-                <th scope="row" class="p-3.5 sm:p-4 font-bold text-[#111827]">Material de tapizado</th>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Reutiliza la tela vieja manchada con residuos de goma degradada</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Tela genérica sin espesor calibrado para molduras de Peugeot</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">Tela automotriz foamizada nueva con tono y textura original OEM</td>
+              <tr>
+                <th scope="row" class="sticky left-0 z-10 bg-[#FFFFFF] p-3 sm:p-4 font-bold text-[#111827] border-b border-r border-[#E5E7EB]">
+                  Material de tapizado
+                </th>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">
+                  Tela automotriz 100% fibra de poliéster (sin capa de gomaespuma degradable)
+                </td>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB]">
+                  Tela genérica sin espesor calibrado para molduras de Peugeot
+                </td>
+                <td class="p-3 sm:p-4 border-b border-[#E5E7EB]">
+                  Reutiliza la tela vieja manchada con residuos de goma degradada
+                </td>
               </tr>
-              <tr class="hover:bg-[#F9FAFB] transition-colors">
-                <th scope="row" class="p-3.5 sm:p-4 font-bold text-[#111827]">Tiempo sin auto y traslado</th>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Trabajo incompleto sin desarme; dura semanas o días</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Inmoviliza el vehículo de 2 a 5 días en taller</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">Servicio en el día en tu cochera; listo en 3 a 4 horas</td>
+              <tr>
+                <th scope="row" class="sticky left-0 z-10 bg-[#FFFFFF] p-3 sm:p-4 font-bold text-[#111827] border-b border-r border-[#E5E7EB]">
+                  Tiempo sin auto y traslado
+                </th>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">
+                  Servicio en el día donde tengas el auto (calle, trabajo o cochera); listo en menos de 2 horas
+                </td>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB]">
+                  Inmoviliza el vehículo de 2 a 5 días en taller
+                </td>
+                <td class="p-3 sm:p-4 border-b border-[#E5E7EB]">
+                  Trabajo incompleto sin desarme; dura semanas o días
+                </td>
               </tr>
-              <tr class="hover:bg-[#F9FAFB] transition-colors">
-                <th scope="row" class="p-3.5 sm:p-4 font-bold text-[#111827]">Cuidado de trabas y sensores</th>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Riesgo de quebrar grampas, plafones de luz y parasoles</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Desarme general sin herramientas dedicadas a Peugeot 307</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">Espátulas plásticas específicas para no marcar molduras ni romper trabas</td>
+              <tr>
+                <th scope="row" class="sticky left-0 z-10 bg-[#FFFFFF] p-3 sm:p-4 font-bold text-[#111827] border-b border-r border-[#E5E7EB]">
+                  Cuidado de trabas y sensores
+                </th>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">
+                  Espátulas plásticas específicas para no marcar molduras ni romper trabas
+                </td>
+                <td class="p-3 sm:p-4 border-b border-r border-[#E5E7EB]">
+                  Desarme general sin herramientas dedicadas a Peugeot 307
+                </td>
+                <td class="p-3 sm:p-4 border-b border-[#E5E7EB]">
+                  Riesgo de quebrar grampas, plafones de luz y parasoles
+                </td>
               </tr>
-              <tr class="hover:bg-[#F9FAFB] transition-colors">
-                <th scope="row" class="p-3.5 sm:p-4 font-bold text-[#111827]">Garantía documentada</th>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Sin garantía; resultado desprolijo</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB]">Variable según criterio de cada taller</td>
-                <td class="p-3.5 sm:p-4 border-l border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">Garantía escrita de 12 meses</td>
+              <tr>
+                <th scope="row" class="sticky left-0 z-10 bg-[#FFFFFF] p-3 sm:p-4 font-bold text-[#111827] border-r border-[#E5E7EB]">
+                  Garantía documentada
+                </th>
+                <td class="p-3 sm:p-4 border-r border-[#E5E7EB] font-semibold text-[#111827] bg-[#F3F4F6]/60">
+                  Garantía escrita de 12 meses
+                </td>
+                <td class="p-3 sm:p-4 border-r border-[#E5E7EB]">
+                  Variable según criterio de cada taller
+                </td>
+                <td class="p-3 sm:p-4">
+                  Sin garantía; resultado desprolijo
+                </td>
               </tr>
             </tbody>
           </table>
@@ -304,7 +311,7 @@ const regiones = [
           Proceso de retapizado a domicilio en 3 pasos
         </h2>
         <p class="text-base text-[#4B5563] max-w-3xl leading-relaxed">
-          Realizamos el retapizado completo del techo de tu Peugeot 307 en tu cochera o garaje sin mover el vehiculo. Nuestro protocolo tecnico especializado asegura una colocacion limpia, rapida y sin riesgo de danos en clips o sensores electricos en solo 3 a 4 horas.
+          Realizamos el retapizado completo del techo de tu Peugeot 307 donde tengas el auto (en la calle, en el trabajo, cochera o estacionamiento) sin mover el vehículo. Nuestro protocolo técnico especializado asegura una colocación limpia, rápida y sin riesgo de daños en clips o sensores eléctricos en menos de 2 horas.
         </p>
       </div>
 
@@ -372,10 +379,10 @@ const regiones = [
               </span>
             </div>
             <h3 class="text-base font-black uppercase tracking-tight text-[#111827] mb-2">
-              3. Lo reparamos a domicilio
+              3. Lo reparamos donde tengas el auto
             </h3>
             <p class="text-sm text-[#4B5563] leading-relaxed">
-              Vamos a tu cochera y en solo 3 a 4 horas dejamos el techo como 0km, sin que muevas el auto.
+              Vamos donde tengas el auto (calle, trabajo o cochera) y en menos de 2 horas dejamos el techo como 0km, sin que lo muevas.
             </p>
           </div>
         </li>
@@ -391,7 +398,7 @@ const regiones = [
           Preguntas frecuentes sobre el servicio
         </h2>
         <p class="text-base text-[#4B5563] leading-relaxed">
-          Respondemos las dudas mas habituales sobre los materiales automotrices, tiempos de ejecucion y condiciones del trabajo en tu domicilio.
+          Respondemos las dudas más habituales sobre los materiales automotrices, tiempos de ejecución y condiciones del trabajo donde tengas el auto.
         </p>
       </div>
 
@@ -402,7 +409,7 @@ const regiones = [
             <span class="text-[#4B5563] font-mono text-lg ml-2 shrink-0">+</span>
           </summary>
           <p class="text-xs sm:text-sm text-[#4B5563] mt-3 pt-3 border-t border-[#E5E7EB] leading-relaxed">
-            Entre 2 y 4 horas (según versión con o sin techo solar). Lo hacemos y lo terminamos en el día para que no te quedes a pie.
+            Menos de 2 horas (según versión con o sin techo solar). Lo hacemos y lo terminamos en el día para que no te quedes a pie.
           </p>
         </details>
 
@@ -422,7 +429,7 @@ const regiones = [
             <span class="text-[#4B5563] font-mono text-lg ml-2 shrink-0">+</span>
           </summary>
           <p class="text-xs sm:text-sm text-[#4B5563] mt-3 pt-3 border-t border-[#E5E7EB] leading-relaxed">
-            Muy poco. Solo necesitamos el espacio suficiente para poder abrir las puertas y el baúl por completo. Si entra en tu cochera o está estacionado en la calle, podemos trabajar.
+            Muy poco. Solo necesitamos el espacio suficiente para poder abrir las puertas y el baúl por completo. Trabajamos donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento.
           </p>
         </details>
 
@@ -459,8 +466,86 @@ const regiones = [
     </div>
   </section>
 
+  <!-- GUÍAS TÉCNICAS Y BLOG (Puente de contenido y captación de leads) -->
+  <section class="py-12 lg:py-16 bg-[#F3F4F6] border-b border-[#E5E7EB]">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">
+            Guías Técnicas y Diagnóstico del Techo 307
+          </h2>
+          <p class="text-base text-[#4B5563] max-w-2xl leading-relaxed">
+            Conocé en detalle las causas químicas del desprendimiento de la tela, cuidados en techos corredizos y por qué los pegamentos caseros no funcionan.
+          </p>
+        </div>
+        <a href="/blog/" class="text-xs font-bold uppercase tracking-tight text-[#111827] hover:underline inline-flex items-center min-h-[44px] py-1 shrink-0">
+          Ver todas las guías del blog
+        </a>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-5 hover:border-[#111827] transition-colors flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-black uppercase tracking-tight text-[#111827] mb-2 leading-snug">
+              <a href="/blog/techo-caido-peugeot-307-vtv/" class="hover:underline">
+                ¿Te pueden rebotar la VTV por el techo caído en un 307?
+              </a>
+            </h3>
+            <p class="text-xs text-[#4B5563] leading-relaxed mb-4">
+              Criterios de inspección en CABA y PBA: riesgos por visibilidad obstruida, tachas metálicas y solución en el día.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-xs text-[#4B5563]">
+            <span>Normativa y VTV</span>
+            <a href="/blog/techo-caido-peugeot-307-vtv/" class="font-bold uppercase tracking-tight text-[#111827] hover:underline inline-flex items-center min-h-[44px]">
+              Leer guía completa
+            </a>
+          </div>
+        </article>
+
+        <article class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-5 hover:border-[#111827] transition-colors flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-black uppercase tracking-tight text-[#111827] mb-2 leading-snug">
+              <a href="/blog/por-que-se-cae-techo-peugeot-307/" class="hover:underline">
+                ¿Por qué se cae el techo del Peugeot 307 y solución definitiva?
+              </a>
+            </h3>
+            <p class="text-xs text-[#4B5563] leading-relaxed mb-4">
+              La degradación de la espuma original de fábrica bajo el sol y por qué los pegamentos en aerosol arruinan el tapizado.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-xs text-[#4B5563]">
+            <span>Diagnóstico y Reparación</span>
+            <a href="/blog/por-que-se-cae-techo-peugeot-307/" class="font-bold uppercase tracking-tight text-[#111827] hover:underline inline-flex items-center min-h-[44px]">
+              Leer guía completa
+            </a>
+          </div>
+        </article>
+
+        <article class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-5 hover:border-[#111827] transition-colors flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-black uppercase tracking-tight text-[#111827] mb-2 leading-snug">
+              <a href="/blog/techo-solar-panoramico-peugeot-307-tapizado/" class="hover:underline">
+                Techo solar del 307 Hatchback: cuidados y tapizado
+              </a>
+            </h3>
+            <p class="text-xs text-[#4B5563] leading-relaxed mb-4">
+              Precauciones en modelos Hatchback con techo solar corredizo para evitar trabas mecánicas y filtraciones de agua.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-xs text-[#4B5563]">
+            <span>Techo Solar</span>
+            <a href="/blog/techo-solar-panoramico-peugeot-307-tapizado/" class="font-bold uppercase tracking-tight text-[#111827] hover:underline inline-flex items-center min-h-[44px]">
+              Leer guía completa
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ZONAS DE COBERTURA (SELECTOR AL FINAL: UNICA seccion con padding-bottom extra para el CTA flotante) -->
-  <section class="max-w-5xl mx-auto px-4 py-12 lg:py-16 pb-24 md:pb-16">
+  <section id="zonas" class="max-w-5xl mx-auto px-4 py-12 lg:py-16 pb-24 md:pb-16">
     <div class="mb-8">
       <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">
         Zonas de Cobertura a Domicilio
@@ -507,5 +592,10 @@ const regiones = [
         );
       })}
     </div>
+
+    <a href="/reparacion-techo-peugeot-307/" class="mt-8 bg-[#FFFFFF] border border-[#111827] rounded-sm p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 hover:bg-[#F3F4F6] transition-colors min-h-[44px]">
+      <span class="font-black uppercase tracking-tight text-sm text-[#111827]">Ver todas las zonas de cobertura</span>
+      <span class="text-xs font-bold uppercase tracking-tight text-[#4B5563]">Tiempos de llegada y detalle por zona</span>
+    </a>
   </section>
 </Layout>

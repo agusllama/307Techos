@@ -18,6 +18,13 @@ interface CasoExitoLocal {
   resultado: string;
 }
 
+interface ArticleData {
+  headline: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -33,6 +40,11 @@ interface Props {
     casoExitoLocal: CasoExitoLocal;
   };
   isHomepage?: boolean;
+  breadcrumbs?: { name: string; url: string }[];
+  article?: ArticleData;
+  showHeader?: boolean;
+  noindex?: boolean;
+  faq?: boolean;
 }
 
 const props = Astro.props;
@@ -41,7 +53,14 @@ const WA_BASE = 'https://wa.me/' + whatsappNumber;
 const isZone = Boolean(props.zona?.nombreZona);
 const zoneName = props.zona?.nombreZona;
 const trackingZone = isZone && zoneName ? zoneName : 'general';
+const showHeader = props.showHeader ?? (!props.isHomepage && !isZone);
 
+const headerWaUrl = WA_BASE + '?text=' + encodeURIComponent(
+  isZone && zoneName
+    ? `Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en ${zoneName}.`
+    : 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307.'
+);
+const headerWaHandler = waClickHandler(trackingZone, 'header');
 
 const footerWaUrl = WA_BASE + '?text=' + encodeURIComponent(
   isZone && zoneName
@@ -84,12 +103,41 @@ const displayPhone = formatPhone(whatsappNumber);
   </head>
   <body class="bg-[#F3F4F6] text-[#111827] font-sans antialiased selection:bg-[#25D366] selection:text-[#111827]">
 
+    {showHeader && (
+      <header class="bg-[#111827] border-b border-[#374151] text-white">
+        <div class="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
+          <a href="/" class="font-black text-base sm:text-lg tracking-tighter uppercase text-white hover:opacity-80 transition-opacity py-1 flex items-center min-h-[44px]">
+            307 TECHOS
+          </a>
+          <nav aria-label="Navegación principal" class="flex items-center gap-1 sm:gap-4 text-xs sm:text-sm font-bold uppercase tracking-tight">
+            <a href="/#zonas" class="text-[#9CA3AF] hover:text-white transition-colors py-1 px-3 flex items-center min-h-[44px]">
+              Zonas
+            </a>
+            <a href="/blog/" class="text-[#9CA3AF] hover:text-white transition-colors py-1 px-3 flex items-center min-h-[44px]">
+              Blog
+            </a>
+            <a
+              href={headerWaUrl}
+              class="text-[#25D366] hover:underline transition-colors py-1 px-3 flex items-center gap-1.5 min-h-[44px]"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick={headerWaHandler}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </nav>
+        </div>
+      </header>
+    )}
 
     <main>
       <slot />
     </main>
 
-    <footer class="bg-[#111827] text-[#9CA3AF] py-12 border-t border-[#374151]">
+    <footer class="bg-[#111827] text-[#9CA3AF] pt-12 pb-28 md:pb-12 border-t border-[#374151]">
       <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-2">
         <!-- NAP Block semantico con <address> -->
         <address class="not-italic space-y-3">
@@ -154,32 +202,72 @@ const displayPhone = formatPhone(whatsappNumber);
               <li><a href="/reparacion-techo-peugeot-307/la-plata/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">La Plata</a></li>
             </ul>
           </div>
+          <a href="/reparacion-techo-peugeot-307/" class="sm:col-span-3 text-xs font-bold uppercase tracking-tight text-[#25D366] hover:underline inline-flex items-center min-h-[44px] py-1">
+            Ver todas las zonas de cobertura
+          </a>
         </nav>
       </div>
 
-      <div class="max-w-5xl mx-auto px-4 mt-10 pt-6 border-t border-[#374151] text-xs text-[#6B7280] flex flex-col md:flex-row justify-between items-center gap-4">
+      <!-- Guías Técnicas y Blog -->
+      <nav aria-label="Guías técnicas y blog" class="max-w-5xl mx-auto px-4 mt-8 pt-8 border-t border-[#374151]">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div>
+            <p class="font-black text-[#FFFFFF] text-base tracking-tighter uppercase">Guías Técnicas y Blog Especializado</p>
+            <p class="text-xs text-[#9CA3AF]">Diagnósticos técnicos de caída de tela, cuidados para techo solar y soluciones para Peugeot 307.</p>
+          </div>
+          <a href="/blog/" class="text-xs font-bold uppercase tracking-tight text-white hover:underline inline-flex items-center min-h-[44px] py-1">
+            Ver todas las guías del blog
+          </a>
+        </div>
+        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-[#9CA3AF]">
+          <li>
+            <a href="/blog/techo-caido-peugeot-307-vtv/" class="hover:text-white transition-colors py-1 min-h-[44px] flex items-center">
+              ¿Te pueden rebotar la VTV por el techo caído en un 307?
+            </a>
+          </li>
+          <li>
+            <a href="/blog/por-que-se-cae-techo-peugeot-307/" class="hover:text-white transition-colors py-1 min-h-[44px] flex items-center">
+              ¿Por qué se cae el techo del Peugeot 307 y cómo solucionarlo definitivamente?
+            </a>
+          </li>
+          <li>
+            <a href="/blog/techo-solar-panoramico-peugeot-307-tapizado/" class="hover:text-white transition-colors py-1 min-h-[44px] flex items-center">
+              Techo solar del 307 Hatchback: cuidados y tapizado
+            </a>
+          </li>
+        </ul>
+        <div class="mt-3 pt-3 border-t border-[#374151]">
+          <a href="/blog/" class="text-xs font-bold text-white hover:underline transition-colors inline-flex items-center min-h-[44px] py-1">
+            ¿Más dudas? Ver todas las guías y preguntas frecuentes
+          </a>
+        </div>
+      </nav>
+
+      <div class="max-w-5xl mx-auto px-4 mt-8 pt-6 border-t border-[#374151] text-xs text-[#6B7280] flex flex-col md:flex-row justify-between items-center gap-4">
         <p>&copy; {new Date().getFullYear()} {businessName}. Todos los derechos reservados.</p>
-        <p>Servicio especializado para Peugeot 307 Hatchback y Sedan (variantes con y sin techo solar).</p>
+        <p>Servicio especializado para Peugeot 307 Hatchback (variantes 3 y 5 puertas, con y sin techo solar).</p>
       </div>
     </footer>
 
-    <!-- Barra fija inferior tecnica en mobile (Oculta en primer viewport, aparece al hacer scroll) -->
+    <!-- Botón flotante persistente en mobile (Oculta en primer viewport, aparece al hacer scroll) -->
     <div
       id="mobile-sticky-bar"
-      class="md:hidden fixed inset-x-0 bottom-0 bg-[#FFFFFF] border-t border-[#E5E7EB] p-3 z-50 transition-all duration-300 translate-y-full opacity-0 pointer-events-none"
+      class="md:hidden fixed inset-x-3 bottom-3 z-50 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none flex justify-center"
     >
       <a
         href={stickyWaUrl}
-        class="cta-whatsapp text-xs sm:text-sm py-2.5 px-3.5 w-full min-h-[44px] inline-flex items-center justify-center gap-2 text-center leading-snug"
+        class="cta-floating-whatsapp w-full max-w-[420px] min-h-[48px] py-3 px-4 rounded-full flex items-center justify-center gap-2.5 text-center transition-transform active:scale-[0.98] pointer-events-auto"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Cotizar por WhatsApp — Mandá foto del techo"
+        aria-label="COTIZAR POR WHATSAPP — MANDÁ FOTO DEL TECHO"
         onclick={stickyWaHandler}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 text-[#092212]" aria-hidden="true" style="aspect-ratio: 1/1;">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-        <span>Cotizar por WhatsApp — Mandá foto del techo</span>
+        <span class="text-[11px] sm:text-xs font-black uppercase tracking-tight text-[#092212] leading-tight">
+          COTIZAR POR WHATSAPP — MANDÁ FOTO DEL TECHO
+        </span>
       </a>
     </div>
 
@@ -193,10 +281,10 @@ const displayPhone = formatPhone(whatsappNumber);
           if (shouldShow !== isShown) {
             isShown = shouldShow;
             if (isShown) {
-              bar.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+              bar.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
               bar.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
             } else {
-              bar.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+              bar.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
               bar.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
             }
           }

@@ -26,6 +26,21 @@ const zonasCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string().optional(),
+    description: z.string(),
+    date: z.string(),
+    author: z.string().default('Técnico Especialista 307 Techos'),
+    category: z.string().default('Guía Técnica'),
+    readTime: z.string().default('4 min de lectura'),
+    image: z.string().optional(),
+  }),
+});
+
 export const collections = {
   zonas: zonasCollection,
+  blog: blogCollection,
 };

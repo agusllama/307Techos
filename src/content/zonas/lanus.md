@@ -1,4 +1,4 @@
-﻿---
+---
 nombreZona: "Lanus"
 slug: "lanus"
 wikidataId: "Q869792"
@@ -16,9 +16,9 @@ viasAccesoPrincipales:
   - "Av. 25 de Mayo"
   - "Puente Valentin Alsina"
   - "Av. Remedios de Escalada de San Martin"
-particularidadZona: "Lanus presenta una alta densidad residencial y un parque automotor del Peugeot 307 muy consolidado. En zonas como Lanus Este y Monte Chingolo abundan las viviendas con estacionamiento exterior, donde el calor acumulado bajo el sol directo supera la resistencia del adhesivo de fabrica. En Lanus Oeste y Remedios de Escalada, el servicio a domicilio permite trabajar directamente en garajes particulares sin interrumpir la rutina del propietario."
+particularidadZona: "Lanus presenta una alta densidad residencial y un parque automotor del Peugeot 307 muy consolidado. En zonas como Lanus Este y Monte Chingolo abundan las viviendas con estacionamiento exterior, donde el calor acumulado bajo el sol directo supera la resistencia del adhesivo de fabrica. En Lanus Oeste y Remedios de Escalada, el servicio a domicilio permite trabajar directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas y sin interrumpir la rutina del propietario."
 casoExitoLocal:
-  modeloDetalle: "307 Sedan 4 puertas"
+  modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -26,4 +26,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Lanus
 
-El desprendimiento del tapizado de techo en el Peugeot 307 es una falla comun originada por el desgaste de la espuma bajo las temperaturas del Conurbano Sur. Realizamos la reparacion y retapizado a domicilio en todo el partido de Lanus con tecnicos equipados, aplicando tela foamizada nueva y adhesivo de grado automotriz para una fijacion uniforme y duradera.
+El desprendimiento del tapizado de techo en el Peugeot 307 es una falla común por desgaste de la espuma bajo el calor del Conurbano Sur. Realizamos la reparación a domicilio en Lanús con técnicos equipados en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, aplicando tela 100% fibra de poliéster y adhesivo de grado automotriz para una fijación definitiva.

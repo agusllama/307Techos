@@ -1,23 +1,23 @@
 ---
 nombreZona: "Esteban Echeverría"
 slug: "esteban-echeverria"
-wikidataId: "Q1483844"
+wikidataId: "Q1484197"
 tiempoLlegadaEstimado: "En el dia a coordinar"
 keywordPrincipal: "reparacion techo caido peugeot 307 esteban echeverria"
 barriosCobertura:
   - "Monte Grande"
-  - "El Jagüel"
   - "Luis Guillón"
-  - "9 de Julio"
+  - "El Jagüel"
   - "Canning Norte"
+  - "9 de Abril"
 viasAccesoPrincipales:
   - "Autopista Riccheri"
-  - "Av. Boulevard Buenos Aires"
-  - "Camino de Cintura (Ruta 4)"
   - "Ruta Provincial 205"
-particularidadZona: "En Esteban Echeverría (Monte Grande, Luis Guillón) la mayoría de los vehículos permanecen estacionados en garajes residenciales o entradas de auto. Nos trasladamos con todo el equipamiento para completar el trabajo en 3 a 4 horas."
+  - "Camino de Cintura (Ruta 4)"
+  - "Av. Boulevard Buenos Aires"
+particularidadZona: "En Esteban Echeverría (Monte Grande, Luis Guillón) nos trasladamos con todo el equipamiento para completar el trabajo en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento."
 casoExitoLocal:
-  modeloDetalle: "307 Sedan 4 puertas"
+  modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -25,4 +25,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Esteban Echeverría
 
-En Monte Grande, Luis Guillón y alrededores, resolvemos el desprendimiento de techo interior del Peugeot 307 de manera definitiva. No tenés que dejar el auto inmovilizado días en un taller: el técnico llega a tu casa y lo deja como nuevo en el día.
+En Monte Grande, Luis Guillón y alrededores, resolvemos el desprendimiento de techo interior del Peugeot 307 de manera definitiva. No tenés que dejar el auto inmovilizado días en un taller: el técnico llega donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, y lo deja como nuevo en menos de 2 horas.

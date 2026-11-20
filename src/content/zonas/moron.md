@@ -11,12 +11,11 @@ barriosCobertura:
   - "El Palomar"
   - "Villa Sarmiento"
 viasAccesoPrincipales:
-  - "Acceso Oeste (AU7)"
+  - "Autopista Acceso Oeste"
   - "Av. Rivadavia"
-  - "Av. Don Bosco"
+  - "Ruta Provincial 4 (Camino de Cintura)"
   - "Av. Gaona"
-  - "Av. Presidente Perón"
-particularidadZona: "En Morón, Castelar y Haedo los usuarios buscan soluciones ágiles y prolijas. Realizamos el trabajo directo en la cochera del cliente en solo 3 a 4 horas, evitando la incomodidad de esperar turnos de semanas en talleres zonales."
+particularidadZona: "En Morón, Castelar y Haedo los usuarios buscan soluciones ágiles y prolijas. Realizamos el trabajo directo donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas, evitando la incomodidad de esperar turnos de semanas en talleres zonales."
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
@@ -26,4 +25,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Morón
 
-Si vivís en Castelar, Haedo, Morón Centro o El Palomar y el techo de tu Peugeot 307 se cayó o empezó a soltar polvillo, nuestro servicio a domicilio lo soluciona en el día. Usamos materiales automotrices específicos para garantizar un acabado original de fábrica.
+Si vivís en Castelar, Haedo, Morón Centro o El Palomar y el techo de tu Peugeot 307 se cayó o empezó a soltar polvillo, nuestro servicio a domicilio lo soluciona en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento. Usamos materiales automotrices específicos para garantizar un acabado original de fábrica.

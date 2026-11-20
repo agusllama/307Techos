@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+.vercel
+
+screenshot-*.png
+shot-*.png
+
+# skills del entorno del agente (no forman parte del sitio)
+.agents/
+skills-lock.json

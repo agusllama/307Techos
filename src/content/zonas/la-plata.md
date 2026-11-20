@@ -18,7 +18,7 @@ viasAccesoPrincipales:
   - "Camino Parque Centenario"
   - "Camino General Belgrano"
   - "Avenida 44"
-particularidadZona: "En el Gran La Plata (Casco, Tolosa, City Bell, Gonnet, Berisso y Ensenada) las distancias a talleres de tapicería suelen ser largas y el tránsito por los accesos complica el traslado de un vehículo con visibilidad reducida. Atendemos a domicilio directamente en garajes particulares o entradas descubiertas en el día."
+particularidadZona: "En el Gran La Plata (Casco, Tolosa, City Bell, Gonnet, Berisso y Ensenada) las distancias a talleres de tapicería suelen ser largas y el tránsito por los accesos complica el traslado de un vehículo con visibilidad reducida. Atendemos a domicilio directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas."
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
@@ -28,4 +28,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en La Plata
 
-La Plata, City Bell, Gonnet y el Gran La Plata cuentan con un gran parque automotor de Peugeot 307. Trasladar un vehículo con el tapizado desprendido por la autopista o los caminos Belgrano y Centenario resulta incómodo y peligroso al limitar la visión trasera. Nuestro servicio técnico móvil llega directamente a tu cochera o entrada para resolver el retapizado con materiales originales y adhesivo de alta resistencia térmica en 3 a 4 horas.
+En La Plata, City Bell y Gonnet brindamos servicio especializado a domicilio para reparar el techo caído de tu Peugeot 307 Hatchback. Nuestro técnico móvil acude directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, para desmontar, sanear la superficie y colocar tela nueva con adhesivo de alta temperatura en menos de 2 horas de labor.

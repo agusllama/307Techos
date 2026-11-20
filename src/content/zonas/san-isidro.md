@@ -1,7 +1,7 @@
 ---
 nombreZona: "San Isidro"
 slug: "san-isidro"
-wikidataId: "Q1484206"
+wikidataId: "Q1484208"
 tiempoLlegadaEstimado: "En el dia a coordinar"
 keywordPrincipal: "reparacion techo caido peugeot 307 san isidro"
 barriosCobertura:
@@ -16,9 +16,9 @@ viasAccesoPrincipales:
   - "Av. del Libertador"
   - "Av. Santa Fe / Centenario"
   - "Av. Márquez (Ruta 4)"
-particularidadZona: "En San Isidro, Martínez y Acassuso predomina una exigencia estética alta en el mantenimiento vehicular. Garantizamos un acabado idéntico al 0km sin ruidos de encastre ni arrugas en molduras."
+particularidadZona: "En San Isidro, Martínez y Acassuso realizamos el servicio técnico donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento. Garantizamos un acabado idéntico al 0km en menos de 2 horas, sin ruidos de encastre ni arrugas en molduras."
 casoExitoLocal:
-  modeloDetalle: "307 SW con techo panoramico"
+  modeloDetalle: "307 Hatchback 5 puertas con techo solar"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -26,4 +26,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en San Isidro
 
-En San Isidro, Martínez, Acassuso y Beccar brindamos servicio a domicilio especializado en techos caídos de Peugeot 307. Llevamos las herramientas precisas para desmontar, retapizar y reinstalar el techo en el día, garantizando terminación de fábrica.
+En San Isidro, Martínez, Acassuso y Beccar brindamos servicio a domicilio especializado en techos caídos de Peugeot 307 Hatchback. Llevamos las herramientas precisas para desmontar, colocar tela nueva de poliéster y reinstalar el techo donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas y garantizando una terminación impecable.

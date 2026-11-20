@@ -18,7 +18,7 @@ viasAccesoPrincipales:
   - "Av. Espora"
   - "Av. Monteverde (Ruta 4)"
   - "Av. San Martín"
-particularidadZona: "Almirante Brown cuenta con localidades de gran extensión como Adrogué, Burzaco y Longchamps, donde los usuarios prefieren evitar la incomodidad de llevar el auto a talleres lejanos. Realizamos la intervención completa en la entrada o vereda del domicilio."
+particularidadZona: "Almirante Brown cuenta con localidades de gran extensión como Adrogué, Burzaco y Longchamps, donde los usuarios prefieren evitar la incomodidad de llevar el auto a talleres lejanos. Realizamos la intervención completa donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas."
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
@@ -28,4 +28,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Almirante Brown
 
-Atendemos en todo el partido de Almirante Brown, incluyendo Adrogué, Burzaco, Longchamps y Rafael Calzada. El problema del techo desprendido en el Peugeot 307 se soluciona en el lugar, retirando los restos de poliuretano degradado y colocando tela automotriz tramada original con fijación de máxima resistencia térmica.
+Atendemos en todo el partido de Almirante Brown, incluyendo Adrogué, Burzaco, Longchamps y Rafael Calzada. El problema del techo desprendido en el Peugeot 307 se soluciona en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, retirando los restos de poliuretano degradado y colocando tela automotriz tramada original con fijación de máxima resistencia térmica.

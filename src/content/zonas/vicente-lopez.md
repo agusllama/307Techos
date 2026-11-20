@@ -17,7 +17,7 @@ viasAccesoPrincipales:
   - "Av. Maipú"
   - "Autopista Panamericana (Acceso Norte)"
   - "Av. General Paz"
-particularidadZona: "En Vicente López y Olivos las cocheras residenciales y de edificios permiten trabajar con total comodidad. Nuestro servicio a domicilio evita el engorroso viaje hacia talleres del conurbano sur o microcentro."
+particularidadZona: "En Vicente López y Olivos realizamos el trabajo donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento. Nuestro servicio a domicilio resuelve la colocación en menos de 2 horas y evita el engorroso viaje hacia talleres lejanos."
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
@@ -27,4 +27,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Vicente López
 
-Atendemos en Olivos, Florida, Vicente López, Munro y Carapachay. Recuperamos el tapizado caído de tu Peugeot 307 a domicilio con tela foamizada automotriz de tono original, cuidando anclajes y molduras interiores con máxima prolijidad.
+Atendemos en Olivos, Florida, Vicente López, Munro y Carapachay. Recuperamos el tapizado caído de tu Peugeot 307 Hatchback a domicilio con tela automotriz 100% fibra de poliéster de tono original, cuidando cada anclaje y moldura interior con máxima prolijidad técnica en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento.

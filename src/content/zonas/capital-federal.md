@@ -20,19 +20,18 @@ barriosCobertura:
   - "Saavedra"
   - "Parque Chacabuco"
   - "San Cristobal"
-  - "Villa Crespo"
   - "Barracas"
-  - "Mataderos"
-  - "Villa Luro"
-  - "Liniers"
 viasAccesoPrincipales:
+  - "Av. General Paz"
   - "Autopista 25 de Mayo (AU1)"
-  - "Autopista Perito Moreno (AU6)"
-  - "Av. Rivadavia"
   - "Av. Juan B. Justo"
-particularidadZona: "En CABA, la mayoria de los vehiculos permanecen estacionados en garajes subterraneos o en la via publica bajo exposicion solar directa. Esta combinacion acelera la degradacion del foam del revestimiento interior. En edificios con cocheras subterraneas, el trabajo se realiza sin problemas de espacio: se requiere solo abrir ambas puertas traseras o la puerta trasera del maletero para acceder comodamente al interior del techo. El trafico denso de la ciudad hace que el servicio a domicilio sea especialmente valioso para propietarios que no pueden trasladar el vehiculo a un taller."
+  - "Av. Rivadavia"
+  - "Av. del Libertador"
+  - "Av. Cabildo / Santa Fe"
+  - "Autopista Illia"
+particularidadZona: "En CABA, la mayoria de los vehiculos permanecen estacionados en la via publica o en edificios bajo exposicion solar directa. Esta combinacion acelera la degradacion de la espuma del revestimiento interior. Atendemos donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, completando la intervencion en menos de 2 horas. El trafico denso de la ciudad hace que el servicio a domicilio sea especialmente valioso para propietarios que no pueden trasladar el vehiculo a un taller."
 casoExitoLocal:
-  modeloDetalle: "307 Hatchback 5 puertas"
+  modeloDetalle: "307 Hatchback 5 puertas con techo solar"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -40,4 +39,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Capital Federal
 
-La degradacion del foam es el problema estructural mas comun en unidades de la linea 307 que circulan en CABA. Las variaciones termicas entre el invierno y el verano porteno aceleran la separacion del adhesivo entre la tela y el sustrato rigido del techo. El servicio se ejecuta en el domicilio del cliente, con herramental especializado y sin necesidad de remolque ni taller.
+La degradación de la espuma original es una falla habitual en unidades Peugeot 307 que circulan por CABA. El calor estival acelera el desprendimiento de la tela interior sobre los ocupantes. Brindamos servicio a domicilio con herramental específico para dejar el techo impecable en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento.

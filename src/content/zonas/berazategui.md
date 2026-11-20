@@ -17,9 +17,9 @@ viasAccesoPrincipales:
   - "Camino General Belgrano"
   - "Av. Mitre"
   - "Ruta Provincial 36"
-particularidadZona: "En Berazategui, Hudson y Ranelagh predominan viviendas unifamiliares con garaje privado o espacio en vereda amplia, lo que facilita el trabajo técnico en el lugar sin necesidad de dejar el vehículo en un taller durante días."
+particularidadZona: "En Berazategui, Hudson y Ranelagh realizamos el trabajo técnico en menos de 2 horas directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, sin necesidad de dejar el vehículo en un taller durante días."
 casoExitoLocal:
-  modeloDetalle: "307 Sedan 4 puertas"
+  modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -27,4 +27,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Berazategui
 
-En el partido de Berazategui, abarcando localidades como Hudson, Ranelagh y Villa España, brindamos atención técnica a domicilio para reparar el techo caído de tu Peugeot 307. La exposición al sol descompone la espuma original; nosotros retiramos el techo, saneamos la superficie y aplicamos tela nueva con pegamento de grado automotriz en solo 3 a 4 horas.
+En Berazategui, Hudson y Ranelagh brindamos atención técnica a domicilio para reparar el techo caído de tu Peugeot 307 Hatchback. La exposición al sol descompone la espuma original; retiramos el panel, saneamos la superficie y aplicamos tela nueva con pegamento resistente a alta temperatura en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento.

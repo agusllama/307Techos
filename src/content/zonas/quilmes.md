@@ -1,26 +1,25 @@
-﻿---
+---
 nombreZona: "Quilmes"
 slug: "quilmes"
-wikidataId: "Q863777"
+wikidataId: "Q869788"
 tiempoLlegadaEstimado: "En el dia a coordinar"
 keywordPrincipal: "reparacion techo caido peugeot 307 quilmes"
 barriosCobertura:
   - "Quilmes Centro"
-  - "Quilmes Oeste"
+  - "Bernal"
+  - "Ezpeleta"
   - "Don Bosco"
   - "San Francisco Solano"
-  - "Bernal"
-  - "Bernal Oeste"
-  - "Ezpeleta"
-  - "Quilmes Este"
+  - "Quilmes Oeste"
 viasAccesoPrincipales:
-  - "Autopista Buenos Aires - La Plata (AU6)"
+  - "Autopista Buenos Aires - La Plata"
   - "Av. Calchaqui"
-  - "Autopista Presidente Peron (Camino del Buen Ayre)"
-  - "Ruta Provincial 53"
-particularidadZona: "El partido de Quilmes concentra una alta proporcion de viviendas con cocheras descubiertas o techadas con chapas de zinc, lo que somete a los vehiculos a ciclos mas agresivos de expansion y contraccion termica. Las temperaturas internas que pueden alcanzarse bajo una cubierta metalica en verano afectan directamente la durabilidad del adhesivo original de fabrica. El servicio a domicilio en Quilmes se ejecuta preferentemente en la cochera del cliente o en la vereda, con espacio operativo libre a cada lateral del vehiculo."
+  - "Av. Mitre"
+  - "Av. Vicente Lopez"
+  - "Av. 12 de Octubre"
+particularidadZona: "El partido de Quilmes concentra una alta proporcion de viviendas con espacios descubiertos o techados con chapas de zinc, lo que somete a los vehiculos a ciclos mas agresivos de expansion y contraccion termica. Las temperaturas internas que pueden alcanzarse bajo una cubierta metalica en verano afectan directamente la durabilidad del adhesivo original de fabrica. El servicio a domicilio en Quilmes se ejecuta donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, completando el trabajo en menos de 2 horas."
 casoExitoLocal:
-  modeloDetalle: "307 SW con techo panoramico de vidrio"
+  modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -28,4 +27,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Quilmes
 
-Quilmes es uno de los partidos del Conurbano Sur con alta concentracion de unidades Peugeot 307, especialmente la variante SW con techo panoramico. Las cocheras descubiertas son comunes en la zona y generan condiciones termicas que deterioran el adhesivo original del techo interior. El tecnico se desplaza hasta el domicilio con herramental especifico para tapiceria automotriz a alta temperatura.
+En Quilmes, Bernal y Ezpeleta reparamos a domicilio el techo caído de tu Peugeot 307 Hatchback de 3 o 5 puertas. El calor descompone la espuma original y desprende la tela; nuestro técnico acude donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, con herramental específico para restaurarlo con tela automotriz resistente en menos de 2 horas.

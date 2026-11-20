@@ -12,5 +12,9 @@ export const whatsappNumber = '5492212269244';
 
 export const businessName = '307 Techos - Retapizado a Domicilio Peugeot 307';
 
-/** ID de medicion de Google Analytics 4 */
-export const gtagId = 'G-XXXXXXXXXX'; // [REEMPLAZAR con el ID real de GA4]
+/**
+ * ID de medicion de Google Analytics 4.
+ * Se configura en build con PUBLIC_GA_ID (ej. en .env o en el panel del hosting).
+ * Si no esta configurado, SEOHead no carga gtag.js ni emite requests invalidos.
+ */
+export const gtagId = import.meta.env.PUBLIC_GA_ID || 'G-XXXXXXXXXX';

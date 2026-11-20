@@ -1,0 +1,160 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ReviewsMarquee from '../../components/ReviewsMarquee.astro';
+import { siteUrl, whatsappNumber } from '../../config/site';
+import { waClickHandler } from '../../lib/tracking';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug || post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const postSlug = d.slug || post.id;
+
+const canonicalUrl = siteUrl + '/blog/' + postSlug + '/';
+const title = d.title + ' | 307 Techos';
+const description = d.description;
+
+const articleWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Leí el artículo sobre "' + d.title + '" y quiero pedir presupuesto a domicilio para mi Peugeot 307.');
+const articleWaHandler = waClickHandler('blog-' + postSlug, 'in-article');
+
+const breadcrumbs = [
+  { name: 'Inicio', url: siteUrl + '/' },
+  { name: 'Blog', url: siteUrl + '/blog/' },
+  { name: d.title, url: canonicalUrl },
+];
+
+const articleData = {
+  headline: d.title,
+  datePublished: d.date,
+  authorName: d.author,
+};
+
+const topZonas = [
+  { name: 'Capital Federal', slug: 'capital-federal' },
+  { name: 'Avellaneda', slug: 'avellaneda' },
+  { name: 'Lanús', slug: 'lanus' },
+  { name: 'Lomas de Zamora', slug: 'lomas-de-zamora' },
+  { name: 'Quilmes', slug: 'quilmes' },
+  { name: 'Vicente López', slug: 'vicente-lopez' },
+  { name: 'San Isidro', slug: 'san-isidro' },
+  { name: 'La Plata', slug: 'la-plata' },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+  article={articleData}
+>
+  <article>
+    <!-- Cabecera del Artículo dentro de <article> semántico -->
+    <header class="bg-[#111827] text-white py-10 sm:py-14 border-b border-[#374151]">
+      <div class="max-w-3xl mx-auto px-4">
+        <nav aria-label="Miga de pan" class="mb-4">
+          <ol class="flex flex-wrap items-center gap-2 text-xs text-[#9CA3AF]">
+            <li><a href="/" class="hover:text-white transition-colors py-1 px-2 inline-flex items-center min-h-[44px]">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="/blog/" class="hover:text-white transition-colors py-1 px-2 inline-flex items-center min-h-[44px]">Blog</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white font-bold truncate max-w-[200px] sm:max-w-xs" aria-current="page">{d.title}</li>
+          </ol>
+        </nav>
+
+        <h1 class="text-[28px] sm:text-4xl font-black uppercase tracking-tighter leading-[1.12] mb-4 text-white">
+          {d.title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 text-xs text-[#9CA3AF] pt-3 border-t border-[#374151]">
+          <span>Categoría: <strong class="text-white">{d.category}</strong></span>
+          <span>Lectura: <strong class="text-white">{d.readTime}</strong></span>
+          <span>Autor: <strong class="text-white">{d.author}</strong></span>
+          <span>Publicado: <time datetime={d.date} class="text-white font-bold">{d.date}</time></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-3xl mx-auto px-4 py-10 sm:py-14">
+      <!-- Renderizado Markdown con estilos tipográficos completos -->
+      <div class="blog-content text-base text-[#111827] leading-relaxed [&>h2]:text-[22px] sm:[&>h2]:text-[26px] [&>h2]:font-black [&>h2]:uppercase [&>h2]:tracking-tight [&>h2]:text-[#111827] [&>h2]:mt-10 [&>h2]:mb-3 [&>h2]:pt-4 [&>h2]:border-t [&>h2]:border-[#E5E7EB] [&>h3]:text-[18px] sm:[&>h3]:text-[20px] [&>h3]:font-black [&>h3]:uppercase [&>h3]:tracking-tight [&>h3]:text-[#111827] [&>h3]:mt-8 [&>h3]:mb-3 [&_strong]:font-bold [&_strong]:text-[#111827] [&>p]:text-base [&>p]:text-[#4B5563] [&>p]:leading-relaxed [&>p]:mb-5 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-5 [&>ul]:text-base [&>ul]:text-[#4B5563] [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-5 [&>ol]:text-base [&>ol]:text-[#4B5563] [&>table]:w-full [&>table]:my-6 [&>table]:border-collapse [&>table]:border [&>table]:border-[#E5E7EB] [&>table]:text-xs sm:[&>table]:text-sm [&_th]:bg-[#111827] [&_th]:text-white [&_th]:font-bold [&_th]:uppercase [&_th]:tracking-tight [&_th]:p-3 [&_th]:text-left [&_th]:border [&_th]:border-[#374151] [&_td]:p-3 [&_td]:border [&_td]:border-[#E5E7EB] [&_td]:text-[#4B5563] [&_tr:nth-child(even)]:bg-[#FFFFFF] [&_tr:nth-child(odd)]:bg-[#F9FAFB] [&>blockquote]:border-l-4 [&>blockquote]:border-[#111827] [&>blockquote]:bg-[#FFFFFF] [&>blockquote]:p-4 [&>blockquote]:my-6 [&>blockquote]:text-sm [&>blockquote]:text-[#4B5563] [&>blockquote]:rounded-r-sm [&>blockquote]:border-y [&>blockquote]:border-r [&>blockquote]:border-[#E5E7EB] [&>figure]:my-8">
+        <Content />
+      </div>
+
+      <!-- Bloque de Conversión Directo en Artículo -->
+      <div class="my-12 bg-[#FFFFFF] border-2 border-[#111827] rounded-sm p-6 sm:p-8">
+        <div class="max-w-xl">
+          <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#111827] mb-2 leading-snug">
+            ¿Te pasa esto en tu Peugeot 307?
+          </p>
+          <p class="text-sm text-[#4B5563] mb-5 leading-relaxed">
+            No dañes el cartón original intentando pegar la tela sucia. Vamos donde tengas el auto (calle, trabajo o estacionamiento) en CABA, Gran Buenos Aires o La Plata y dejamos tu techo como nuevo en menos de 2 horas con garantía escrita de 12 meses.
+          </p>
+
+          <a
+            href={articleWaUrl}
+            class="cta-whatsapp text-sm sm:text-base px-6 py-3.5 inline-flex items-center justify-center gap-2 text-center leading-snug w-full sm:w-auto"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick={articleWaHandler}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>Cotizar por WhatsApp con foto del techo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- MARQUEE DE RESEÑAS / SOCIAL PROOF GOOGLE MAPS -->
+  <ReviewsMarquee />
+
+  <!-- Enlace Cruzado a Zonas de Cobertura (GEO SEO) -->
+  <section class="max-w-3xl mx-auto px-4 pb-24 md:pb-16 border-t border-[#E5E7EB] pt-8">
+    <div class="mb-4">
+      <h2 class="text-lg sm:text-xl font-black uppercase tracking-tight text-[#111827] mb-2">
+        Atención a Domicilio en CABA, GBA y La Plata
+      </h2>
+      <p class="text-sm text-[#4B5563] leading-relaxed">
+        Coordinamos la reparación y retapizado del techo de tu Peugeot 307 directamente donde tengas el vehículo en cualquier punto de Capital Federal, Gran Buenos Aires o Gran La Plata. Seleccioná tu localidad para consultar tiempos de llegada de nuestro taller móvil, barrios con cobertura activa y agendar tu turno hoy mismo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8">
+      {topZonas.map((z) => (
+        <a
+          href={"/reparacion-techo-peugeot-307/" + z.slug + "/"}
+          class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-2.5 text-xs font-bold text-[#111827] hover:border-[#111827] transition-colors flex items-center justify-between min-h-[44px]"
+        >
+          <span>{z.name}</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center justify-between pt-4 border-t border-[#E5E7EB]">
+      <a
+        href="/blog/"
+        class="text-xs font-bold uppercase tracking-tight text-[#111827] hover:underline transition-colors inline-flex items-center min-h-[44px] py-1"
+      >
+        Volver al listado del blog
+      </a>
+      <a
+        href="/"
+        class="text-xs font-bold uppercase tracking-tight text-[#4B5563] hover:text-[#111827] transition-colors inline-flex items-center min-h-[44px] py-1"
+      >
+        Ir a la página principal
+      </a>
+    </div>
+  </section>
+</Layout>

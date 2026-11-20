@@ -1,4 +1,4 @@
-﻿---
+---
 nombreZona: "Lomas de Zamora"
 slug: "lomas-de-zamora"
 wikidataId: "Q924670"
@@ -17,9 +17,9 @@ viasAccesoPrincipales:
   - "Av. Alsina"
   - "Camino Presidente Peron (Camino Negro)"
   - "Av. Eva Peron (Pasco)"
-particularidadZona: "Lomas de Zamora abarca una extensa superficie con gran concentracion de variantes Peugeot 307 SW Rural con techo panoramico de vidrio en barrios como Las Lomitas, Banfield y Temperley. La gran superficie vidriada de estos modelos eleva la temperatura interna del habitaculo, acelerando el colapso del foam en ambas secciones de tela. El servicio a domicilio en Lomas cubre todas las localidades con atencion directa en cochera."
+particularidadZona: "Lomas de Zamora abarca una extensa superficie con gran concentracion de Peugeot 307 Hatchback en barrios como Las Lomitas, Banfield y Temperley. Los vehiculos estacionados al sol sufren temperaturas extremas dentro del habitaculo, acelerando el desgaste del adhesivo original. El servicio a domicilio en Lomas cubre todas las localidades con atencion directa donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas."
 casoExitoLocal:
-  modeloDetalle: "307 SW con techo panoramico"
+  modeloDetalle: "307 Hatchback 5 puertas con techo solar"
   barrio: "[COMPLETAR]"
   problemaResuelto: "[COMPLETAR — caso real pendiente]"
   resultado: "[COMPLETAR — caso real pendiente]"
@@ -27,4 +27,4 @@ casoExitoLocal:
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Lomas de Zamora
 
-En Lomas de Zamora, la radiacion solar intensa deteriora el forro interior del Peugeot 307 provocando que la tela se desprenda y caiga sobre los ocupantes. Brindamos servicio tecnico a domicilio para modelos Hatchback, Sedan y SW con techo panoramico, desmontando los accesorios con precision y retapizando con materiales resistentes a las maximas temperaturas estivales.
+En Lomas de Zamora, la radiacion solar intensa deteriora el forro interior del Peugeot 307 provocando que la tela se desprenda y caiga sobre los ocupantes. Brindamos servicio tecnico a domicilio para modelos Hatchback (con y sin techo solar), trabajando donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, para dejarlo listo en menos de 2 horas con tela de poliester resistente a temperaturas estivales.

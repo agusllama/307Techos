@@ -17,6 +17,13 @@ interface CasoExitoLocal {
   resultado: string;
 }
 
+interface ArticleData {
+  headline: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -33,23 +40,35 @@ interface Props {
     casoExitoLocal: CasoExitoLocal;
   };
   isHomepage?: boolean;
+  breadcrumbs?: { name: string; url: string }[];
+  article?: ArticleData;
+  noindex?: boolean;
+  /** Solo true en paginas que muestran una FAQ visible que coincide con el markup. */
+  faq?: boolean;
 }
 
 const {
   title,
   description,
   canonicalUrl,
-  ogImage = '/og-default.jpg',
+  ogImage = '/images/og-default.jpg',
   zona,
   isHomepage = false,
+  breadcrumbs,
+  article,
+  noindex = false,
+  faq = false,
 } = Astro.props;
+
+// Sin ID real no se carga gtag: evita un request invalido en produccion.
+const gaMeasurementId = gtagId && !gtagId.includes('XXXX') ? gtagId : '';
 
 // og:image siempre URL absoluta — WhatsApp no genera preview con rutas relativas
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
 
 const WIKIDATA_PEUGEOT_307 = 'https://www.wikidata.org/wiki/Q215286';
 
-const breadcrumbItems = [
+const breadcrumbItems = breadcrumbs || [
   { name: 'Inicio', url: siteUrl + '/' },
   ...(zona
     ? [
@@ -99,7 +118,6 @@ const jsonLd = {
       description: 'Especialistas en retapizado y reparacion de techos caidos (headliner) de Peugeot 307 a domicilio. Cubrimos CABA, Gran Buenos Aires y La Plata.',
       url: siteUrl,
       telephone: '+' + whatsappNumber,
-      priceRange: '',
       currenciesAccepted: 'ARS',
       paymentAccepted: 'Cash, Transferencia bancaria, Mercado Pago',
       areaServed: areaServed,
@@ -126,7 +144,7 @@ const jsonLd = {
       provider: { '@id': siteUrl + '/#business' },
       serviceType: 'Auto Interior Repair',
       about: { '@type': 'Thing', name: 'Peugeot 307', sameAs: WIKIDATA_PEUGEOT_307 },
-      description: 'Servicio especializado de retapizado de techo interior para Peugeot 307 Hatchback y Sedan (variantes con y sin techo solar).',
+      description: 'Servicio especializado de retapizado de techo interior para Peugeot 307 Hatchback (variantes 3 y 5 puertas, con y sin techo solar).',
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Servicios para Peugeot 307',
@@ -134,7 +152,7 @@ const jsonLd = {
           {
             '@type': 'Offer',
             name: 'Retapizado Techo Peugeot 307',
-            description: 'Para variantes Hatchback (3 y 5 puertas) y Sedan (con y sin techo solar). Incluye desmontaje, remocion de foam degradado, aplicacion de tela foamizada nueva con adhesivo de alta temperatura y reinstalacion.',
+            description: 'Para variantes Peugeot 307 Hatchback (3 y 5 puertas, con y sin techo solar). Incluye desmontaje, remocion de espuma original degradada, aplicacion de tela 100% fibra poliester con adhesivo de alta temperatura y reinstalacion.',
             priceCurrency: 'ARS',
           },
         ],
@@ -152,7 +170,7 @@ const jsonLd = {
         { '@type': 'HowToTool', name: 'Adhesivo de contacto de alta temperatura para tapiceria' },
         { '@type': 'HowToTool', name: 'Rodillo de presion para tapiceria' },
         { '@type': 'HowToTool', name: 'Espatula de plastico' },
-        { '@type': 'HowToTool', name: 'Tela foamizada de repuesto' },
+        { '@type': 'HowToTool', name: 'Tela de tapiceria automotriz 100% fibra poliester' },
       ],
       step: [
         {
@@ -162,13 +180,13 @@ const jsonLd = {
         },
         {
           '@type': 'HowToStep', position: 2,
-          name: 'Remocion del residuo foamizado degradado',
-          text: 'Con espatula de plastico y calor moderado, se elimina el foam pulverizado adherido al sustrato rigido del techo. Cualquier residuo impide la adhesion correcta de la nueva tela.',
+          name: 'Remocion del residuo de espuma original degradada',
+          text: 'Con espatula y solvente desengrasante, se elimina la espuma original pulverizada adherida al sustrato rigido del techo. Cualquier residuo impide la adhesion correcta de la nueva tela.',
         },
         {
           '@type': 'HowToStep', position: 3,
-          name: 'Aplicacion de tela foamizada con adhesivo de alta temperatura',
-          text: 'Se aplica adhesivo de contacto de alta temperatura en el sustrato y en el dorso de la nueva tela foamizada. Con calor controlado se activa el adhesivo y se presiona la tela desde el centro hacia los bordes para una fijacion uniforme.',
+          name: 'Aplicacion de tela 100% fibra poliester con adhesivo de alta temperatura',
+          text: 'Se aplica adhesivo de contacto de alta temperatura en el sustrato y en la nueva tela 100% fibra poliester automotriz. Se presiona desde el centro hacia los bordes para una fijacion uniforme y duradera.',
         },
         {
           '@type': 'HowToStep', position: 4,
@@ -177,8 +195,8 @@ const jsonLd = {
         },
       ],
     },
-    // 4. FAQPage
-    {
+    // 4. FAQPage (solo si la pagina muestra esas preguntas)
+    ...(faq ? [{
       '@type': 'FAQPage',
       '@id': siteUrl + '/#faq',
       mainEntity: [
@@ -187,7 +205,7 @@ const jsonLd = {
           name: 'Cuanto tiempo demora el trabajo?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Entre 2 y 4 horas (segun version con o sin techo solar). Lo hacemos y lo terminamos en el dia para que no te quedes a pie.',
+            text: 'Menos de 2 horas (segun version con o sin techo solar). Lo hacemos y lo terminamos en el dia para que no te quedes a pie.',
           },
         },
         {
@@ -203,7 +221,7 @@ const jsonLd = {
           name: 'Que espacio se necesita en el domicilio?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Muy poco. Solo necesitamos el espacio suficiente para poder abrir las puertas y el baul por completo. Si entra en tu cochera o esta estacionado en la calle, podemos trabajar.',
+            text: 'Muy poco. Solo necesitamos el espacio suficiente para poder abrir las puertas y el baul por completo. Trabajamos donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento.',
           },
         },
         {
@@ -231,7 +249,7 @@ const jsonLd = {
           },
         },
       ],
-    },
+    }] : []),
     // 5. BreadcrumbList
     {
       '@type': 'BreadcrumbList',
@@ -243,6 +261,31 @@ const jsonLd = {
         item: item.url,
       })),
     },
+    // 6. BlogPosting (si corresponde)
+    ...(article
+      ? [
+          {
+            '@type': 'BlogPosting',
+            '@id': canonicalUrl + '#article',
+            headline: article.headline,
+            description: description,
+            datePublished: article.datePublished,
+            dateModified: article.dateModified || article.datePublished,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': canonicalUrl,
+            },
+            author: {
+              '@type': 'Person',
+              name: article.authorName || 'Técnico Especialista 307 Techos',
+            },
+            publisher: {
+              '@id': siteUrl + '/#business',
+            },
+            image: ogImageAbsolute,
+          },
+        ]
+      : []),
   ],
 };
 
@@ -250,14 +293,18 @@ const jsonLdString = JSON.stringify(jsonLd);
 ---
 
 <!-- Google tag (gtag.js) - unico script de terceros permitido, cargado async -->
-<script async src={"https://www.googletagmanager.com/gtag/js?id=" + gtagId}></script>
-<script define:vars={{ gtagId }} is:inline>
-  window.dataLayer = window.dataLayer || [];
-  // eslint-disable-next-line no-inner-declarations
-  function gtag(){window.dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', gtagId);
-</script>
+{gaMeasurementId && (
+  <>
+    <script async src={"https://www.googletagmanager.com/gtag/js?id=" + gaMeasurementId}></script>
+    <script define:vars={{ gaMeasurementId }} is:inline>
+      window.dataLayer = window.dataLayer || [];
+      // eslint-disable-next-line no-inner-declarations
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaMeasurementId);
+    </script>
+  </>
+)}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -265,7 +312,14 @@ const jsonLdString = JSON.stringify(jsonLd);
 <link rel="canonical" href={canonicalUrl} />
 
 <!-- Open Graph (og:image siempre URL absoluta >= 1200x630) -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={article ? 'article' : 'website'} />
+{article && (
+  <>
+    <meta property="article:published_time" content={article.datePublished} />
+    <meta property="article:modified_time" content={article.dateModified || article.datePublished} />
+    <meta property="article:author" content={article.authorName || 'Técnico Especialista 307 Techos'} />
+  </>
+)}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
@@ -282,7 +336,7 @@ const jsonLdString = JSON.stringify(jsonLd);
 <meta name="twitter:image" content={ogImageAbsolute} />
 
 <!-- Robots -->
-<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
 
 <!-- Geo Meta -->
 <meta name="geo.region" content="AR-C" />

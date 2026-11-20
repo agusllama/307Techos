@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteUrl, whatsappNumber } from '../config/site';
+import { waClickHandler } from '../lib/tracking';
+
+const canonicalUrl = siteUrl + '/404.html';
+const title = 'Página No Encontrada (Error 404) | 307 Techos';
+const description = 'La ruta solicitada no existe o fue reubicada. Contactanos por WhatsApp para consultar por reparación de techos de Peugeot 307 a domicilio en CABA y GBA.';
+
+const waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Estaba navegando en el sitio de 307 Techos, no encontré la página que buscaba y quiero consultar por la reparación de mi Peugeot 307.');
+const waHandler = waClickHandler('404', 'primary-cta');
+
+const zonasPrincipales = [
+  { name: 'Capital Federal', slug: 'capital-federal' },
+  { name: 'Avellaneda', slug: 'avellaneda' },
+  { name: 'Lanús', slug: 'lanus' },
+  { name: 'Lomas de Zamora', slug: 'lomas-de-zamora' },
+  { name: 'Quilmes', slug: 'quilmes' },
+  { name: 'La Plata', slug: 'la-plata' },
+  { name: 'Vicente López', slug: 'vicente-lopez' },
+  { name: 'San Isidro', slug: 'san-isidro' },
+];
+
+const articulosBlog = [
+  { title: '¿Te pueden rebotar la VTV por el techo caído en un 307?', slug: 'techo-caido-peugeot-307-vtv' },
+  { title: 'Por qué se cae la tela del techo y cómo solucionarlo', slug: 'por-que-se-cae-techo-peugeot-307' },
+  { title: 'Cómo reparar el techo del 307 en casa: precauciones', slug: 'como-reparar-techo-peugeot-307-en-casa' },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  showHeader={true}
+  noindex={true}
+>
+  <main class="max-w-3xl mx-auto px-4 py-12 sm:py-20">
+    <!-- Panel Principal 404 Técnico -->
+    <div class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-6 sm:p-10 mb-8">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-[#111827] text-white text-xs font-mono font-bold tracking-tight rounded-sm mb-6">
+        <span>ESTADO 404</span>
+        <span aria-hidden="true" class="text-[#9CA3AF]">/</span>
+        <span>RUTA_NO_LOCALIZADA</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter leading-[1.1] text-[#111827] mb-4">
+        Página no encontrada
+      </h1>
+
+      <p class="text-base text-[#4B5563] leading-relaxed mb-8">
+        La dirección que intentás abrir no existe, fue renombrada o ingresaste una ruta incompleta. Si estás buscando solucionar la tela descolgada de tu Peugeot 307 Hatchback (3 o 5 puertas), podés contactarnos directamente o elegir tu zona de atención a continuación.
+      </p>
+
+      <!-- Detección de Coincidencias en Cliente (Edge Fallback) -->
+      <div id="smart-suggestion" class="hidden mb-8 p-4 bg-[#F3F4F6] border-l-4 border-[#111827] rounded-sm" role="status">
+        <p class="text-xs font-bold uppercase tracking-tight text-[#111827] mb-1">
+          Coincidencia detectada para tu búsqueda
+        </p>
+        <p id="smart-suggestion-text" class="text-xs text-[#4B5563] mb-3">
+          Detectamos una página que coincide con la dirección que ingresaste.
+        </p>
+        <a
+          id="smart-suggestion-link"
+          href="/"
+          class="inline-flex items-center justify-center text-xs font-bold uppercase tracking-tight bg-[#111827] text-white px-4 py-2 rounded-sm hover:bg-black transition-colors min-h-[44px]"
+        >
+          Ir a la sección recomendada
+        </a>
+      </div>
+
+      <!-- Botón Primario de Conversión WhatsApp -->
+      <div class="pt-2 pb-6 border-b border-[#E5E7EB]">
+        <a
+          href={waUrl}
+          class="cta-whatsapp w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm sm:text-base font-bold text-[#092212] rounded-sm text-center leading-snug min-h-[48px]"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick={waHandler}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span>Pedir presupuesto directo por WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Accesos Directos de Navegación -->
+      <div class="pt-6">
+        <p class="text-xs font-bold uppercase tracking-tight text-[#111827] mb-3">
+          Opciones de navegación principal
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a
+            href="/"
+            class="bg-[#FFFFFF] border border-[#111827] text-[#111827] font-bold text-xs uppercase tracking-tight px-4 py-2.5 rounded-sm hover:bg-[#111827] hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+          >
+            Página Principal
+          </a>
+          <a
+            href="/#zonas"
+            class="bg-[#FFFFFF] border border-[#E5E7EB] text-[#111827] font-bold text-xs uppercase tracking-tight px-4 py-2.5 rounded-sm hover:border-[#111827] transition-colors inline-flex items-center min-h-[44px]"
+          >
+            Zonas de Cobertura
+          </a>
+          <a
+            href="/blog/"
+            class="bg-[#FFFFFF] border border-[#E5E7EB] text-[#111827] font-bold text-xs uppercase tracking-tight px-4 py-2.5 rounded-sm hover:border-[#111827] transition-colors inline-flex items-center min-h-[44px]"
+          >
+            Guías del Blog
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secciones Recomendadas: Zonas de Cobertura -->
+    <section class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-6 sm:p-8 mb-8">
+      <h2 class="text-lg sm:text-xl font-black uppercase tracking-tight text-[#111827] mb-2">
+        Reparación a domicilio por zona
+      </h2>
+      <p class="text-xs text-[#4B5563] mb-4">
+        Seleccioná tu localidad para consultar tiempos de llegada del técnico y agendar el retapizado en menos de 2 horas donde tengas el auto:
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        {zonasPrincipales.map((z) => (
+          <a
+            href={"/reparacion-techo-peugeot-307/" + z.slug + "/"}
+            class="bg-[#F3F4F6] border border-[#E5E7EB] rounded-sm p-2.5 text-xs font-bold text-[#111827] hover:border-[#111827] transition-colors flex items-center justify-between min-h-[44px]"
+          >
+            <span>{z.name}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Secciones Recomendadas: Guías Populares -->
+    <section class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-6 sm:p-8">
+      <h2 class="text-lg sm:text-xl font-black uppercase tracking-tight text-[#111827] mb-2">
+        Guías técnicas más consultadas
+      </h2>
+      <p class="text-xs text-[#4B5563] mb-4">
+        Información detallada sobre diagnóstico, normativa de inspección y soluciones para el tapizado del Peugeot 307:
+      </p>
+
+      <ul class="space-y-2">
+        {articulosBlog.map((art) => (
+          <li>
+            <a
+              href={"/blog/" + art.slug + "/"}
+              class="bg-[#F3F4F6] border border-[#E5E7EB] rounded-sm p-3 text-xs font-bold text-[#111827] hover:border-[#111827] transition-colors flex items-center justify-between min-h-[44px]"
+            >
+              <span>{art.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+
+  <!-- Script ligero de sugerencia inteligente para edge/rutas mal escritas -->
+  <script is:inline>
+    (function() {
+      try {
+        var path = window.location.pathname.toLowerCase();
+        var knownRoutes = [
+          { pattern: 'vtv', target: '/blog/techo-caido-peugeot-307-vtv/', label: 'Guía VTV: Rechazos y Multas por Techo Caído' },
+          { pattern: 'solar', target: '/blog/techo-solar-panoramico-peugeot-307-tapizado/', label: 'Guía: Techo Solar Corredizo de 307 Hatchback' },
+          { pattern: 'casa', target: '/blog/como-reparar-techo-peugeot-307-en-casa/', label: 'Guía: Reparar el Techo en Casa' },
+          { pattern: 'quilmes', target: '/reparacion-techo-peugeot-307/quilmes/', label: 'Servicio a Domicilio en Quilmes' },
+          { pattern: 'lanus', target: '/reparacion-techo-peugeot-307/lanus/', label: 'Servicio a Domicilio en Lanús' },
+          { pattern: 'lomas', target: '/reparacion-techo-peugeot-307/lomas-de-zamora/', label: 'Servicio a Domicilio en Lomas de Zamora' },
+          { pattern: 'avellaneda', target: '/reparacion-techo-peugeot-307/avellaneda/', label: 'Servicio a Domicilio en Avellaneda' },
+          { pattern: 'capital', target: '/reparacion-techo-peugeot-307/capital-federal/', label: 'Servicio a Domicilio en Capital Federal' },
+          { pattern: 'caba', target: '/reparacion-techo-peugeot-307/capital-federal/', label: 'Servicio a Domicilio en Capital Federal' },
+          { pattern: 'plata', target: '/reparacion-techo-peugeot-307/la-plata/', label: 'Servicio a Domicilio en La Plata' },
+          { pattern: 'moron', target: '/reparacion-techo-peugeot-307/moron/', label: 'Servicio a Domicilio en Morón' },
+          { pattern: 'san-isidro', target: '/reparacion-techo-peugeot-307/san-isidro/', label: 'Servicio a Domicilio en San Isidro' },
+          { pattern: 'vicente', target: '/reparacion-techo-peugeot-307/vicente-lopez/', label: 'Servicio a Domicilio en Vicente López' },
+          { pattern: 'matanza', target: '/reparacion-techo-peugeot-307/la-matanza/', label: 'Servicio a Domicilio en La Matanza' },
+          { pattern: 'tigre', target: '/reparacion-techo-peugeot-307/tigre/', label: 'Servicio a Domicilio en Tigre' },
+          { pattern: 'pilar', target: '/reparacion-techo-peugeot-307/pilar/', label: 'Servicio a Domicilio en Pilar' }
+        ];
+
+        for (var i = 0; i < knownRoutes.length; i++) {
+          if (path.indexOf(knownRoutes[i].pattern) !== -1) {
+            var box = document.getElementById('smart-suggestion');
+            var text = document.getElementById('smart-suggestion-text');
+            var link = document.getElementById('smart-suggestion-link');
+            if (box && text && link) {
+              text.textContent = 'Parece que estabas buscando: "' + knownRoutes[i].label + '".';
+              link.setAttribute('href', knownRoutes[i].target);
+              link.textContent = 'Ir a ' + knownRoutes[i].label;
+              box.classList.remove('hidden');
+            }
+            break;
+          }
+        }
+      } catch (e) {
+        // Fallback silencioso sin interferir con la navegación
+      }
+    })();
+  </script>
+</Layout>

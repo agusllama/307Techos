@@ -1,111 +1,168 @@
 import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
+import { siteUrl, whatsappNumber } from '../config/site';
+
+const regiones = [
+  {
+    nombre: 'CABA y Zona Norte',
+    slugs: ['capital-federal', 'vicente-lopez', 'san-isidro', 'general-san-martin', 'tigre', 'pilar'],
+  },
+  {
+    nombre: 'Zona Oeste',
+    slugs: ['la-matanza', 'moron', 'tres-de-febrero', 'ituzaingo'],
+  },
+  {
+    nombre: 'Zona Sur y Gran La Plata',
+    slugs: ['avellaneda', 'lanus', 'lomas-de-zamora', 'quilmes', 'berazategui', 'almirante-brown', 'esteban-echeverria', 'ezeiza-canning', 'florencio-varela', 'la-plata'],
+  },
+];
 
 export const GET: APIRoute = async () => {
+  const zonas = await getCollection('zonas');
+  const posts = await getCollection('blog');
+
+  const displayPhone = whatsappNumber.replace(/^549(\d{3})(\d{3})(\d{4})$/, '+54 9 $1 $2-$3');
+
   const lines: string[] = [
-    "# 307 Techos - Servicio Especializado en Peugeot 307",
-    "",
-    "## Descripcion del Servicio",
-    "",
-    "307 Techos es un servicio especializado en reparacion y retapizado a domicilio de techos caidos (headliner) de Peugeot 307.",
-    "Opera en Ciudad Autonoma de Buenos Aires (CABA), Gran Buenos Aires (Zona Norte, Zona Oeste, Zona Sur) y Gran La Plata.",
-    "El tecnico especialista se desplaza al domicilio o cochera del cliente. No se requiere trasladar el vehiculo a un taller.",
-    "",
-    "---",
-    "",
-    "## Matriz de Compatibilidad de Modelos",
-    "",
-    "| Variante | Carroceria | Complejidad | Observaciones |",
-    "|---|---|---|---|",
-    "| Peugeot 307 Hatchback 3 puertas | 3 puertas | Estandar | Acceso por puertas delanteras |",
-    "| Peugeot 307 Hatchback 5 puertas | 5 puertas | Estandar | Acceso desde las cuatro puertas |",
-    "| Peugeot 307 Sedan 4 puertas | Sedan | Estandar + | Techo de mayor longitud; atencion en pilares C |",
-    "| Peugeot 307 SW / Rural | Familiar/Rural | Alta | Dos secciones de tela y cortina corrediza de techo panoramico |",
-    "",
-    "---",
-    "",
-    "## Proceso Tecnico (4 pasos)",
-    "",
-    "1. **Desmontaje de accesorios y plafones**: Remocion de plafones, espejo retrovisor, parasoles y agarraderas con rotulado de piezas.",
-    "2. **Remocion del foam degradado**: Eliminacion con espatula y calor moderado del residuo de espuma poliuretanica pulverizada.",
-    "3. **Aplicacion de tela foamizada con adhesivo de alta temperatura**: Adhesivo de contacto de grado automotriz para resistir la exposicion solar.",
-    "4. **Reinstalacion y chequeo de fijaciones**: Reinstalacion de accesorios y verificacion del mecanismo en variante SW.",
-    "",
-    "---",
-    "",
-    "## Especificaciones del Material",
-    "",
-    "- Tipo de tela: Foamizada automotriz de repuesto",
-    "- Adhesivo: Contacto de alta temperatura especifico para tapiceria vehicular",
-    "- Modalidad: Trabajo a domicilio / cochera del cliente",
-    "",
-    "---",
-    "",
-    "## Cobertura Geografica",
-    "",
-    "### Ciudad Autonoma de Buenos Aires (CABA)",
-    "- Wikidata: https://www.wikidata.org/wiki/Q1486",
-    "- Barrios incluidos: Palermo, Villa del Parque, Caballito, Flores, Boedo, San Cristobal, Parque Chacabuco, Mataderos, Villa Luro y toda CABA",
-    "- URL canonica: https://307techos.com.ar/reparacion-techo-peugeot-307/capital-federal/",
-    "",
-    "### Avellaneda",
-    "- Wikidata: https://www.wikidata.org/wiki/Q1031013",
-    "- Localidades incluidas: Avellaneda Centro, Pineyro, Crucecita, Sarandi, Villa Dominico, Wilde, Gerli",
-    "- URL canonica: https://307techos.com.ar/reparacion-techo-peugeot-307/avellaneda/",
-    "",
-    "### Lanus",
-    "- Wikidata: https://www.wikidata.org/wiki/Q869792",
-    "- Localidades incluidas: Lanus Oeste, Lanus Este, Remedios de Escalada, Gerli, Valentin Alsina, Monte Chingolo",
-    "- URL canonica: https://307techos.com.ar/reparacion-techo-peugeot-307/lanus/",
-    "",
-    "### Lomas de Zamora",
-    "- Wikidata: https://www.wikidata.org/wiki/Q924670",
-    "- Localidades incluidas: Lomas Centro, Banfield, Temperley, Turdera, Llavallol, Villa Centenario, San Jose",
-    "- URL canonica: https://307techos.com.ar/reparacion-techo-peugeot-307/lomas-de-zamora/",
-    "",
-    "### Quilmes",
-    "- Wikidata: https://www.wikidata.org/wiki/Q863777",
-    "- Localidades incluidas: Quilmes Centro, Quilmes Oeste, Don Bosco, San Francisco Solano, Bernal, Bernal Oeste, Ezpeleta, Quilmes Este",
-    "- URL canonica: https://307techos.com.ar/reparacion-techo-peugeot-307/quilmes/",
-    "",
-    "---",
-    "",
-    "## Informacion de Contacto",
-    "",
-    "- Servicio: Retapizado y reparacion de techo caido Peugeot 307 a domicilio",
-    "- Zona: CABA, Gran Buenos Aires (Norte, Oeste, Sur) y Gran La Plata",
-    "- Horario: Lunes a sabado, 8:00 a 19:00 hs",
-    "- Moneda: ARS (Pesos argentinos)",
-    "- Metodos de pago: Efectivo, transferencia bancaria, Mercado Pago",
-    "",
-    "---",
-    "",
-    "## Entidades en Wikidata",
-    "",
-    "- Peugeot 307: https://www.wikidata.org/wiki/Q215286",
-    "- CABA: https://www.wikidata.org/wiki/Q1486",
-    "- Avellaneda: https://www.wikidata.org/wiki/Q1031013",
-    "- Lanus: https://www.wikidata.org/wiki/Q869792",
-    "- Lomas de Zamora: https://www.wikidata.org/wiki/Q924670",
-    "- Quilmes: https://www.wikidata.org/wiki/Q863777",
-    "",
-    "---",
-    "",
-    "## Preguntas Frecuentes Principales",
-    "",
-    "**Cuanto tiempo demora el trabajo?**",
-    "El tiempo varia segun la variante de carroceria. Se confirma la duracion estimada al coordinar por WhatsApp.",
-    "",
-    "**El adhesivo resiste el calor del verano?**",
-    "Si. Se formula para soportar las altas temperaturas del habitaculo bajo el sol.",
-    "",
-    "**Que espacio se necesita en el domicilio?**",
-    "Espacio suficiente para abrir las puertas del vehiculo y acceder comodamente al interior.",
-    "",
-    "**Funciona para el 307 SW con techo panoramico?**",
-    "Si. Se reparan las secciones de tapizado y se contempla el mecanismo de cortina corrediza.",
+    '# 307 Techos - Servicio Especializado en Peugeot 307',
+    '',
+    '## Descripcion del Servicio',
+    '',
+    '307 Techos es un servicio especializado en reparacion y retapizado a domicilio de techos caidos (headliner) de Peugeot 307.',
+    'Opera en Ciudad Autonoma de Buenos Aires (CABA), Gran Buenos Aires (Zona Norte, Zona Oeste, Zona Sur) y Gran La Plata.',
+    'El tecnico especialista se desplaza a donde tengas el auto (en la calle, en el trabajo, cochera o estacionamiento). No se requiere trasladar el vehiculo a un taller.',
+    '',
+    '---',
+    '',
+    '## Matriz de Compatibilidad de Modelos',
+    '',
+    '| Variante | Carroceria | Complejidad | Observaciones |',
+    '|---|---|---|---|',
+    '| Peugeot 307 Hatchback 3 puertas | 3 puertas (Hatch) | Estandar | Acceso por puertas delanteras; opciones estandar y techo solar |',
+    '| Peugeot 307 Hatchback 5 puertas | 5 puertas (Hatch) | Estandar | Acceso desde las cuatro puertas; opciones estandar y techo solar |',
+    '',
+    'Nota importante: No se realizan trabajos para Peugeot 307 Sedan (4 puertas) ni Peugeot 307 SW (familiar/rural con techo panoramico).',
+    '',
+    '---',
+    '',
+    '## Proceso Tecnico (4 pasos)',
+    '',
+    '1. **Desmontaje de accesorios y plafones**: Remocion de plafones, espejo retrovisor, parasoles y agarraderas con rotulado de piezas.',
+    '2. **Remocion del residuo de espuma original**: Eliminacion con espatula y solvente desengrasante del residuo de gomaespuma pulverizada adherida al sustrato rigido.',
+    '3. **Aplicacion de tela 100% fibra poliester con adhesivo de alta temperatura**: Adhesivo de contacto de grado automotriz para resistir la radiacion solar.',
+    '4. **Reinstalacion y chequeo de fijaciones**: Reinstalacion de accesorios y verificacion del mecanismo en variantes con techo solar corredizo.',
+    '',
+    '---',
+    '',
+    '## Especificaciones del Material',
+    '',
+    '- Tipo de tela: 100% fibra de poliester automotriz (no foamizada, sin gomaespuma degradable)',
+    '- Adhesivo: Contacto de alta temperatura especifico para tapiceria vehicular',
+    '- Modalidad: Trabajo a domicilio o donde tengas el auto (calle, trabajo, cochera o estacionamiento)',
+    '- Duracion del servicio: menos de 2 horas',
+    '',
+    '---',
+    '',
+    '## Cobertura Geografica',
+    '',
+    `Hub de zonas: ${siteUrl}/reparacion-techo-peugeot-307/`,
+    '',
   ];
 
-  const content = lines.join("\n");
+  const slugsCubiertos = new Set<string>();
+  for (const region of regiones) {
+    lines.push(`### ${region.nombre}`, '');
+    for (const slug of region.slugs) {
+      const zona = zonas.find((z) => z.data.slug === slug);
+      if (!zona) continue;
+      slugsCubiertos.add(slug);
+      const d = zona.data;
+      lines.push(
+        `#### ${d.nombreZona}`,
+        `- Wikidata: https://www.wikidata.org/wiki/${d.wikidataId}`,
+        `- Localidades incluidas: ${d.barriosCobertura.join(', ')}`,
+        `- Tiempo de llegada: ${d.tiempoLlegadaEstimado}`,
+        `- URL canonica: ${siteUrl}/reparacion-techo-peugeot-307/${d.slug}/`,
+        '',
+      );
+    }
+  }
+
+  // Red de seguridad: si se agrega una zona nueva sin actualizar las regiones,
+  // igual queda listada en llms.txt.
+  const zonasSinRegion = zonas.filter((z) => !slugsCubiertos.has(z.data.slug));
+  if (zonasSinRegion.length > 0) {
+    lines.push('### Otras zonas con cobertura', '');
+    for (const zona of zonasSinRegion) {
+      const d = zona.data;
+      lines.push(
+        `#### ${d.nombreZona}`,
+        `- Wikidata: https://www.wikidata.org/wiki/${d.wikidataId}`,
+        `- Localidades incluidas: ${d.barriosCobertura.join(', ')}`,
+        `- URL canonica: ${siteUrl}/reparacion-techo-peugeot-307/${d.slug}/`,
+        '',
+      );
+    }
+  }
+
+  lines.push(
+    '---',
+    '',
+    '## Informacion de Contacto',
+    '',
+    '- Servicio: Retapizado y reparacion de techo caido Peugeot 307 a domicilio',
+    `- Sitio web: ${siteUrl}/`,
+    `- WhatsApp: ${displayPhone} (https://wa.me/${whatsappNumber})`,
+    '- Zona: CABA, Gran Buenos Aires (Norte, Oeste, Sur) y Gran La Plata',
+    '- Horario: Lunes a sabado, 8:00 a 19:00 hs',
+    '- Moneda: ARS (Pesos argentinos)',
+    '- Metodos de pago: Efectivo, transferencia bancaria, Mercado Pago',
+    '',
+    '---',
+    '',
+    '## Entidades en Wikidata',
+    '',
+    '- Peugeot 307: https://www.wikidata.org/wiki/Q215286',
+  );
+
+  for (const zona of zonas) {
+    lines.push(`- ${zona.data.nombreZona}: https://www.wikidata.org/wiki/${zona.data.wikidataId}`);
+  }
+
+  lines.push(
+    '',
+    '---',
+    '',
+    '## Guias Tecnicas y Blog',
+    '',
+    `- Indice del blog: ${siteUrl}/blog/`,
+  );
+
+  for (const post of posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())) {
+    const postSlug = post.data.slug || post.id;
+    lines.push(`- ${post.data.title}: ${siteUrl}/blog/${postSlug}/`);
+  }
+
+  lines.push(
+    '',
+    '---',
+    '',
+    '## Preguntas Frecuentes Principales',
+    '',
+    '**Cuanto tiempo demora el trabajo?**',
+    'Menos de 2 horas (segun version con o sin techo solar). El vehiculo queda listo para usar en el dia.',
+    '',
+    '**El adhesivo resiste el calor del verano?**',
+    'Si. Se formula para soportar las altas temperaturas del habitaculo bajo el sol.',
+    '',
+    '**Que espacio se necesita en el domicilio?**',
+    'Espacio suficiente para abrir las puertas del vehiculo y acceder comodamente al interior. Se realiza donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento.',
+    '',
+    '**Se tapizan modelos Sedan o SW?**',
+    'No. El servicio esta especializado exclusivamente en la variante Hatchback (3 y 5 puertas), tanto con techo estandar como con techo solar corredizo.',
+  );
+
+  const content = lines.join('\n');
 
   return new Response(content, {
     status: 200,
