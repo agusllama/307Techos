@@ -12,11 +12,11 @@ barriosCobertura:
   - "Valentin Alsina"
   - "Monte Chingolo"
 viasAccesoPrincipales:
-  - "Av. Hipolito Yrigoyen (Pavon)"
+  - "Av. Hipólito Yrigoyen (Pavón)"
   - "Av. 25 de Mayo"
-  - "Puente Valentin Alsina"
-  - "Av. Remedios de Escalada de San Martin"
-particularidadZona: "Lanus presenta una alta densidad residencial y un parque automotor del Peugeot 307 muy consolidado. En zonas como Lanus Este y Monte Chingolo abundan las viviendas con estacionamiento exterior, donde el calor acumulado bajo el sol directo supera la resistencia del adhesivo de fabrica. En Lanus Oeste y Remedios de Escalada, el servicio a domicilio permite trabajar directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas y sin interrumpir la rutina del propietario."
+  - "Puente Valentín Alsina"
+  - "Av. Remedios de Escalada de San Martín"
+particularidadZona: "Lanus presenta una alta densidad residencial y un parque automotor del Peugeot 307 muy consolidado. En zonas como Lanus Este y Monte Chingolo abundan las viviendas con estacionamiento exterior, donde el calor acumulado bajo el sol directo supera la resistencia del adhesivo de fábrica. En Lanus Oeste y Remedios de Escalada, el servicio a domicilio permite trabajar directamente donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, en menos de 2 horas y sin interrumpir la rutina del propietario."
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
@@ -24,6 +24,6 @@ casoExitoLocal:
   resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
-## Servicio de Reparacion de Techo Peugeot 307 en Lanus
+## Servicio de Reparación de Techo Peugeot 307 en Lanús
 
 El desprendimiento del tapizado de techo en el Peugeot 307 es una falla común por desgaste de la espuma bajo el calor del Conurbano Sur. Realizamos la reparación a domicilio en Lanús con técnicos equipados en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento, aplicando tela 100% fibra de poliéster y adhesivo de grado automotriz para una fijación definitiva.

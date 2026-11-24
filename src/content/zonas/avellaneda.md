@@ -13,11 +13,11 @@ barriosCobertura:
   - "Wilde"
   - "Gerli"
 viasAccesoPrincipales:
-  - "Puente Pueyrredon"
-  - "Av. Bartolome Mitre"
+  - "Puente Pueyrredón"
+  - "Av. Bartolomé Mitre"
   - "Av. Belgrano"
   - "Autopista Buenos Aires - La Plata"
-particularidadZona: "Por su cercania al Riachuelo y su trazado urbano mixto, los vehiculos en Avellaneda estan expuestos tanto a alta humedad ambiente como a fuerte radiacion solar en veredas y espacios descubiertos de Wilde, Dominico y Sarandi. En el corredor de Avenida Mitre y el centro de Avellaneda el servicio tecnico a domicilio evita traslados innecesarios y resuelve la reparacion en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento."
+particularidadZona: "Por su cercanía al Riachuelo y su trazado urbano mixto, los vehículos en Avellaneda están expuestos tanto a alta humedad ambiente como a fuerte radiación solar en veredas y espacios descubiertos de Wilde, Dominico y Sarandi. En el corredor de Avenida Mitre y el centro de Avellaneda el servicio técnico a domicilio evita traslados innecesarios y resuelve la reparación en menos de 2 horas donde tengas el auto: en la calle, en el trabajo, cochera o estacionamiento."
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
