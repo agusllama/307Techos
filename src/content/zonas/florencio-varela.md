@@ -20,8 +20,8 @@ particularidadZona: "En Florencio Varela la alta exposición solar en vehículos
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Florencio Varela

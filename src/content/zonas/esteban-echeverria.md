@@ -19,8 +19,8 @@ particularidadZona: "En Esteban Echeverría (Monte Grande, Luis Guillón) nos tr
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Esteban Echeverría

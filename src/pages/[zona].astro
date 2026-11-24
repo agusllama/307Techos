@@ -8,35 +8,72 @@
  * Cero placeholders crudos [COMPLETAR] en el HTML renderizado.
  */
 import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import ReviewsMarquee from '../../components/ReviewsMarquee.astro';
-import { siteUrl, whatsappNumber } from '../../config/site';
-import { waClickHandler } from '../../lib/tracking';
+import Layout from '../layouts/Layout.astro';
+import ReviewsMarquee from '../components/ReviewsMarquee.astro';
+import { siteUrl, whatsappNumber } from '../config/site';
+import { waClickHandler } from '../lib/tracking';
 
 export async function getStaticPaths() {
+  const RESERVED_SLUGS = new Set([
+    'blog',
+    '404',
+    'index',
+    'llms.txt',
+    'api',
+    'images',
+    'favicon.svg',
+    'robots.txt',
+    'sitemap-index.xml',
+    'sitemap-0.xml',
+  ]);
   const zonas = await getCollection('zonas');
-  return zonas.map((zona) => ({
-    params: { zona: zona.data.slug },
-    props: { zona },
-  }));
+  return zonas
+    .filter((zona) => !RESERVED_SLUGS.has(zona.data.slug))
+    .map((zona) => ({
+      params: { zona: zona.data.slug },
+      props: { zona },
+    }));
 }
 
 const { zona } = Astro.props;
 const { Content } = await render(zona);
 const d = zona.data;
 
-const canonicalUrl = siteUrl + '/reparacion-techo-peugeot-307/' + d.slug + '/';
-const heroWaUrl         = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Vi el servicio en la web y consulto para retapizar el techo de mi Peugeot 307 a domicilio en ' + d.nombreZona + '.');
-const antesDespuesWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Vi las fotos del retapizado del Peugeot 307 y quiero pedir presupuesto para hacerlo en ' + d.nombreZona + '.');
-const finalWaUrl        = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Quiero coordinar un turno para retapizar el techo de mi Peugeot 307 en ' + d.nombreZona + '.');
+const isCaba = d.slug === 'capital-federal';
+const isInterior = d.slug === 'interior-buenos-aires';
+
+const enZona = isInterior ? 'en el Interior de Buenos Aires' : 'en ' + d.nombreZona;
+const paraZona = isInterior ? 'para el Interior de Buenos Aires' : (isCaba ? 'para CABA' : 'para ' + d.nombreZona);
+
+const canonicalUrl = siteUrl + '/' + d.slug + '/';
+const heroWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(
+  isInterior
+    ? 'Hola! Vi el servicio en la web y consulto para retapizar el techo de mi Peugeot 307 en el Interior de Buenos Aires. Soy de (ciudad/localidad): ... Te adjunto foto del techo:'
+    : 'Hola! Vi el servicio en la web y consulto para retapizar el techo de mi Peugeot 307 a domicilio en ' + d.nombreZona + '. Te adjunto foto del techo:'
+);
+const antesDespuesWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(
+  isInterior
+    ? 'Hola! Vi las fotos del retapizado del Peugeot 307 y quiero pedir presupuesto para el Interior de Buenos Aires. Mi localidad es: ... Te adjunto foto:'
+    : 'Hola! Vi las fotos del retapizado del Peugeot 307 y quiero pedir presupuesto para hacerlo en ' + d.nombreZona + '. Te adjunto foto:'
+);
+const finalWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(
+  isInterior
+    ? 'Hola! Quiero coordinar un turno para retapizar el techo de mi Peugeot 307 en el Interior de Buenos Aires. Soy de: ... Te adjunto foto:'
+    : 'Hola! Quiero coordinar un turno para retapizar el techo de mi Peugeot 307 en ' + d.nombreZona + '. Te adjunto foto:'
+);
 
 // Handlers de tracking (sin duplicar logica inline)
 const heroCTAHandler         = waClickHandler(d.nombreZona, 'hero');
 const antesDespuesCTAHandler = waClickHandler(d.nombreZona, 'antes-despues');
 const finalCTAHandler        = waClickHandler(d.nombreZona, 'final');
 
-const title = 'Techo Caído Peugeot 307 en ' + d.nombreZona + ' a Domicilio';
-const description = 'Retapizado de techo Peugeot 307 en ' + d.nombreZona + ' donde tengas el auto. Listo en menos de 2 horas. Hatchback 3 y 5 puertas.';
+const baseTitleLong = 'Reparación de Techo Peugeot 307 en ' + d.nombreZona + ' a Domicilio';
+const baseTitleShort = 'Techo Caído Peugeot 307 en ' + d.nombreZona + ' a Domicilio';
+const baseTitleCompact = 'Techo Peugeot 307 en ' + d.nombreZona + ' a Domicilio';
+const title = baseTitleLong.length <= 60 ? baseTitleLong : (baseTitleShort.length <= 60 ? baseTitleShort : baseTitleCompact);
+const description = isInterior
+  ? 'Retapizado de techo Peugeot 307 en el Interior de Bs. As. a domicilio. En el día, menos de 2 horas y garantía escrita. Hatchback 3 y 5 puertas.'
+  : 'Retapizado de techo Peugeot 307 en ' + d.nombreZona + ' donde tengas el auto (calle, trabajo o cochera). Listo en menos de 2 horas. Hatchback 3 y 5 puertas.';
 
 // Verificacion estricta para omitir casos de exito si contienen placeholders
 const isCasoExitoValido = Boolean(
@@ -48,9 +85,19 @@ const isCasoExitoValido = Boolean(
   !d.casoExitoLocal.problemaResuelto?.includes('[COMPLETAR]')
 );
 
-const isCaba = d.slug === 'capital-federal';
-
-const todasLasZonas = await getCollection('zonas');
+const RESERVED_SLUGS = new Set([
+  'blog',
+  '404',
+  'index',
+  'llms.txt',
+  'api',
+  'images',
+  'favicon.svg',
+  'robots.txt',
+  'sitemap-index.xml',
+  'sitemap-0.xml',
+]);
+const todasLasZonas = (await getCollection('zonas')).filter((z) => !RESERVED_SLUGS.has(z.data.slug));
 
 // Misma agrupacion que el hub y la home. Se usan las 3 zonas mas cercanas
 // dentro de la region para enlazado interno contextual.
@@ -58,10 +105,12 @@ const regiones = [
   { nombre: 'CABA y Zona Norte', slugs: ['capital-federal', 'vicente-lopez', 'san-isidro', 'general-san-martin', 'tigre', 'pilar'] },
   { nombre: 'Zona Oeste', slugs: ['la-matanza', 'moron', 'tres-de-febrero', 'ituzaingo'] },
   { nombre: 'Zona Sur y Gran La Plata', slugs: ['avellaneda', 'lanus', 'lomas-de-zamora', 'quilmes', 'berazategui', 'almirante-brown', 'esteban-echeverria', 'ezeiza-canning', 'florencio-varela', 'la-plata'] },
+  { nombre: 'Costa Atlántica', slugs: ['partido-de-la-costa', 'san-bernardo', 'mar-de-ajo', 'pinamar', 'villa-gesell', 'mar-del-plata'] },
+  { nombre: 'Interior de Buenos Aires', slugs: ['interior-buenos-aires'] },
 ];
 const regionActual = regiones.find((r) => r.slugs.includes(d.slug));
 const indiceZona = regionActual ? regionActual.slugs.indexOf(d.slug) : -1;
-const zonasRelacionadas = regionActual && indiceZona >= 0
+const candidateRelacionadas = regionActual && indiceZona >= 0
   ? regionActual.slugs
       .filter((slug) => slug !== d.slug)
       .sort((a, b) => Math.abs(regionActual.slugs.indexOf(a) - indiceZona) - Math.abs(regionActual.slugs.indexOf(b) - indiceZona))
@@ -69,6 +118,13 @@ const zonasRelacionadas = regionActual && indiceZona >= 0
       .map((slug) => todasLasZonas.find((z) => z.data.slug === slug))
       .filter((z): z is NonNullable<typeof z> => Boolean(z))
   : [];
+
+// Si la región tiene una sola zona (ej. Interior de Buenos Aires), enlazamos a nodos gateway
+const zonasRelacionadas = candidateRelacionadas.length > 0
+  ? candidateRelacionadas
+  : ['pilar', 'la-plata', 'mar-del-plata']
+      .map((slug) => todasLasZonas.find((z) => z.data.slug === slug))
+      .filter((z): z is NonNullable<typeof z> => Boolean(z));
 
 const puntosBeneficio = isCaba
   ? [
@@ -85,6 +141,21 @@ const puntosBeneficio = isCaba
         descripcion: 'Nosotros dejamos el techo como 0km en menos de 2 horas.',
       },
     ]
+  : isInterior
+  ? [
+      {
+        titulo: 'Llegamos a tu localidad',
+        descripcion: 'No necesitás viajar cientos de kilómetros a Capital ni a La Plata. Coordinamos la visita a tu ciudad o paraje y acudimos donde tengas el auto.',
+      },
+      {
+        titulo: 'Especialista exclusivo en 307',
+        descripcion: 'Evitá tapiceros generalistas que improvisan con tu techo solar o usan gomaespuma que se vuelve a caer con el calor del verano.',
+      },
+      {
+        titulo: 'Listo en menos de 2 horas',
+        descripcion: 'Trabajo completo en el acto: saneado de matriz, tela automotriz poliéster no foamizada y rearmado perfecto sin dejar el auto tirado.',
+      },
+    ]
   : [
       {
         titulo: 'Sin mover el auto',
@@ -99,6 +170,60 @@ const puntosBeneficio = isCaba
         descripcion: 'Te ahorrás el dolor de cabeza de dejar el auto tirado días enteros en un taller de barrio.',
       },
     ];
+
+const corredoresInterior = [
+  {
+    ruta: 'RN 7 / RN 188',
+    nombre: 'Corredor Noroeste',
+    ciudades: 'Junín, Chacabuco, Vedia, Lincoln, General Pinto, Leandro N. Alem, General Villegas y parajes intermedios.',
+  },
+  {
+    ruta: 'RN 5',
+    nombre: 'Corredor Centro-Oeste',
+    ciudades: 'Chivilcoy, Mercedes, Suipacha, Alberti, Bragado, 9 de Julio, Carlos Casares, Pehuajó, Trenque Lauquen y Pellegrini.',
+  },
+  {
+    ruta: 'RN 8 / RN 9',
+    nombre: 'Corredor Norte y Litoral',
+    ciudades: 'Pergamino, Arrecifes, Capitán Sarmiento, Colón, Salto, Rojas, San Antonio de Areco, Carmen de Areco, Baradero y San Pedro.',
+  },
+  {
+    ruta: 'RN 205 / RN 3',
+    nombre: 'Corredor Sudoeste y Cuenca Central',
+    ciudades: 'Lobos, Roque Pérez, Saladillo, General Alvear, Las Flores, Tapalqué, Azul, Olavarría, Laprida, General La Madrid, Coronel Pringles, Benito Juárez, Tres Arroyos y Bahía Blanca.',
+  },
+  {
+    ruta: 'RP 226 / RP 29',
+    nombre: 'Corredor Sierras',
+    ciudades: 'Tandil, Balcarce, Ayacucho, Rauch, General Belgrano y parajes aledaños de la cuenca serrana.',
+  },
+  {
+    ruta: 'RP 2 / RP 63',
+    nombre: 'Corredor Autovía y Salado',
+    ciudades: 'Chascomús, Lezama, Castelli, Dolores, Maipú y conexiones rurales.',
+  },
+];
+
+const diferencialesInterior = [
+  {
+    numero: '01',
+    titulo: 'Especialista Exclusivo en 307 (Techo Solar sin Roturas)',
+    subtitulo: 'Por qué los tapiceros locales no suelen tomar el auto',
+    descripcion: 'El 307 tiene una matriz plástica termoformada con tolerancias milimétricas que se quiebra si se desmonta sin espátulas automotrices específicas. En talleres tradicionales suelen pedir que desmontes el techo o inmovilizan el coche días improvisando con pegamentos universales. Nosotros llevamos instrumental OEM y repuestos de fijación exactos para desarmar, retapizar y rearmar en menos de 2 horas en tu propio garage.',
+  },
+  {
+    numero: '02',
+    titulo: 'Tela Automotriz No Foamizada (Resistencia a >65°C)',
+    subtitulo: 'La solución definitiva al sol y calor del interior bonaerense',
+    descripcion: 'Al dejar el auto en veredas anchas o campos abiertos en verano, el techo supera los 65°C. La gomaespuma original de fábrica se pudre por calor químico y se convierte en polvillo naranja pegajoso que suelta la tela. Nuestra tela es 100% fibra de poliéster automotriz sin capa de gomaespuma degradable, termo-adherida con adhesivo para más de 110°C: nunca más vuelve a caerse.',
+  },
+  {
+    numero: '03',
+    titulo: 'Presupuesto Cerrado por Foto en 15 Minutos',
+    subtitulo: 'Cero sorpresas al momento de la visita',
+    descripcion: 'Nos mandás una foto del techo desprendido por WhatsApp y en menos de 15 minutos te pasamos el presupuesto exacto y congelado para tu localidad. Coordinamos la fecha exacta del recorrido técnico y contás con 12 meses de garantía escrita documentada.',
+  },
+];
 ---
 
 <Layout title={title} description={description} canonicalUrl={canonicalUrl} zona={d} faq={true}>
@@ -107,7 +232,7 @@ const puntosBeneficio = isCaba
   <section class="relative min-h-[calc(100vh-130px)] min-h-[calc(100dvh-130px)] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#111827] text-white border-b border-[#E5E7EB]">
     <!-- Imagen de fondo optimizada con carga prioritaria LCP -->
     <picture class="absolute inset-0 w-full h-full pointer-events-none">
-      <source media="(max-width: 640px)" srcset="/images/hero-split-bg-mobile.webp" type="image/webp" />
+      <source media="(max-width: 640px)" srcset="/images/hero-split-bg-mobile.webp" type="image/webp" width="750" height="1200" />
       <img
         src="/images/hero-split-bg.webp"
         alt={"Antes y después del retapizado de techo Peugeot 307 en " + d.nombreZona}
@@ -131,57 +256,89 @@ const puntosBeneficio = isCaba
     </div>
 
     <!-- Contenido Minimalista Centrado -->
-    <div class="relative z-10 max-w-2xl mx-auto px-4 py-16 sm:py-20 text-center flex flex-col items-center">
-      <nav aria-label="Miga de pan" class="mb-4 w-full">
-        <ol class="flex flex-wrap items-center justify-center gap-1.5 text-[11px] sm:text-xs text-gray-300">
-          <li><a href="/" class="hover:text-white transition-colors py-1 px-1.5 inline-flex items-center min-h-[44px]">Inicio</a></li>
-          <li aria-hidden="true">/</li>
-          <li><a href="/reparacion-techo-peugeot-307/" class="hover:text-white transition-colors py-1 px-1.5 inline-flex items-center min-h-[44px]">Zonas</a></li>
-          <li aria-hidden="true">/</li>
-          <li class="text-white font-bold px-1" aria-current="page">{d.nombreZona}</li>
-        </ol>
-      </nav>
-
-      <h1 class="text-[30px] sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[1.08] mb-4 text-white drop-shadow-sm">
-        Techo Caído del Peugeot 307 en {d.nombreZona}
+    <div class="relative z-10 max-w-2xl mx-auto px-4 py-8 sm:py-20 text-center flex flex-col items-center">
+      <h1 class="text-[22px] sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[1.08] mb-3 text-white drop-shadow-sm">
+        Techo Caído del Peugeot 307 {enZona}
       </h1>
 
-      <p class="text-sm sm:text-base text-gray-200 mb-6 max-w-lg leading-relaxed font-normal">
-        Servicio especializado a domicilio en {d.nombreZona}. Retapizado donde tengas el auto (calle, trabajo o cochera) en menos de 2 horas con materiales que soportan calor extremo y humedad sin despegarse.
+      <p class="text-sm sm:text-base text-gray-200 max-w-xl mx-auto mb-6 leading-relaxed font-normal text-balance">
+        {isInterior
+          ? 'Como 0km sin mover tu auto: retapizado a domicilio en el interior bonaerense, sin olor a pegamento y sin que se vuelva a despegar con el calor.'
+          : `Como 0km sin mover tu auto: retapizado a domicilio en ${d.nombreZona}, sin olor a pegamento y sin que se vuelva a despegar con el calor.`}
       </p>
 
-      <!-- Escasez pegada al botón -->
-      <p class="text-xs font-bold uppercase tracking-wider text-white/90 mb-2.5 flex items-center justify-center gap-1.5">
-        <span class="w-2 h-2 rounded-full bg-[#25D366] inline-block"></span>
-        <span>Solo 6 turnos por semana</span>
-      </p>
+      <!-- Trust Grid de 3 columnas unificado -->
+      <div class="grid grid-cols-3 gap-1.5 sm:gap-4 w-full max-w-lg mb-6 p-2.5 sm:p-3 rounded-2xl bg-white/[0.08] backdrop-blur-md border border-white/15 shadow-lg">
+        <!-- Columna 1: Rapidez -->
+        <div class="flex flex-col items-center justify-center p-1 sm:p-2 text-center">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center mb-1 text-[#25D366] shrink-0" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" style="aspect-ratio: 1/1;">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <span class="text-[10px] sm:text-xs font-black uppercase tracking-tight text-white leading-tight">En menos de 2 horas</span>
+        </div>
 
+        <!-- Columna 2: Ubicación -->
+        <div class="flex flex-col items-center justify-center p-1 sm:p-2 text-center border-x border-white/10">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center mb-1 text-[#25D366] shrink-0" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" style="aspect-ratio: 1/1;">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <span class="text-[11px] sm:text-sm font-black uppercase tracking-tight text-white leading-tight">A Domicilio</span>
+          <span class="text-[10px] sm:text-xs text-gray-300 font-medium leading-tight">{isInterior ? 'Galpón, campo o casa' : 'Cochera o calle'}</span>
+        </div>
+
+        <!-- Columna 3: Garantía -->
+        <div class="flex flex-col items-center justify-center p-1 sm:p-2 text-center">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center mb-1 text-[#25D366] shrink-0" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" style="aspect-ratio: 1/1;">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="text-[11px] sm:text-sm font-black uppercase tracking-tight text-white leading-tight">12 Meses</span>
+          <span class="text-[10px] sm:text-xs text-gray-300 font-medium leading-tight">Garantía escrita</span>
+        </div>
+      </div>
+
+      <!-- Escasez pegada al botón con punto verde alineado con precisión -->
+      <div class="inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-wider text-white/90 text-center mb-2.5">
+        <span class="relative flex h-2 w-2 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+        </span>
+        <span class="leading-none">{isInterior ? 'Recorridos semanales · Cupos limitados por zona' : `Solo 2 turnos por semana en ${d.nombreZona}`}</span>
+      </div>
+
+      <!-- WhatsApp CTA Button Redesign -->
       <a
         href={heroWaUrl}
-        class="cta-whatsapp text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto mb-3.5 text-center leading-snug"
+        class="cta-hero-whatsapp group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-3.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-[#0a2e16] mb-3 text-left min-h-[52px]"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={"Contactar por WhatsApp para reparacion en " + d.nombreZona}
+        aria-label={"Cotizar por WhatsApp para reparación " + (isInterior ? "en el Interior de Buenos Aires" : "en " + d.nombreZona)}
         onclick={heroCTAHandler}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-        <span>Cotizar por WhatsApp con foto del techo</span>
+        <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/25 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-150">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-[#0a2e16] shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+        </div>
+        <div class="flex flex-col items-start text-left">
+          <span class="text-sm sm:text-base font-black uppercase tracking-tight leading-tight text-[#0a2e16]">Cotizar por WhatsApp</span>
+          <span class="text-[11px] sm:text-xs font-semibold tracking-normal text-[#0a2e16] leading-tight mt-0.5">Envianos foto de tu techo • Respuesta en 15 min</span>
+        </div>
       </a>
-
-      <!-- Mitigador de riesgo pegado debajo del botón -->
-      <p class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white mb-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-[#25D366] shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <path d="m9 12 2 2 4-4"/>
-        </svg>
-        <span>Garantía escrita de 12 meses</span>
-      </p>
 
       <!-- Reassurance estilo minimalista debajo del boton -->
       <p class="text-[11px] sm:text-xs text-gray-300 font-medium tracking-tight">
-        Atención en {d.nombreZona}. Donde tengas el auto en menos de 2 horas, con materiales resistentes a calor extremo y humedad.
+        {isInterior
+          ? 'Presupuesto cerrado por foto en 15 min · 12 meses de garantía escrita'
+          : 'Presupuesto sin cargo en el día · Sin seña, pagás recién al terminar.'}
       </p>
     </div>
   </section>
@@ -194,10 +351,10 @@ const puntosBeneficio = isCaba
     <div class="max-w-5xl mx-auto px-4">
       <div class="mb-8">
         <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">
-          Tu Techo como 0km en {d.nombreZona}
+          Tu Techo como 0km {enZona}
         </h2>
         <p class="text-base text-[#4B5563] max-w-3xl leading-relaxed">
-          El desprendimiento de la tela del techo en el Peugeot 307 en {d.nombreZona} ocurre por la degradacion natural de la espuma de fabrica bajo el calor. La solucion profesional a domicilio reemplaza la tela completa por material nuevo automotriz fijado con adhesivo resistente a altas temperaturas sin mover tu auto.
+          El desprendimiento de la tela del techo en el Peugeot 307 {enZona} ocurre por la degradación natural de la espuma de fábrica bajo el calor. La solución profesional a domicilio reemplaza la tela completa por material nuevo automotriz fijado con adhesivo resistente a altas temperaturas sin mover tu auto.
         </p>
       </div>
 
@@ -368,15 +525,21 @@ const puntosBeneficio = isCaba
       <div class="mt-8 text-center sm:text-left">
         <a
           href={antesDespuesWaUrl}
-          class="cta-whatsapp text-base w-full sm:w-auto"
+          class="cta-hero-whatsapp group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-3.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-[#0a2e16] text-left min-h-[52px]"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={"Pedir presupuesto por WhatsApp " + paraZona}
           onclick={antesDespuesCTAHandler}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-          <span>Pedir Presupuesto para {d.nombreZona}</span>
+          <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/25 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-150">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-[#0a2e16] shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-sm sm:text-base font-black uppercase tracking-tight leading-tight text-[#0a2e16]">Pedir Presupuesto {paraZona}</span>
+            <span class="text-[11px] sm:text-xs font-semibold tracking-normal text-[#0a2e16] leading-tight mt-0.5">Envianos foto de tu techo • Respuesta en 15 min</span>
+          </div>
         </a>
       </div>
     </div>
@@ -470,11 +633,11 @@ const puntosBeneficio = isCaba
     </div>
   </section>
 
-  <!-- PARTICULARIDAD DE ZONA -->
+  <!-- PARTICULARIDAD DE ZONA Y CONTENIDO LOCAL -->
   <section class="bg-[#FFFFFF] py-12 lg:py-16 border-b border-[#E5E7EB]">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-6">
-        Por qué este servicio es ideal para {d.nombreZona === 'Capital Federal' ? 'CABA' : d.nombreZona}
+        Por qué este servicio es ideal {paraZona}
       </h2>
 
       <!-- 3 Puntos Clave de Alto Valor -->
@@ -494,14 +657,139 @@ const puntosBeneficio = isCaba
         ))}
       </div>
 
+      <!-- Contenido técnico específico de la zona (100% visible, sin cloaking) -->
+      <div class="bg-[#F9FAFB] border border-[#E5E7EB] rounded-sm p-5 sm:p-6 mb-8">
+        <div class="prose max-w-none text-[#374151] leading-relaxed [&_h2]:text-base sm:[&_h2]:text-lg [&_h2]:font-black [&_h2]:uppercase [&_h2]:tracking-tight [&_h2]:text-[#111827] [&_h2]:mb-3 [&_p]:text-sm sm:[&_p]:text-base [&_p]:leading-relaxed [&_p+p]:mt-3 [&_strong]:text-[#111827] [&_strong]:font-bold">
+          <Content />
+        </div>
+        {d.particularidadZona && !isInterior && (
+          <div class="mt-4 pt-4 border-t border-[#E5E7EB] text-xs sm:text-sm text-[#4B5563] leading-relaxed">
+            <p><strong class="text-[#111827] font-bold uppercase tracking-tight">Particularidad técnica {enZona}:</strong> {d.particularidadZona}</p>
+          </div>
+        )}
+      </div>
+
+      {isInterior && (
+        <div class="mb-10 space-y-8">
+          <!-- 1. Grid de Corredores Viales -->
+          <div>
+            <div class="mb-4">
+              <span class="text-xs font-bold uppercase tracking-widest text-[#16A34A] block mb-1">
+                Recorridos Programados
+              </span>
+              <h3 class="text-base sm:text-lg font-black uppercase tracking-tight text-[#111827]">
+                Cobertura Integral por Corredores y Rutas Troncales
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4B5563] mt-1">
+                Llegamos a ciudades cabecera, parajes y accesos a lo largo de las principales rutas de la provincia.
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {corredoresInterior.map((c) => (
+                <div class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-4 hover:border-[#111827] transition-colors flex flex-col justify-between shadow-2xs">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="bg-[#111827] text-white text-[10px] font-black px-2 py-0.5 rounded-xs tracking-wider shrink-0 uppercase">
+                        {c.ruta}
+                      </span>
+                      <h4 class="text-xs sm:text-sm font-black uppercase tracking-tight text-[#111827]">
+                        {c.nombre}
+                      </h4>
+                    </div>
+                    <p class="text-xs text-[#4B5563] leading-relaxed">
+                      {c.ciudades}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- 2. Banner Destacado para Chacras, Quintas y Campo -->
+          <div class="bg-gradient-to-r from-[#F0FDF4] to-[#FFFFFF] border border-[#25D366]/40 rounded-sm p-4 sm:p-5 flex items-start gap-3.5 shadow-2xs">
+            <div class="w-10 h-10 rounded-full bg-[#25D366]/20 text-[#16A34A] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" style="aspect-ratio: 1/1;">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-black uppercase tracking-tight text-[#111827] mb-1">
+                ¿Estás en un campo, quinta, chacra o paraje rural?
+              </h4>
+              <p class="text-xs sm:text-sm text-[#374151] leading-relaxed">
+                Llegamos directamente hasta donde tengas el auto: galpón, entrada particular o predio rural. <strong class="text-[#111827]">No necesitás trasladarte hasta la ruta ni mover el vehículo.</strong> Trabajamos con taller móvil autónomo.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Diferenciales Técnicos de Alto Valor -->
+          <div>
+            <div class="mb-4">
+              <span class="text-xs font-bold uppercase tracking-widest text-[#16A34A] block mb-1">
+                Garantía y Solución Definitiva
+              </span>
+              <h3 class="text-base sm:text-lg font-black uppercase tracking-tight text-[#111827]">
+                Claves Técnicas del Servicio en el Interior
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4B5563] mt-1">
+                Por qué nuestra atención especializada supera a cualquier tapicería tradicional.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-4">
+              {diferencialesInterior.map((dif) => (
+                <div class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-5 flex flex-col justify-between shadow-2xs">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <span class="text-[11px] font-black uppercase tracking-widest text-[#16A34A] bg-[#25D366]/15 px-2 py-0.5 rounded-xs">
+                        Pilar {dif.numero}
+                      </span>
+                      <span class="text-[10px] font-bold text-[#4B5563] bg-[#F3F4F6] px-1.5 py-0.5 rounded-xs uppercase tracking-wide">
+                        Especialista
+                      </span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-black uppercase tracking-tight text-[#111827] mb-1 leading-snug">
+                      {dif.titulo}
+                    </h4>
+                    <p class="text-[11px] font-bold uppercase tracking-tight text-[#16A34A] mb-2.5">
+                      {dif.subtitulo}
+                    </p>
+                    <p class="text-xs sm:text-sm text-[#4B5563] leading-relaxed">
+                      {dif.descripcion}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div class="pt-6 border-t border-[#E5E7EB]">
-        <h3 class="font-black text-[#111827] mb-3 text-xs uppercase tracking-tight">Barrios y Localidades con Cobertura Activa</h3>
+        <h3 class="font-black text-[#111827] mb-3 text-xs uppercase tracking-tight">{isInterior ? 'Ciudades Cabecera, Corredores y Localidades con Cobertura' : 'Barrios y Localidades con Cobertura Activa'}</h3>
         <ul class="flex flex-wrap gap-2">
           {d.barriosCobertura.map((barrio) => (
             <li class="bg-[#F3F4F6] border border-[#E5E7EB] rounded-sm px-3 py-1.5 text-xs text-[#111827] font-semibold">{barrio}</li>
           ))}
           <li class="bg-[#E5E7EB] border border-[#D1D5DB] rounded-sm px-3 py-1.5 text-xs text-[#111827] font-bold">Entre otros...</li>
         </ul>
+        {d.viasAccesoPrincipales && d.viasAccesoPrincipales.length > 0 && (
+          <div class="mt-4 pt-4 border-t border-[#E5E7EB]">
+            <h4 class="font-black text-[#111827] mb-2 text-xs uppercase tracking-tight">{isInterior ? 'Rutas y Corredores Viales Principales' : 'Vías de Acceso Principales'}</h4>
+            <ul class="flex flex-wrap gap-2">
+              {d.viasAccesoPrincipales.map((via) => (
+                <li class="bg-[#F3F4F6] border border-[#E5E7EB] rounded-sm px-3 py-1.5 text-xs text-[#4B5563] font-medium">{via}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {isInterior && (
+          <p class="mt-4 text-xs text-[#4B5563] bg-[#F9FAFB] border border-[#E5E7EB] p-3 rounded-sm leading-relaxed">
+            <strong class="text-[#111827]">¿Tu pueblo, paraje o quinta no figura en la lista?</strong> Llegamos a cualquier punto del interior de la provincia de Buenos Aires a través de nuestros recorridos programados. <a href={heroWaUrl} class="text-[#16A34A] font-bold hover:underline" target="_blank" rel="noopener noreferrer">Consultanos por WhatsApp con tu localidad</a> y coordinamos la fecha.
+          </p>
+        )}
       </div>
     </div>
   </section>
@@ -509,7 +797,7 @@ const puntosBeneficio = isCaba
   <!-- CASO DE EXITO LOCAL (Omitido automaticamente si contiene placeholders) -->
   {isCasoExitoValido && (
     <section class="max-w-5xl mx-auto px-4 py-12 lg:py-16 border-b border-[#E5E7EB]">
-      <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">Caso Real en {d.nombreZona}</h2>
+      <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">Caso Real {enZona}</h2>
       <p class="text-base text-[#4B5563] mb-6 max-w-2xl leading-relaxed">Cada trabajo ejecutado deja registro tecnico del modelo, el barrio, el problema encontrado y el resultado obtenido.</p>
       <article class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-5">
         <dl class="space-y-3">
@@ -518,7 +806,7 @@ const puntosBeneficio = isCaba
             <dd class="sm:col-span-2 text-[#111827] font-semibold text-sm">{d.casoExitoLocal.modeloDetalle}</dd>
           </div>
           <div class="grid sm:grid-cols-3 gap-1 pb-2 border-b border-[#E5E7EB]">
-            <dt class="font-bold text-[#4B5563] text-xs uppercase tracking-tight">Barrio</dt>
+            <dt class="font-bold text-[#4B5563] text-xs uppercase tracking-tight">{isInterior ? 'Localidad' : 'Barrio'}</dt>
             <dd class="sm:col-span-2 text-[#111827] font-semibold text-sm">{d.casoExitoLocal.barrio}</dd>
           </div>
           <div class="grid sm:grid-cols-3 gap-1 pb-2 border-b border-[#E5E7EB]">
@@ -542,7 +830,7 @@ const puntosBeneficio = isCaba
           Preguntas Frecuentes
         </h2>
         <p class="text-base text-[#4B5563] leading-relaxed">
-          Respondemos las dudas más frecuentes de propietarios de Peugeot 307 en {d.nombreZona} sobre el procedimiento de retapizado donde tengas el auto, los materiales utilizados y la coordinación del servicio.
+          Respondemos las dudas más frecuentes de propietarios de Peugeot 307 {enZona} sobre el procedimiento de retapizado donde tengas el auto, los materiales utilizados y la coordinación del servicio.
         </p>
       </div>
 
@@ -593,7 +881,7 @@ const puntosBeneficio = isCaba
             <span class="text-[#4B5563] font-mono text-lg ml-2 shrink-0">+</span>
           </summary>
           <p class="text-xs sm:text-sm text-[#4B5563] mt-3 pt-3 border-t border-[#E5E7EB] leading-relaxed">
-            Aceptamos efectivo y transferencia bancaria.
+            Aceptamos efectivo y transferencia bancaria. Abonás recién cuando el trabajo está terminado y revisado a tu total conformidad.
           </p>
         </details>
 
@@ -695,14 +983,14 @@ const puntosBeneficio = isCaba
             También atendemos a domicilio en localidades vecinas a {d.nombreZona}.
           </p>
         </div>
-        <a href="/reparacion-techo-peugeot-307/" class="text-xs font-bold uppercase tracking-tight text-[#111827] hover:underline transition-colors inline-flex items-center min-h-[44px] py-1 shrink-0">
+        <a href="/#zonas" class="text-xs font-bold uppercase tracking-tight text-[#111827] hover:underline transition-colors inline-flex items-center min-h-[44px] py-1 shrink-0">
           Ver todas las zonas
         </a>
       </div>
       <div class="grid gap-3 sm:grid-cols-3">
         {zonasRelacionadas.map((z) => (
           <a
-            href={"/reparacion-techo-peugeot-307/" + z.data.slug + "/"}
+            href={"/" + z.data.slug + "/"}
             class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-4 hover:border-[#111827] transition-colors flex flex-col justify-between"
           >
             <p class="font-black text-sm uppercase tracking-tight text-[#111827] mb-1">{z.data.nombreZona}</p>
@@ -717,28 +1005,35 @@ const puntosBeneficio = isCaba
   <!-- CTA FINAL (ÚLTIMA SECCIÓN ANTES DEL FOOTER: UNICA seccion con padding-bottom extra para el CTA flotante) -->
   <section class="max-w-4xl mx-auto px-4 py-12 lg:py-16 pb-24 md:pb-16 text-center">
     <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">
-      Resolvelo Hoy en {d.nombreZona}
+      Resolvelo Hoy {enZona}
     </h2>
     <p class="text-base text-[#4B5563] mb-6 max-w-lg mx-auto leading-relaxed">
-      Sin turno previo para la consulta inicial. Evaluamos el estado del techo de tu Peugeot 307 por WhatsApp y coordinamos el horario que mejor se adapte a tu agenda.
+      {isInterior
+        ? 'Sin turno previo para la consulta inicial. Evaluamos el estado del techo de tu Peugeot 307 por WhatsApp y coordinamos la fecha del próximo recorrido por tu zona.'
+        : 'Sin turno previo para la consulta inicial. Evaluamos el estado del techo de tu Peugeot 307 por WhatsApp y coordinamos el horario que mejor se adapte a tu agenda.'}
     </p>
     <a
       href={finalWaUrl}
-      class="cta-whatsapp text-base w-full sm:w-auto"
+      class="cta-hero-whatsapp group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-3.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-[#0a2e16] mb-3 text-left min-h-[52px]"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={"Cotizar por WhatsApp " + paraZona}
       onclick={finalCTAHandler}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-      </svg>
-      <span>Cotizar por WhatsApp con foto del techo</span>
+      <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/25 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-150">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-[#0a2e16] shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+      </div>
+      <div class="flex flex-col items-start text-left">
+        <span class="text-sm sm:text-base font-black uppercase tracking-tight leading-tight text-[#0a2e16]">Cotizar por WhatsApp</span>
+        <span class="text-[11px] sm:text-xs font-semibold tracking-normal text-[#0a2e16] leading-tight mt-0.5">Envianos foto de tu techo • Respuesta en 15 min</span>
+      </div>
     </a>
-    <p class="text-xs text-[#4B5563] mt-3">Atencion a domicilio en {d.nombreZona} y alrededores. Coordinacion directa por WhatsApp.</p>
+    <p class="text-xs text-[#4B5563] mt-3">
+      {isInterior
+        ? 'Atención a domicilio en todas las localidades y corredores del interior de Buenos Aires. Coordinación directa por WhatsApp.'
+        : `Atención a domicilio en ${d.nombreZona} y alrededores. Coordinación directa por WhatsApp.`}
+    </p>
   </section>
-
-  <!-- Contenido del markdown (indexable, oculto visualmente) -->
-  <div class="sr-only" aria-hidden="true">
-    <Content />
-  </div>
 </Layout>

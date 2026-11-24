@@ -1,7 +1,7 @@
 ---
 title: "¿Rebotan la VTV por el techo caído del 307?"
 slug: "techo-caido-peugeot-307-vtv"
-description: "¿Tenés turno de VTV y el techo del Peugeot 307 está descolgado? Motivos de rechazo por visibilidad y cómo resolverlo a domicilio en el día."
+description: "¿Tenés turno de VTV y el techo de tu Peugeot 307 está descolgado? Motivos de rechazo por visibilidad y cómo resolverlo a domicilio en el día."
 date: "2026-11-20"
 author: "Técnico Especialista 307 Techos"
 category: "Normativa y Trámites"

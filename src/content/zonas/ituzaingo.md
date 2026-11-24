@@ -21,8 +21,8 @@ particularidadZona: "Con amplias zonas residenciales y arboladas como Parque Lel
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Ituzaingó

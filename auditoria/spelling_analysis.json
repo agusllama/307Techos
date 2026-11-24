@@ -1,0 +1,282 @@
+{
+  "totalIssues": 727,
+  "uniqueWords": 113,
+  "voseoWordsCount": 39,
+  "realSpellingErrors": {
+    "cercania": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/avellaneda_main.txt",
+          "slug": "avellaneda",
+          "col": 6125,
+          "word": "cercania",
+          "context": "écnica en Avellaneda: Por su cercania al Riachuelo y su trazado urba"
+        }
+      ]
+    },
+    "vehiculos": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/avellaneda_main.txt",
+          "slug": "avellaneda",
+          "col": 6178,
+          "word": "vehiculos",
+          "context": "su trazado urbano mixto, los vehiculos en Avellaneda estan expuestos "
+        },
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6135,
+          "word": "vehiculos",
+          "context": ": En CABA, la mayoria de los vehiculos permanecen estacionados en la "
+        },
+        {
+          "file": "auditoria/extracted_text/lomas-de-zamora_main.txt",
+          "slug": "lomas-de-zamora",
+          "col": 6369,
+          "word": "vehiculos",
+          "context": "s, Banfield y Temperley. Los vehiculos estacionados al sol sufren tem"
+        },
+        {
+          "file": "auditoria/extracted_text/quilmes_main.txt",
+          "slug": "quilmes",
+          "col": 6229,
+          "word": "vehiculos",
+          "context": "de zinc, lo que somete a los vehiculos a ciclos mas agresivos de expa"
+        }
+      ]
+    },
+    "estan": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/avellaneda_main.txt",
+          "slug": "avellaneda",
+          "col": 6202,
+          "word": "estan",
+          "context": " los vehiculos en Avellaneda estan expuestos tanto a alta humedad"
+        }
+      ]
+    },
+    "tecnico": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/avellaneda_main.txt",
+          "slug": "avellaneda",
+          "col": 6413,
+          "word": "tecnico",
+          "context": "ro de Avellaneda el servicio tecnico a domicilio evita traslados in"
+        },
+        {
+          "file": "auditoria/extracted_text/interior-buenos-aires_main.txt",
+          "slug": "interior-buenos-aires",
+          "col": 10574,
+          "word": "tecnico",
+          "context": "bajo ejecutado deja registro tecnico del modelo, el barrio, el prob"
+        },
+        {
+          "file": "auditoria/extracted_text/lomas-de-zamora_main.txt",
+          "slug": "lomas-de-zamora",
+          "col": 5923,
+          "word": "tecnico",
+          "context": "cupantes. Brindamos servicio tecnico a domicilio para modelos Hatch"
+        }
+      ]
+    },
+    "Pueyrredon": {
+      "type": "Falta de tilde en nombre propio",
+      "correction": "Pueyrredón",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/avellaneda_main.txt",
+          "slug": "avellaneda",
+          "col": 6747,
+          "word": "Pueyrredon",
+          "context": "de Acceso Principales Puente Pueyrredon Av. Bartolome Mitre Av. Belgra"
+        }
+      ]
+    },
+    "Bartolome": {
+      "type": "Falta de tilde en nombre propio",
+      "correction": "Bartolomé",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/avellaneda_main.txt",
+          "slug": "avellaneda",
+          "col": 6762,
+          "word": "Bartolome",
+          "context": "ipales Puente Pueyrredon Av. Bartolome Mitre Av. Belgrano Autopista B"
+        }
+      ]
+    },
+    "mayoria": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6120,
+          "word": "mayoria",
+          "context": "Capital Federal: En CABA, la mayoria de los vehiculos permanecen es"
+        }
+      ]
+    },
+    "exposicion": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6207,
+          "word": "exposicion",
+          "context": " publica o en edificios bajo exposicion solar directa. Esta combinacio"
+        }
+      ]
+    },
+    "combinacion": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6238,
+          "word": "combinacion",
+          "context": "posicion solar directa. Esta combinacion acelera la degradacion de la e"
+        }
+      ]
+    },
+    "intervencion": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6416,
+          "word": "intervencion",
+          "context": "acionamiento, completando la intervencion en menos de 2 horas. El trafic"
+        }
+      ]
+    },
+    "vehiculo": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6584,
+          "word": "vehiculo",
+          "context": "s que no pueden trasladar el vehiculo a un taller. Barrios y Localid"
+        }
+      ]
+    },
+    "Nuñez": {
+      "type": "Falta de tilde en nombre propio",
+      "correction": "Núñez",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6761,
+          "word": "Nuñez",
+          "context": "agro Flores Boedo Colegiales Nuñez Saavedra Parque Chacabuco San "
+        }
+      ]
+    },
+    "Cristobal": {
+      "type": "Falta de tilde en nombre propio",
+      "correction": "Cristóbal",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/capital-federal_main.txt",
+          "slug": "capital-federal",
+          "col": 6797,
+          "word": "Cristobal",
+          "context": "aavedra Parque Chacabuco San Cristobal Barracas Entre otros... Vías d"
+        }
+      ]
+    },
+    "Hipolito": {
+      "type": "Falta de tilde en nombre propio",
+      "correction": "Hipólito",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/lanus_main.txt",
+          "slug": "lanus",
+          "col": 6795,
+          "word": "Hipolito",
+          "context": "as de Acceso Principales Av. Hipolito Yrigoyen (Pavon) Av. 25 de May"
+        },
+        {
+          "file": "auditoria/extracted_text/lomas-de-zamora_main.txt",
+          "slug": "lomas-de-zamora",
+          "col": 6842,
+          "word": "Hipolito",
+          "context": "as de Acceso Principales Av. Hipolito Yrigoyen Av. Alsina Camino Pre"
+        }
+      ]
+    },
+    "concentracion": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/lomas-de-zamora_main.txt",
+          "slug": "lomas-de-zamora",
+          "col": 6275,
+          "word": "concentracion",
+          "context": " extensa superficie con gran concentracion de Peugeot 307 Hatchback en ba"
+        }
+      ]
+    },
+    "proporcion": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/quilmes_main.txt",
+          "slug": "quilmes",
+          "col": 6128,
+          "word": "proporcion",
+          "context": "e Quilmes concentra una alta proporcion de viviendas con espacios desc"
+        }
+      ]
+    },
+    "contraccion": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/quilmes_main.txt",
+          "slug": "quilmes",
+          "col": 6277,
+          "word": "contraccion",
+          "context": "mas agresivos de expansion y contraccion termica. Las temperaturas inte"
+        }
+      ]
+    },
+    "termica": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/quilmes_main.txt",
+          "slug": "quilmes",
+          "col": 6289,
+          "word": "termica",
+          "context": "s de expansion y contraccion termica. Las temperaturas internas que"
+        }
+      ]
+    },
+    "metalica": {
+      "type": "Palabra no reconocida o falta de tilde",
+      "occurrences": [
+        {
+          "file": "auditoria/extracted_text/quilmes_main.txt",
+          "slug": "quilmes",
+          "col": 6364,
+          "word": "metalica",
+          "context": "alcanzarse bajo una cubierta metalica en verano afectan directamente"
+        }
+      ]
+    }
+  }
+}

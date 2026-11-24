@@ -1,0 +1,2340 @@
+{
+  "zonasCount": 27,
+  "blogCount": 4,
+  "regularPagesCount": 34,
+  "redirectPagesCount": 28,
+  "sitemapUrlsCount": 33,
+  "inSitemapNotInRegular": [],
+  "inRegularNotInSitemap": [],
+  "brokenTextFindings": [
+    {
+      "file": "404.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 5907
+    },
+    {
+      "file": "404.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}}]}</script><link rel=\"stylesheet\" href=\"",
+      "pos": 6797
+    },
+    {
+      "file": "404.html",
+      "pattern": "Multiple spaces",
+      "snippet": "S   Z"
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6219
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7109
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9231
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9490
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9796
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9952
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10182
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10384
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10784
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11270
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11525
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6198
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7088
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9210
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9469
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9775
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9931
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10161
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10363
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10748
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11234
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11489
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "avellaneda/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6207
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7097
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9219
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9478
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9784
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9940
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10170
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10372
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10760
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11246
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11501
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "berazategui/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6174
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:",
+      "pos": 7064
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 8315
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 8801
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 9056
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "S   Z"
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "blog/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 5889
+    },
+    {
+      "file": "blog/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:",
+      "pos": 6779
+    },
+    {
+      "file": "blog/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "S   Z"
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6153
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:",
+      "pos": 7043
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 8266
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 8752
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 9007
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "S   Z"
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6158
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:",
+      "pos": 7048
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 8260
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 8746
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 9001
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "S   Z"
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6175
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:",
+      "pos": 7065
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 8333
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 8819
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 9074
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "S   Z"
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6219
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7109
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9231
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9490
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9796
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9952
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10182
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10384
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10784
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11270
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11525
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "capital-federal/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6246
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7136
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9258
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9517
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9823
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9979
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10209
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10411
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10820
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11306
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11561
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6224
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7114
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9236
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9495
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9801
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9957
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10187
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10389
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10788
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11274
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11529
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6228
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7118
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9240
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9499
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9805
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9961
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10191
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10393
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10796
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11282
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11537
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6246
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7136
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9258
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9517
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9823
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9979
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10209
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10411
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10820
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11306
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11561
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6175
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7065
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9187
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9446
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9752
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9908
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10138
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]}]}</script><style>@keyframes marquee{0",
+      "pos": 10340
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10437
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 10923
+    },
+    {
+      "file": "index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11178
+    },
+    {
+      "file": "index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6225
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7115
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9237
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9496
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9802
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9958
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10188
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10390
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10811
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11297
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11552
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6189
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7079
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9201
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9460
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9766
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9922
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10152
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10354
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10736
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11222
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11477
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6198
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7088
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9210
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9469
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9775
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9931
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10161
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10363
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10748
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11234
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11489
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "la-matanza/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6180
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7070
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9192
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9451
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9757
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9913
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10143
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10345
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10724
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11210
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11465
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "la-plata/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6153
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7043
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9165
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9424
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9730
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9886
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10116
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10318
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10688
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11174
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11429
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "lanus/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6219
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7109
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9231
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9490
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9796
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9952
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10182
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10384
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10784
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11270
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11525
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6198
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7088
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9210
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9469
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9775
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9931
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10161
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10363
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10748
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11234
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11489
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6225
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7115
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9237
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9496
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9802
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9958
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10188
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10390
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10784
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11270
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11525
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6153
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7043
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9165
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9424
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9730
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9886
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10116
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10318
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10688
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11174
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11429
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "moron/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6255
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7145
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9267
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9526
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9832
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9988
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10218
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10420
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10832
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11318
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11573
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6153
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7043
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9165
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9424
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9730
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9886
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10116
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10318
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10688
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11174
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11429
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "pilar/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6171
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7061
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9183
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9442
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9748
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9904
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10134
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10336
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10712
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11198
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11453
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "pinamar/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6171
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7061
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9183
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9442
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9748
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9904
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10134
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10336
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10712
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11198
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11453
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "quilmes/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "s     \t R"
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6216
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7106
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9228
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9487
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9793
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9949
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10179
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10381
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10772
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11258
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11513
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6198
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7088
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9210
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9469
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9775
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9931
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10161
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10363
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10748
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11234
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11489
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "san-isidro/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6153
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7043
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9165
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9424
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9730
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9886
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10116
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10318
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10688
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11174
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11429
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "tigre/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6219
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7109
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9231
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9490
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9796
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9952
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10182
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10384
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10784
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11270
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11525
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6225
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7115
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9237
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9496
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9802
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9958
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10188
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10390
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10784
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11270
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11525
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "212269244\",\"availableLanguage\":\"Spanish\"}},{\"@type\":\"Service\",\"@id\":\"https://307te",
+      "pos": 6216
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": " reinstalacion.\",\"priceCurrency\":\"ARS\"}]}},{\"@type\":\"HowTo\",\"@id\":\"https://307tech",
+      "pos": 7106
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": " en el dia para que no te quedes a pie.\"}},{\"@type\":\"Question\",\"name\":\"El adhesivo",
+      "pos": 9228
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "remo y humedad sin volver a despegarse.\"}},{\"@type\":\"Question\",\"name\":\"Que espacio",
+      "pos": 9487
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": " el trabajo, cochera o estacionamiento.\"}},{\"@type\":\"Question\",\"name\":\"El servicio",
+      "pos": 9793
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "amos una garantia escrita por 12 meses.\"}},{\"@type\":\"Question\",\"name\":\"Que medios ",
+      "pos": 9949
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "nado y revisado a tu total conformidad.\"}},{\"@type\":\"Question\",\"name\":\"Puedo usar ",
+      "pos": 10179
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "nos vamos, sin tiempos extra de secado.\"}}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"http",
+      "pos": 10381
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "nslate(0,0)}to{transform:translate(-50%)}}.reviews-marquee-container[data-astro-ci",
+      "pos": 10772
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "ffoa3]:hover{animation-play-state:paused}}@media (prefers-reduced-motion:reduce){.",
+      "pos": 11258
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "}}",
+      "snippet": "{-webkit-mask-image:none;mask-image:none}} </style><link rel=\"stylesheet\" href=\"/_",
+      "pos": 11513
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "Multiple spaces",
+      "snippet": "o     T"
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "pattern": "Duplicate punctuation",
+      "snippet": "..."
+    }
+  ],
+  "linkErrors": [],
+  "totalLinksCount": 825
+}

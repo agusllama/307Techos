@@ -1,0 +1,319 @@
+{
+  "totalHtml": 62,
+  "regularCount": 34,
+  "redirectCount": 28,
+  "regularRoutes": [
+    {
+      "file": "404.html",
+      "route": "/404.html",
+      "isRedirect": false
+    },
+    {
+      "file": "almirante-brown/index.html",
+      "route": "/almirante-brown/",
+      "isRedirect": false
+    },
+    {
+      "file": "avellaneda/index.html",
+      "route": "/avellaneda/",
+      "isRedirect": false
+    },
+    {
+      "file": "berazategui/index.html",
+      "route": "/berazategui/",
+      "isRedirect": false
+    },
+    {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "route": "/blog/como-reparar-techo-peugeot-307-en-casa/",
+      "isRedirect": false
+    },
+    {
+      "file": "blog/index.html",
+      "route": "/blog/",
+      "isRedirect": false
+    },
+    {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "route": "/blog/por-que-se-cae-techo-peugeot-307/",
+      "isRedirect": false
+    },
+    {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "route": "/blog/techo-caido-peugeot-307-vtv/",
+      "isRedirect": false
+    },
+    {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "route": "/blog/techo-solar-panoramico-peugeot-307-tapizado/",
+      "isRedirect": false
+    },
+    {
+      "file": "capital-federal/index.html",
+      "route": "/capital-federal/",
+      "isRedirect": false
+    },
+    {
+      "file": "esteban-echeverria/index.html",
+      "route": "/esteban-echeverria/",
+      "isRedirect": false
+    },
+    {
+      "file": "ezeiza-canning/index.html",
+      "route": "/ezeiza-canning/",
+      "isRedirect": false
+    },
+    {
+      "file": "florencio-varela/index.html",
+      "route": "/florencio-varela/",
+      "isRedirect": false
+    },
+    {
+      "file": "general-san-martin/index.html",
+      "route": "/general-san-martin/",
+      "isRedirect": false
+    },
+    {
+      "file": "index.html",
+      "route": "/",
+      "isRedirect": false
+    },
+    {
+      "file": "interior-buenos-aires/index.html",
+      "route": "/interior-buenos-aires/",
+      "isRedirect": false
+    },
+    {
+      "file": "ituzaingo/index.html",
+      "route": "/ituzaingo/",
+      "isRedirect": false
+    },
+    {
+      "file": "la-matanza/index.html",
+      "route": "/la-matanza/",
+      "isRedirect": false
+    },
+    {
+      "file": "la-plata/index.html",
+      "route": "/la-plata/",
+      "isRedirect": false
+    },
+    {
+      "file": "lanus/index.html",
+      "route": "/lanus/",
+      "isRedirect": false
+    },
+    {
+      "file": "lomas-de-zamora/index.html",
+      "route": "/lomas-de-zamora/",
+      "isRedirect": false
+    },
+    {
+      "file": "mar-de-ajo/index.html",
+      "route": "/mar-de-ajo/",
+      "isRedirect": false
+    },
+    {
+      "file": "mar-del-plata/index.html",
+      "route": "/mar-del-plata/",
+      "isRedirect": false
+    },
+    {
+      "file": "moron/index.html",
+      "route": "/moron/",
+      "isRedirect": false
+    },
+    {
+      "file": "partido-de-la-costa/index.html",
+      "route": "/partido-de-la-costa/",
+      "isRedirect": false
+    },
+    {
+      "file": "pilar/index.html",
+      "route": "/pilar/",
+      "isRedirect": false
+    },
+    {
+      "file": "pinamar/index.html",
+      "route": "/pinamar/",
+      "isRedirect": false
+    },
+    {
+      "file": "quilmes/index.html",
+      "route": "/quilmes/",
+      "isRedirect": false
+    },
+    {
+      "file": "san-bernardo/index.html",
+      "route": "/san-bernardo/",
+      "isRedirect": false
+    },
+    {
+      "file": "san-isidro/index.html",
+      "route": "/san-isidro/",
+      "isRedirect": false
+    },
+    {
+      "file": "tigre/index.html",
+      "route": "/tigre/",
+      "isRedirect": false
+    },
+    {
+      "file": "tres-de-febrero/index.html",
+      "route": "/tres-de-febrero/",
+      "isRedirect": false
+    },
+    {
+      "file": "vicente-lopez/index.html",
+      "route": "/vicente-lopez/",
+      "isRedirect": false
+    },
+    {
+      "file": "villa-gesell/index.html",
+      "route": "/villa-gesell/",
+      "isRedirect": false
+    }
+  ],
+  "redirectRoutes": [
+    {
+      "file": "reparacion-techo-peugeot-307/almirante-brown/index.html",
+      "route": "/reparacion-techo-peugeot-307/almirante-brown/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/avellaneda/index.html",
+      "route": "/reparacion-techo-peugeot-307/avellaneda/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/berazategui/index.html",
+      "route": "/reparacion-techo-peugeot-307/berazategui/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/capital-federal/index.html",
+      "route": "/reparacion-techo-peugeot-307/capital-federal/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/esteban-echeverria/index.html",
+      "route": "/reparacion-techo-peugeot-307/esteban-echeverria/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/ezeiza-canning/index.html",
+      "route": "/reparacion-techo-peugeot-307/ezeiza-canning/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/florencio-varela/index.html",
+      "route": "/reparacion-techo-peugeot-307/florencio-varela/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/general-san-martin/index.html",
+      "route": "/reparacion-techo-peugeot-307/general-san-martin/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/index.html",
+      "route": "/reparacion-techo-peugeot-307/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/interior-buenos-aires/index.html",
+      "route": "/reparacion-techo-peugeot-307/interior-buenos-aires/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/ituzaingo/index.html",
+      "route": "/reparacion-techo-peugeot-307/ituzaingo/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/la-matanza/index.html",
+      "route": "/reparacion-techo-peugeot-307/la-matanza/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/la-plata/index.html",
+      "route": "/reparacion-techo-peugeot-307/la-plata/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/lanus/index.html",
+      "route": "/reparacion-techo-peugeot-307/lanus/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/lomas-de-zamora/index.html",
+      "route": "/reparacion-techo-peugeot-307/lomas-de-zamora/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/mar-de-ajo/index.html",
+      "route": "/reparacion-techo-peugeot-307/mar-de-ajo/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/mar-del-plata/index.html",
+      "route": "/reparacion-techo-peugeot-307/mar-del-plata/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/moron/index.html",
+      "route": "/reparacion-techo-peugeot-307/moron/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/partido-de-la-costa/index.html",
+      "route": "/reparacion-techo-peugeot-307/partido-de-la-costa/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/pilar/index.html",
+      "route": "/reparacion-techo-peugeot-307/pilar/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/pinamar/index.html",
+      "route": "/reparacion-techo-peugeot-307/pinamar/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/quilmes/index.html",
+      "route": "/reparacion-techo-peugeot-307/quilmes/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/san-bernardo/index.html",
+      "route": "/reparacion-techo-peugeot-307/san-bernardo/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/san-isidro/index.html",
+      "route": "/reparacion-techo-peugeot-307/san-isidro/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/tigre/index.html",
+      "route": "/reparacion-techo-peugeot-307/tigre/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/tres-de-febrero/index.html",
+      "route": "/reparacion-techo-peugeot-307/tres-de-febrero/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/vicente-lopez/index.html",
+      "route": "/reparacion-techo-peugeot-307/vicente-lopez/",
+      "isRedirect": true
+    },
+    {
+      "file": "reparacion-techo-peugeot-307/villa-gesell/index.html",
+      "route": "/reparacion-techo-peugeot-307/villa-gesell/",
+      "isRedirect": true
+    }
+  ]
+}

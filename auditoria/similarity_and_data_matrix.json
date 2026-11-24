@@ -1,0 +1,1091 @@
+{
+  "topSimilarities": [
+    {
+      "zoneA": "pilar",
+      "zoneB": "tigre",
+      "similarity": 78.46
+    },
+    {
+      "zoneA": "san-isidro",
+      "zoneB": "vicente-lopez",
+      "similarity": 77.95
+    },
+    {
+      "zoneA": "ituzaingo",
+      "zoneB": "moron",
+      "similarity": 77.76
+    },
+    {
+      "zoneA": "la-matanza",
+      "zoneB": "moron",
+      "similarity": 77.58
+    },
+    {
+      "zoneA": "moron",
+      "zoneB": "tres-de-febrero",
+      "similarity": 77.19
+    },
+    {
+      "zoneA": "pilar",
+      "zoneB": "vicente-lopez",
+      "similarity": 77.05
+    },
+    {
+      "zoneA": "pilar",
+      "zoneB": "san-isidro",
+      "similarity": 77.03
+    },
+    {
+      "zoneA": "tigre",
+      "zoneB": "vicente-lopez",
+      "similarity": 77
+    },
+    {
+      "zoneA": "berazategui",
+      "zoneB": "esteban-echeverria",
+      "similarity": 76.83
+    },
+    {
+      "zoneA": "san-isidro",
+      "zoneB": "tigre",
+      "similarity": 76.64
+    },
+    {
+      "zoneA": "avellaneda",
+      "zoneB": "berazategui",
+      "similarity": 76.62
+    },
+    {
+      "zoneA": "ituzaingo",
+      "zoneB": "tres-de-febrero",
+      "similarity": 76.47
+    },
+    {
+      "zoneA": "la-matanza",
+      "zoneB": "tres-de-febrero",
+      "similarity": 76.46
+    },
+    {
+      "zoneA": "ituzaingo",
+      "zoneB": "la-matanza",
+      "similarity": 76.34
+    },
+    {
+      "zoneA": "esteban-echeverria",
+      "zoneB": "ezeiza-canning",
+      "similarity": 76.24
+    },
+    {
+      "zoneA": "esteban-echeverria",
+      "zoneB": "florencio-varela",
+      "similarity": 76.02
+    },
+    {
+      "zoneA": "florencio-varela",
+      "zoneB": "la-plata",
+      "similarity": 75.75
+    },
+    {
+      "zoneA": "esteban-echeverria",
+      "zoneB": "la-plata",
+      "similarity": 75.71
+    },
+    {
+      "zoneA": "almirante-brown",
+      "zoneB": "esteban-echeverria",
+      "similarity": 75.59
+    },
+    {
+      "zoneA": "general-san-martin",
+      "zoneB": "san-isidro",
+      "similarity": 75.56
+    },
+    {
+      "zoneA": "general-san-martin",
+      "zoneB": "pilar",
+      "similarity": 75.51
+    },
+    {
+      "zoneA": "ezeiza-canning",
+      "zoneB": "la-plata",
+      "similarity": 75.47
+    },
+    {
+      "zoneA": "general-san-martin",
+      "zoneB": "tigre",
+      "similarity": 75.47
+    },
+    {
+      "zoneA": "berazategui",
+      "zoneB": "ezeiza-canning",
+      "similarity": 75.4
+    },
+    {
+      "zoneA": "berazategui",
+      "zoneB": "la-plata",
+      "similarity": 75.38
+    },
+    {
+      "zoneA": "general-san-martin",
+      "zoneB": "vicente-lopez",
+      "similarity": 75.26
+    },
+    {
+      "zoneA": "berazategui",
+      "zoneB": "moron",
+      "similarity": 75.21
+    },
+    {
+      "zoneA": "esteban-echeverria",
+      "zoneB": "moron",
+      "similarity": 75.21
+    },
+    {
+      "zoneA": "almirante-brown",
+      "zoneB": "berazategui",
+      "similarity": 75.09
+    },
+    {
+      "zoneA": "berazategui",
+      "zoneB": "quilmes",
+      "similarity": 75.09
+    }
+  ],
+  "allSimilaritiesCount": 351,
+  "dataMatrix": {
+    "404": {
+      "file": "404.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "15 min",
+        "menos de 2 horas"
+      ],
+      "garantias": [],
+      "cupos": [],
+      "precioMentionsCount": 0,
+      "businessMentionsCount": 3
+    },
+    "almirante-brown": {
+      "file": "almirante-brown/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "avellaneda": {
+      "file": "avellaneda/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "berazategui": {
+      "file": "berazategui/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "blog/como-reparar-techo-peugeot-307-en-casa": {
+      "file": "blog/como-reparar-techo-peugeot-307-en-casa/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "6 min",
+        "menos de 2 horas",
+        "15 min"
+      ],
+      "garantias": [],
+      "cupos": [],
+      "precioMentionsCount": 0,
+      "businessMentionsCount": 4
+    },
+    "blog": {
+      "file": "blog/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "5 min",
+        "6 min",
+        "4 min",
+        "menos de 2 horas",
+        "15 min"
+      ],
+      "garantias": [],
+      "cupos": [],
+      "precioMentionsCount": 0,
+      "businessMentionsCount": 3
+    },
+    "blog/por-que-se-cae-techo-peugeot-307": {
+      "file": "blog/por-que-se-cae-techo-peugeot-307/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "4 min",
+        "menos de 2 horas",
+        "15 min"
+      ],
+      "garantias": [],
+      "cupos": [],
+      "precioMentionsCount": 0,
+      "businessMentionsCount": 4
+    },
+    "blog/techo-caido-peugeot-307-vtv": {
+      "file": "blog/techo-caido-peugeot-307-vtv/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "5 min",
+        "menos de 2 horas",
+        "Menos de 2 horas",
+        "15 min"
+      ],
+      "garantias": [],
+      "cupos": [],
+      "precioMentionsCount": 3,
+      "businessMentionsCount": 5
+    },
+    "blog/techo-solar-panoramico-peugeot-307-tapizado": {
+      "file": "blog/techo-solar-panoramico-peugeot-307-tapizado/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "5 min",
+        "menos de 2 horas",
+        "15 min"
+      ],
+      "garantias": [],
+      "cupos": [],
+      "precioMentionsCount": 0,
+      "businessMentionsCount": 4
+    },
+    "capital-federal": {
+      "file": "capital-federal/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "2 horas",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "esteban-echeverria": {
+      "file": "esteban-echeverria/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "ezeiza-canning": {
+      "file": "ezeiza-canning/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "florencio-varela": {
+      "file": "florencio-varela/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "general-san-martin": {
+      "file": "general-san-martin/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "home": {
+      "file": "index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "6 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "interior-buenos-aires": {
+      "file": "interior-buenos-aires/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "15 Minutos",
+        "15 minutos",
+        "1 hora",
+        "45 minutos",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "12 meses de garantía",
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "ituzaingo": {
+      "file": "ituzaingo/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "la-matanza": {
+      "file": "la-matanza/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "la-plata": {
+      "file": "la-plata/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "lanus": {
+      "file": "lanus/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "lomas-de-zamora": {
+      "file": "lomas-de-zamora/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "mar-de-ajo": {
+      "file": "mar-de-ajo/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "mar-del-plata": {
+      "file": "mar-del-plata/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "moron": {
+      "file": "moron/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "partido-de-la-costa": {
+      "file": "partido-de-la-costa/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "pilar": {
+      "file": "pilar/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "pinamar": {
+      "file": "pinamar/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "quilmes": {
+      "file": "quilmes/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "san-bernardo": {
+      "file": "san-bernardo/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "san-isidro": {
+      "file": "san-isidro/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "tigre": {
+      "file": "tigre/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "tres-de-febrero": {
+      "file": "tres-de-febrero/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "vicente-lopez": {
+      "file": "vicente-lopez/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    },
+    "villa-gesell": {
+      "file": "villa-gesell/index.html",
+      "waNumberHrefs": [
+        "5492212269244"
+      ],
+      "telHrefs": [
+        "5492212269244"
+      ],
+      "displayedPhones": [
+        "+54 9 221 226-9244"
+      ],
+      "horarios": [
+        "Lunes a Sabado, 8:00 a 19:00 hs"
+      ],
+      "plazos": [
+        "menos de 2 horas",
+        "15 min",
+        "Menos de 2 horas"
+      ],
+      "garantias": [
+        "garantía escrita por 12 meses"
+      ],
+      "cupos": [
+        "2 turnos por semana"
+      ],
+      "precioMentionsCount": 1,
+      "businessMentionsCount": 3
+    }
+  }
+}

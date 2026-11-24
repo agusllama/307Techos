@@ -89,7 +89,7 @@ server.listen(4322, async () => {
     console.log('Saved shot-marquee-visible-mobile.png');
 
     // 3. Zone page check
-    await page.goto('http://localhost:4322/reparacion-techo-peugeot-307/capital-federal/', { waitUntil: 'networkidle0' });
+    await page.goto('http://localhost:4322/capital-federal/', { waitUntil: 'networkidle0' });
     const zoneMetrics = await page.evaluate(() => {
       const card = document.querySelector('.review-card');
       return {
@@ -111,6 +111,20 @@ server.listen(4322, async () => {
     await new Promise(r => setTimeout(r, 500));
     await page.screenshot({ path: 'shot-blog-marquee-mobile.png' });
     console.log('Saved shot-blog-marquee-mobile.png');
+
+    // 5. Blog index page check
+    await page.goto('http://localhost:4322/blog/', { waitUntil: 'networkidle0' });
+    const blogIndexMetrics = await page.evaluate(() => {
+      const firstArticle = document.querySelector('article');
+      return {
+        viewportHeight: window.innerHeight,
+        articleTop: firstArticle ? firstArticle.getBoundingClientRect().top : null,
+        articlePeekingPixels: firstArticle ? Math.max(0, window.innerHeight - firstArticle.getBoundingClientRect().top) : 0,
+      };
+    });
+    console.log('Blog index peek metrics:', JSON.stringify(blogIndexMetrics, null, 2));
+    await page.screenshot({ path: 'shot-blog-index-mobile.png' });
+    console.log('Saved shot-blog-index-mobile.png');
 
     await browser.close();
   } catch (err) {

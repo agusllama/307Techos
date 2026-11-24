@@ -15,6 +15,14 @@ const regiones = [
     nombre: 'Zona Sur y Gran La Plata',
     slugs: ['avellaneda', 'lanus', 'lomas-de-zamora', 'quilmes', 'berazategui', 'almirante-brown', 'esteban-echeverria', 'ezeiza-canning', 'florencio-varela', 'la-plata'],
   },
+  {
+    nombre: 'Costa Atlántica',
+    slugs: ['partido-de-la-costa', 'san-bernardo', 'mar-de-ajo', 'pinamar', 'villa-gesell', 'mar-del-plata'],
+  },
+  {
+    nombre: 'Interior de Buenos Aires',
+    slugs: ['interior-buenos-aires'],
+  },
 ];
 
 export const GET: APIRoute = async () => {
@@ -29,7 +37,7 @@ export const GET: APIRoute = async () => {
     '## Descripcion del Servicio',
     '',
     '307 Techos es un servicio especializado en reparacion y retapizado a domicilio de techos caidos (headliner) de Peugeot 307.',
-    'Opera en Ciudad Autonoma de Buenos Aires (CABA), Gran Buenos Aires (Zona Norte, Zona Oeste, Zona Sur) y Gran La Plata.',
+    'Opera en Ciudad Autonoma de Buenos Aires (CABA), Gran Buenos Aires (Zona Norte, Zona Oeste, Zona Sur), Gran La Plata, Costa Atlantica e Interior de la Provincia de Buenos Aires.',
     'El tecnico especialista se desplaza a donde tengas el auto (en la calle, en el trabajo, cochera o estacionamiento). No se requiere trasladar el vehiculo a un taller.',
     '',
     '---',
@@ -65,7 +73,7 @@ export const GET: APIRoute = async () => {
     '',
     '## Cobertura Geografica',
     '',
-    `Hub de zonas: ${siteUrl}/reparacion-techo-peugeot-307/`,
+    `Hub de zonas: ${siteUrl}/#zonas`,
     '',
   ];
 
@@ -82,7 +90,7 @@ export const GET: APIRoute = async () => {
         `- Wikidata: https://www.wikidata.org/wiki/${d.wikidataId}`,
         `- Localidades incluidas: ${d.barriosCobertura.join(', ')}`,
         `- Tiempo de llegada: ${d.tiempoLlegadaEstimado}`,
-        `- URL canonica: ${siteUrl}/reparacion-techo-peugeot-307/${d.slug}/`,
+        `- URL canonica: ${siteUrl}/${d.slug}/`,
         '',
       );
     }
@@ -99,7 +107,7 @@ export const GET: APIRoute = async () => {
         `#### ${d.nombreZona}`,
         `- Wikidata: https://www.wikidata.org/wiki/${d.wikidataId}`,
         `- Localidades incluidas: ${d.barriosCobertura.join(', ')}`,
-        `- URL canonica: ${siteUrl}/reparacion-techo-peugeot-307/${d.slug}/`,
+        `- URL canonica: ${siteUrl}/${d.slug}/`,
         '',
       );
     }
@@ -113,7 +121,7 @@ export const GET: APIRoute = async () => {
     '- Servicio: Retapizado y reparacion de techo caido Peugeot 307 a domicilio',
     `- Sitio web: ${siteUrl}/`,
     `- WhatsApp: ${displayPhone} (https://wa.me/${whatsappNumber})`,
-    '- Zona: CABA, Gran Buenos Aires (Norte, Oeste, Sur) y Gran La Plata',
+    '- Zona: CABA, Gran Buenos Aires (Norte, Oeste, Sur), Gran La Plata, Costa Atlantica e Interior de la Provincia de Buenos Aires',
     '- Horario: Lunes a sabado, 8:00 a 19:00 hs',
     '- Moneda: ARS (Pesos argentinos)',
     '- Metodos de pago: Efectivo, transferencia bancaria, Mercado Pago',

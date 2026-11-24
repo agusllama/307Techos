@@ -23,8 +23,8 @@ particularidadZona: "Al ser el partido más extenso del conurbano, cruzar La Mat
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en La Matanza

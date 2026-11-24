@@ -22,8 +22,8 @@ particularidadZona: "Almirante Brown cuenta con localidades de gran extensión c
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Almirante Brown

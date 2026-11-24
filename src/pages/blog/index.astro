@@ -9,10 +9,10 @@ const posts = await getCollection('blog');
 posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 const canonicalUrl = siteUrl + '/blog/';
-const title = 'Guías y Preguntas: Techo Peugeot 307 | 307 Techos';
-const description = 'Guías técnicas y respuestas sobre el techo caído del Peugeot 307 Hatchback: causas, diagnóstico, VTV y solución a domicilio en CABA y GBA.';
+const title = 'Guías y Soluciones: Techo Peugeot 307 | 307 Techos';
+const description = 'Guías técnicas sobre techo caído Peugeot 307: diagnóstico, VTV y solución a domicilio en CABA, GBA, Costa Atlántica e Interior de Buenos Aires.';
 
-const blogWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Estuve leyendo el blog y quiero consultar presupuesto para reparar el techo de mi Peugeot 307.');
+const blogWaUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Estuve leyendo el blog y quiero consultar presupuesto para reparar el techo de mi Peugeot 307. Te adjunto foto:');
 const blogWaHandler = waClickHandler('blog-index', 'banner-cta');
 
 const breadcrumbs = [
@@ -28,33 +28,38 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
 >
   <!-- Cabecera de seccion -->
-  <section class="bg-[#111827] text-white py-12 sm:py-16 border-b border-[#374151]">
+  <section class="bg-[#111827] text-white pt-5 pb-7 sm:py-12 border-b border-[#374151]">
     <div class="max-w-5xl mx-auto px-4">
-      <nav aria-label="Miga de pan" class="mb-4">
-        <ol class="flex items-center gap-2 text-xs text-[#9CA3AF]">
-          <li><a href="/" class="hover:text-white transition-colors py-1 px-2 inline-flex items-center min-h-[44px]">Inicio</a></li>
-          <li aria-hidden="true">/</li>
+      <nav aria-label="Miga de pan" class="mb-2.5">
+        <ol class="flex items-center gap-1.5 text-xs text-[#9CA3AF]">
+          <li><a href="/" class="hover:text-white transition-colors py-1 px-1.5 inline-flex items-center min-h-[44px]">Inicio</a></li>
+          <li aria-hidden="true" class="text-[#6B7280]">/</li>
           <li class="text-white font-bold px-1" aria-current="page">Blog</li>
         </ol>
       </nav>
 
-      <h1 class="text-[30px] sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-4">
-        Preguntas Frecuentes y Guías: Techo Peugeot 307
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#1F2937] border border-[#374151] text-[#25D366] mb-2.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
+        Taller & Guías
+      </div>
+
+      <h1 class="text-[26px] sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-2.5">
+        Guías y Preguntas: Techo Peugeot 307
       </h1>
 
-      <p class="text-sm sm:text-base text-gray-200 max-w-2xl leading-relaxed">
-        Te ayudamos a resolver tus dudas sobre causas de la caída del tapizado, diagnósticos y soluciones definitivas para Peugeot 307 Hatchback (3 y 5 puertas), con y sin techo solar, en CABA y Gran Buenos Aires.
+      <p class="text-sm sm:text-base text-[#D1D5DB] max-w-2xl leading-normal sm:leading-relaxed">
+        Causas de la caída del tapizado, diagnósticos y soluciones definitivas para Peugeot 307 Hatchback (3 y 5 puertas), con y sin techo solar, en CABA, GBA, La Plata, Costa Atlántica e Interior de Buenos Aires.
       </p>
     </div>
   </section>
 
   <!-- Listado de Artículos -->
-  <section class="max-w-5xl mx-auto px-4 py-12 lg:py-16">
-    <div class="mb-8">
-      <h2 class="text-[24px] lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-3">
+  <section class="max-w-5xl mx-auto px-4 pt-6 pb-12 sm:pt-8 sm:pb-16">
+    <div class="mb-6">
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tighter leading-[1.2] text-[#111827] mb-1.5">
         Artículos Técnicos Destacados
       </h2>
-      <p class="text-base text-[#4B5563] max-w-2xl leading-relaxed">
+      <p class="text-xs sm:text-sm text-[#4B5563] max-w-2xl leading-relaxed">
         Respuestas directas basadas en la experiencia práctica de cientos de techos desmontados y retapizados con especificaciones originales de fábrica.
       </p>
     </div>
@@ -108,20 +113,26 @@ const breadcrumbs = [
           ¿La tela del techo de tu 307 ya empezó a colgar?
         </h2>
         <p class="text-sm sm:text-base text-gray-200 mb-6 leading-relaxed">
-          No uses pegamentos en aerosol ni tachas que arruinan la matriz original. Lo reparamos a nuevo donde tengas el auto (calle, trabajo o estacionamiento) en CABA, Gran Buenos Aires o La Plata en menos de 2 horas.
+          No uses pegamentos en aerosol ni tachas que arruinan la matriz original. Lo reparamos a nuevo donde tengas el auto (calle, trabajo, cochera o campo) en CABA, GBA, La Plata, Costa Atlántica e Interior de Buenos Aires en menos de 2 horas.
         </p>
 
         <a
           href={blogWaUrl}
-          class="cta-whatsapp text-sm sm:text-base px-6 py-3.5 inline-flex items-center justify-center gap-2 text-center leading-snug w-full sm:w-auto"
+          class="cta-hero-whatsapp group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-3.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-[#0a2e16] text-left min-h-[52px]"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Cotizar reparación de techo Peugeot 307 por WhatsApp con foto"
           onclick={blogWaHandler}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-          <span>Cotizar por WhatsApp con foto del techo</span>
+          <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/25 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-150">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-[#0a2e16] shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-sm sm:text-base font-black uppercase tracking-tight leading-tight text-[#0a2e16]">Cotizar por WhatsApp</span>
+            <span class="text-[11px] sm:text-xs font-semibold tracking-normal text-[#0a2e16] leading-tight mt-0.5">Envianos foto de tu techo • Respuesta en 15 min</span>
+          </div>
         </a>
       </div>
     </div>

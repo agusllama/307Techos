@@ -21,8 +21,8 @@ particularidadZona: "Lomas de Zamora abarca una extensa superficie con gran conc
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas con techo solar"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Lomas de Zamora

@@ -5,20 +5,22 @@ import { waClickHandler } from '../lib/tracking';
 
 const canonicalUrl = siteUrl + '/404.html';
 const title = 'Página No Encontrada (Error 404) | 307 Techos';
-const description = 'La ruta solicitada no existe o fue reubicada. Contactanos por WhatsApp para consultar por reparación de techos de Peugeot 307 a domicilio en CABA y GBA.';
+const description = 'Página no encontrada. Consultanos por WhatsApp para reparar el techo de tu Peugeot 307 a domicilio en CABA, GBA, La Plata, Costa Atlántica e Interior de Bs As.';
 
 const waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Hola! Estaba navegando en el sitio de 307 Techos, no encontré la página que buscaba y quiero consultar por la reparación de mi Peugeot 307.');
 const waHandler = waClickHandler('404', 'primary-cta');
 
 const zonasPrincipales = [
   { name: 'Capital Federal', slug: 'capital-federal' },
+  { name: 'Vicente López', slug: 'vicente-lopez' },
+  { name: 'San Isidro', slug: 'san-isidro' },
   { name: 'Avellaneda', slug: 'avellaneda' },
-  { name: 'Lanús', slug: 'lanus' },
   { name: 'Lomas de Zamora', slug: 'lomas-de-zamora' },
   { name: 'Quilmes', slug: 'quilmes' },
   { name: 'La Plata', slug: 'la-plata' },
-  { name: 'Vicente López', slug: 'vicente-lopez' },
-  { name: 'San Isidro', slug: 'san-isidro' },
+  { name: 'Mar del Plata', slug: 'mar-del-plata' },
+  { name: 'Partido de la Costa', slug: 'partido-de-la-costa' },
+  { name: 'Interior de Buenos Aires', slug: 'interior-buenos-aires' },
 ];
 
 const articulosBlog = [
@@ -35,7 +37,7 @@ const articulosBlog = [
   showHeader={true}
   noindex={true}
 >
-  <main class="max-w-3xl mx-auto px-4 py-12 sm:py-20">
+  <div class="max-w-3xl mx-auto px-4 py-12 sm:py-20">
     <!-- Panel Principal 404 Técnico -->
     <div class="bg-[#FFFFFF] border border-[#E5E7EB] rounded-sm p-6 sm:p-10 mb-8">
       <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-[#111827] text-white text-xs font-mono font-bold tracking-tight rounded-sm mb-6">
@@ -73,15 +75,21 @@ const articulosBlog = [
       <div class="pt-2 pb-6 border-b border-[#E5E7EB]">
         <a
           href={waUrl}
-          class="cta-whatsapp w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm sm:text-base font-bold text-[#092212] rounded-sm text-center leading-snug min-h-[48px]"
+          class="cta-hero-whatsapp group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 sm:gap-3.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-[#0a2e16] text-left min-h-[52px]"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Pedir presupuesto directo por WhatsApp"
           onclick={waHandler}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-          <span>Pedir presupuesto directo por WhatsApp</span>
+          <div class="w-10 h-10 rounded-xl bg-white/20 border border-white/25 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-150">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-[#0a2e16] shrink-0" aria-hidden="true" style="aspect-ratio: 1/1;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col items-start text-left">
+            <span class="text-sm sm:text-base font-black uppercase tracking-tight leading-tight text-[#0a2e16]">Pedir presupuesto por WhatsApp</span>
+            <span class="text-[11px] sm:text-xs font-semibold tracking-normal text-[#0a2e16] leading-tight mt-0.5">Envianos foto de tu techo • Respuesta en 15 min</span>
+          </div>
         </a>
       </div>
 
@@ -125,7 +133,7 @@ const articulosBlog = [
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {zonasPrincipales.map((z) => (
           <a
-            href={"/reparacion-techo-peugeot-307/" + z.slug + "/"}
+            href={"/" + z.slug + "/"}
             class="bg-[#F3F4F6] border border-[#E5E7EB] rounded-sm p-2.5 text-xs font-bold text-[#111827] hover:border-[#111827] transition-colors flex items-center justify-between min-h-[44px]"
           >
             <span>{z.name}</span>
@@ -156,7 +164,7 @@ const articulosBlog = [
         ))}
       </ul>
     </section>
-  </main>
+  </div>
 
   <!-- Script ligero de sugerencia inteligente para edge/rutas mal escritas -->
   <script is:inline>
@@ -167,19 +175,37 @@ const articulosBlog = [
           { pattern: 'vtv', target: '/blog/techo-caido-peugeot-307-vtv/', label: 'Guía VTV: Rechazos y Multas por Techo Caído' },
           { pattern: 'solar', target: '/blog/techo-solar-panoramico-peugeot-307-tapizado/', label: 'Guía: Techo Solar Corredizo de 307 Hatchback' },
           { pattern: 'casa', target: '/blog/como-reparar-techo-peugeot-307-en-casa/', label: 'Guía: Reparar el Techo en Casa' },
-          { pattern: 'quilmes', target: '/reparacion-techo-peugeot-307/quilmes/', label: 'Servicio a Domicilio en Quilmes' },
-          { pattern: 'lanus', target: '/reparacion-techo-peugeot-307/lanus/', label: 'Servicio a Domicilio en Lanús' },
-          { pattern: 'lomas', target: '/reparacion-techo-peugeot-307/lomas-de-zamora/', label: 'Servicio a Domicilio en Lomas de Zamora' },
-          { pattern: 'avellaneda', target: '/reparacion-techo-peugeot-307/avellaneda/', label: 'Servicio a Domicilio en Avellaneda' },
-          { pattern: 'capital', target: '/reparacion-techo-peugeot-307/capital-federal/', label: 'Servicio a Domicilio en Capital Federal' },
-          { pattern: 'caba', target: '/reparacion-techo-peugeot-307/capital-federal/', label: 'Servicio a Domicilio en Capital Federal' },
-          { pattern: 'plata', target: '/reparacion-techo-peugeot-307/la-plata/', label: 'Servicio a Domicilio en La Plata' },
-          { pattern: 'moron', target: '/reparacion-techo-peugeot-307/moron/', label: 'Servicio a Domicilio en Morón' },
-          { pattern: 'san-isidro', target: '/reparacion-techo-peugeot-307/san-isidro/', label: 'Servicio a Domicilio en San Isidro' },
-          { pattern: 'vicente', target: '/reparacion-techo-peugeot-307/vicente-lopez/', label: 'Servicio a Domicilio en Vicente López' },
-          { pattern: 'matanza', target: '/reparacion-techo-peugeot-307/la-matanza/', label: 'Servicio a Domicilio en La Matanza' },
-          { pattern: 'tigre', target: '/reparacion-techo-peugeot-307/tigre/', label: 'Servicio a Domicilio en Tigre' },
-          { pattern: 'pilar', target: '/reparacion-techo-peugeot-307/pilar/', label: 'Servicio a Domicilio en Pilar' }
+          { pattern: 'quilmes', target: '/quilmes/', label: 'Servicio a Domicilio en Quilmes' },
+          { pattern: 'lanus', target: '/lanus/', label: 'Servicio a Domicilio en Lanús' },
+          { pattern: 'lomas', target: '/lomas-de-zamora/', label: 'Servicio a Domicilio en Lomas de Zamora' },
+          { pattern: 'avellaneda', target: '/avellaneda/', label: 'Servicio a Domicilio en Avellaneda' },
+          { pattern: 'capital', target: '/capital-federal/', label: 'Servicio a Domicilio en Capital Federal' },
+          { pattern: 'caba', target: '/capital-federal/', label: 'Servicio a Domicilio en Capital Federal' },
+          { pattern: 'plata', target: '/la-plata/', label: 'Servicio a Domicilio en La Plata' },
+          { pattern: 'moron', target: '/moron/', label: 'Servicio a Domicilio en Morón' },
+          { pattern: 'san-isidro', target: '/san-isidro/', label: 'Servicio a Domicilio en San Isidro' },
+          { pattern: 'vicente', target: '/vicente-lopez/', label: 'Servicio a Domicilio en Vicente López' },
+          { pattern: 'matanza', target: '/la-matanza/', label: 'Servicio a Domicilio en La Matanza' },
+          { pattern: 'tigre', target: '/tigre/', label: 'Servicio a Domicilio en Tigre' },
+          { pattern: 'pilar', target: '/pilar/', label: 'Servicio a Domicilio en Pilar' },
+          { pattern: 'costa', target: '/partido-de-la-costa/', label: 'Servicio a Domicilio en Partido de la Costa' },
+          { pattern: 'bernardo', target: '/san-bernardo/', label: 'Servicio a Domicilio en San Bernardo' },
+          { pattern: 'ajo', target: '/mar-de-ajo/', label: 'Servicio a Domicilio en Mar de Ajó' },
+          { pattern: 'pinamar', target: '/pinamar/', label: 'Servicio a Domicilio en Pinamar' },
+          { pattern: 'gesell', target: '/villa-gesell/', label: 'Servicio a Domicilio en Villa Gesell' },
+          { pattern: 'mar-del-plata', target: '/mar-del-plata/', label: 'Servicio a Domicilio en Mar del Plata' },
+          { pattern: 'interior', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en Interior de Buenos Aires' },
+          { pattern: 'junin', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'pergamino', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'tandil', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'olavarria', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'chivilcoy', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'mercedes', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'azul', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'bahia', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'chascomus', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'dolores', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' },
+          { pattern: 'saladillo', target: '/interior-buenos-aires/', label: 'Servicio a Domicilio en el Interior de Buenos Aires' }
         ];
 
         for (var i = 0; i < knownRoutes.length; i++) {

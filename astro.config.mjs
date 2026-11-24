@@ -8,6 +8,14 @@ import { siteUrl } from './src/config/site.ts';
 export default defineConfig({
   site: siteUrl,
   output: 'static',
+  trailingSlash: 'always',
+  redirects: {
+    '/reparacion-techo-peugeot-307': '/#zonas',
+    '/reparacion-techo-peugeot-307/[zona]': '/[zona]',
+  },
+  devToolbar: {
+    enabled: false,
+  },
   integrations: [
     sitemap(),
   ],

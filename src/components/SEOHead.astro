@@ -39,6 +39,7 @@ interface Props {
     viasAccesoPrincipales: string[];
     casoExitoLocal: CasoExitoLocal;
   };
+  isCaba?: boolean;
   isHomepage?: boolean;
   breadcrumbs?: { name: string; url: string }[];
   article?: ArticleData;
@@ -51,8 +52,9 @@ const {
   title,
   description,
   canonicalUrl,
-  ogImage = '/images/og-default.jpg',
+  ogImage = '/images/og-default.webp',
   zona,
+  isCaba,
   isHomepage = false,
   breadcrumbs,
   article,
@@ -65,6 +67,11 @@ const gaMeasurementId = gtagId && !gtagId.includes('XXXX') ? gtagId : '';
 
 // og:image siempre URL absoluta — WhatsApp no genera preview con rutas relativas
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
+const ogImageHeight = ogImage.includes('hero-split-bg') ? '800' : '630';
+
+// Geo region segun ubicacion: CABA es AR-C, resto de GBA y La Plata es AR-B, default AR-C
+const isCapital = Boolean(isCaba || zona?.slug === 'capital-federal');
+const geoRegion = isCapital ? 'AR-C' : (zona ? 'AR-B' : 'AR-C');
 
 const WIKIDATA_PEUGEOT_307 = 'https://www.wikidata.org/wiki/Q215286';
 
@@ -72,8 +79,7 @@ const breadcrumbItems = breadcrumbs || [
   { name: 'Inicio', url: siteUrl + '/' },
   ...(zona
     ? [
-        { name: 'Reparacion Techo 307', url: siteUrl + '/reparacion-techo-peugeot-307/' },
-        { name: zona.nombreZona, url: siteUrl + '/reparacion-techo-peugeot-307/' + zona.slug + '/' },
+        { name: zona.nombreZona, url: siteUrl + '/' + zona.slug + '/' },
       ]
     : []),
 ];
@@ -99,6 +105,13 @@ const baseAreas = [
   { name: 'General San Martin', wikidataUrl: 'https://www.wikidata.org/wiki/Q1484201' },
   { name: 'Tigre',            wikidataUrl: 'https://www.wikidata.org/wiki/Q828766' },
   { name: 'Pilar',            wikidataUrl: 'https://www.wikidata.org/wiki/Q2060205' },
+  { name: 'Mar del Plata',    wikidataUrl: 'https://www.wikidata.org/wiki/Q52607' },
+  { name: 'Pinamar',          wikidataUrl: 'https://www.wikidata.org/wiki/Q517783' },
+  { name: 'Villa Gesell',     wikidataUrl: 'https://www.wikidata.org/wiki/Q991574' },
+  { name: 'Partido de La Costa', wikidataUrl: 'https://www.wikidata.org/wiki/Q1038912' },
+  { name: 'San Bernardo del Tuyu', wikidataUrl: 'https://www.wikidata.org/wiki/Q7413471' },
+  { name: 'Mar de Ajo',       wikidataUrl: 'https://www.wikidata.org/wiki/Q991680' },
+  { name: 'Interior de Buenos Aires', wikidataUrl: 'https://www.wikidata.org/wiki/Q4475' },
 ];
 
 const areaServed = baseAreas.map((a) => ({
@@ -115,7 +128,7 @@ const jsonLd = {
       '@type': ['AutoRepair', 'LocalBusiness'],
       '@id': siteUrl + '/#business',
       name: businessName,
-      description: 'Especialistas en retapizado y reparacion de techos caidos (headliner) de Peugeot 307 a domicilio. Cubrimos CABA, Gran Buenos Aires y La Plata.',
+      description: 'Especialistas en retapizado y reparacion de techos caidos (headliner) de Peugeot 307 a domicilio. Cubrimos CABA, Gran Buenos Aires, La Plata, Costa Atlántica e Interior de Buenos Aires.',
       url: siteUrl,
       telephone: '+' + whatsappNumber,
       currenciesAccepted: 'ARS',
@@ -158,43 +171,51 @@ const jsonLd = {
         ],
       },
     },
-    // 3. HowTo
-    {
-      '@type': 'HowTo',
-      '@id': siteUrl + '/#howto',
-      name: 'Proceso de Retapizado de Techo Caido Peugeot 307',
-      description: 'Procedimiento tecnico de 4 pasos para reparar el headliner del Peugeot 307 a domicilio.',
-      estimatedCost: { '@type': 'MonetaryAmount', currency: 'ARS' },
-      tool: [
-        { '@type': 'HowToTool', name: 'Pistola de calor industrial' },
-        { '@type': 'HowToTool', name: 'Adhesivo de contacto de alta temperatura para tapiceria' },
-        { '@type': 'HowToTool', name: 'Rodillo de presion para tapiceria' },
-        { '@type': 'HowToTool', name: 'Espatula de plastico' },
-        { '@type': 'HowToTool', name: 'Tela de tapiceria automotriz 100% fibra poliester' },
-      ],
-      step: [
-        {
-          '@type': 'HowToStep', position: 1,
-          name: 'Desmontaje de accesorios y plafones',
-          text: 'Se retiran los plafones de iluminacion interior, el espejo retrovisor, los parasoles y las agarraderas. Cada pieza se etiqueta y guarda en orden para garantizar la reinstalacion correcta.',
-        },
-        {
-          '@type': 'HowToStep', position: 2,
-          name: 'Remocion del residuo de espuma original degradada',
-          text: 'Con espatula y solvente desengrasante, se elimina la espuma original pulverizada adherida al sustrato rigido del techo. Cualquier residuo impide la adhesion correcta de la nueva tela.',
-        },
-        {
-          '@type': 'HowToStep', position: 3,
-          name: 'Aplicacion de tela 100% fibra poliester con adhesivo de alta temperatura',
-          text: 'Se aplica adhesivo de contacto de alta temperatura en el sustrato y en la nueva tela 100% fibra poliester automotriz. Se presiona desde el centro hacia los bordes para una fijacion uniforme y duradera.',
-        },
-        {
-          '@type': 'HowToStep', position: 4,
-          name: 'Reinstalacion y chequeo de fijaciones',
-          text: 'Se reinstalan todos los accesorios en el orden inverso al desmontaje. Se verifica el correcto cierre de cada plafon, el funcionamiento de la iluminacion interior y la alineacion OEM de molduras y parasoles.',
-        },
-      ],
-    },
+    // 3. HowTo (solo en landing principal y zonas donde se detalla el proceso)
+    ...((isHomepage || Boolean(zona))
+      ? [
+          {
+            '@type': 'HowTo',
+            '@id': siteUrl + '/#howto',
+            name: 'Proceso de Retapizado de Techo Caido Peugeot 307',
+            description: 'Procedimiento tecnico para reparar el headliner del Peugeot 307 a domicilio.',
+            estimatedCost: { '@type': 'MonetaryAmount', currency: 'ARS' },
+            tool: [
+              { '@type': 'HowToTool', name: 'Pistola de calor industrial' },
+              { '@type': 'HowToTool', name: 'Adhesivo de contacto de alta temperatura para tapiceria' },
+              { '@type': 'HowToTool', name: 'Rodillo de presion para tapiceria' },
+              { '@type': 'HowToTool', name: 'Espatula de plastico' },
+              { '@type': 'HowToTool', name: 'Tela de tapiceria automotriz 100% fibra poliester' },
+            ],
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: 'Desmontaje de accesorios y plafones',
+                text: 'Se retiran los plafones de iluminacion interior, el espejo retrovisor, los parasoles y las agarraderas. Cada pieza se etiqueta y guarda en orden para garantizar la reinstalacion correcta.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: 'Remocion del residuo de espuma original degradada',
+                text: 'Con espatula y solvente desengrasante, se elimina la espuma original pulverizada adherida al sustrato rigido del techo. Cualquier residuo impide la adhesion correcta de la nueva tela.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: 'Aplicacion de tela 100% fibra poliester con adhesivo de alta temperatura',
+                text: 'Se aplica adhesivo de contacto de alta temperatura en el sustrato y en la nueva tela 100% fibra poliester automotriz. Se presiona desde el centro hacia los bordes para una fijacion uniforme y duradera.',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 4,
+                name: 'Reinstalacion y chequeo de fijaciones',
+                text: 'Se reinstalan todos los accesorios en el orden inverso al desmontaje. Se verifica el correcto cierre de cada plafon, el funcionamiento de la iluminacion interior y la alineacion OEM de molduras y parasoles.',
+              },
+            ],
+          },
+        ]
+      : []),
     // 4. FAQPage (solo si la pagina muestra esas preguntas)
     ...(faq ? [{
       '@type': 'FAQPage',
@@ -237,7 +258,7 @@ const jsonLd = {
           name: 'Que medios de pago aceptan?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Aceptamos efectivo y transferencia bancaria.',
+            text: 'Aceptamos efectivo y transferencia bancaria. Abonás recién cuando el trabajo está terminado y revisado a tu total conformidad.',
           },
         },
         {
@@ -250,17 +271,21 @@ const jsonLd = {
         },
       ],
     }] : []),
-    // 5. BreadcrumbList
-    {
-      '@type': 'BreadcrumbList',
-      '@id': canonicalUrl + '#breadcrumb',
-      itemListElement: breadcrumbItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        item: item.url,
-      })),
-    },
+    // 5. BreadcrumbList (solo si no es la home y hay al menos 2 items)
+    ...(!isHomepage && breadcrumbItems.length > 1
+      ? [
+          {
+            '@type': 'BreadcrumbList',
+            '@id': canonicalUrl + '#breadcrumb',
+            itemListElement: breadcrumbItems.map((item, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: item.name,
+              item: item.url,
+            })),
+          },
+        ]
+      : []),
     // 6. BlogPosting (si corresponde)
     ...(article
       ? [
@@ -292,9 +317,19 @@ const jsonLd = {
 const jsonLdString = JSON.stringify(jsonLd);
 ---
 
+<!-- Preload LCP Hero Image en Homepage y Zonas para carga ultra veloz -->
+{(isHomepage || Boolean(zona)) && (
+  <>
+    <link rel="preload" as="image" href="/images/hero-split-bg-mobile.webp" media="(max-width: 640px)" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-split-bg.webp" media="(min-width: 641px)" type="image/webp" fetchpriority="high" />
+  </>
+)}
+
 <!-- Google tag (gtag.js) - unico script de terceros permitido, cargado async -->
 {gaMeasurementId && (
   <>
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <script async src={"https://www.googletagmanager.com/gtag/js?id=" + gaMeasurementId}></script>
     <script define:vars={{ gaMeasurementId }} is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -324,8 +359,9 @@ const jsonLdString = JSON.stringify(jsonLd);
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:image" content={ogImageAbsolute} />
+<meta property="og:image:type" content={ogImageAbsolute.endsWith('.webp') ? 'image/webp' : 'image/jpeg'} />
 <meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image:height" content={ogImageHeight} />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:site_name" content={businessName} />
 
@@ -339,7 +375,7 @@ const jsonLdString = JSON.stringify(jsonLd);
 <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
 
 <!-- Geo Meta -->
-<meta name="geo.region" content="AR-C" />
+<meta name="geo.region" content={geoRegion} />
 <meta name="geo.placename" content={zona ? zona.nombreZona : 'Buenos Aires'} />
 
 <!-- JSON-LD Structured Data @graph unificado -->

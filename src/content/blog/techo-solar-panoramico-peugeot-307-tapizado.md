@@ -1,7 +1,7 @@
 ---
 title: "Techo solar del 307: tapizado y cuidados"
 slug: "techo-solar-panoramico-peugeot-307-tapizado"
-description: "Cómo reparar la tela desprendida del techo solar del Peugeot 307 Hatchback sin dañar los carriles corredizos ni los desagües pluviales."
+description: "Cómo reparar la tela desprendida del techo solar en tu Peugeot 307 Hatchback sin dañar los carriles corredizos ni tapar desagües pluviales."
 date: "2026-03-20"
 author: "Técnico Especialista 307 Techos"
 category: "Guías de Carrocería"

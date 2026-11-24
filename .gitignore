@@ -27,6 +27,11 @@ pnpm-debug.log*
 
 screenshot-*.png
 shot-*.png
+mobile-*.png
+
+# playwright test outputs
+playwright-report/
+test-results/
 
 # skills del entorno del agente (no forman parte del sitio)
 .agents/

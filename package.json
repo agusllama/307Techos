@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --experimental-strip-types test-reviews.mjs"
+    "test": "node --experimental-strip-types test-reviews.mjs",
+    "test:mobile": "playwright test",
+    "audit": "node audit.cjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -20,6 +22,7 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "@tailwindcss/vite": "^4.3.3",
     "puppeteer-core": "^25.9.0",
     "tailwindcss": "^4.3.3"

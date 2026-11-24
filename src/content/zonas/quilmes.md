@@ -1,7 +1,7 @@
 ---
 nombreZona: "Quilmes"
 slug: "quilmes"
-wikidataId: "Q869788"
+wikidataId: "Q863777"
 tiempoLlegadaEstimado: "En el dia a coordinar"
 keywordPrincipal: "reparacion techo caido peugeot 307 quilmes"
 barriosCobertura:
@@ -21,8 +21,8 @@ particularidadZona: "El partido de Quilmes concentra una alta proporcion de vivi
 casoExitoLocal:
   modeloDetalle: "307 Hatchback 5 puertas"
   barrio: "[COMPLETAR]"
-  problemaResuelto: "[COMPLETAR — caso real pendiente]"
-  resultado: "[COMPLETAR — caso real pendiente]"
+  problemaResuelto: "[COMPLETAR - caso real pendiente]"
+  resultado: "[COMPLETAR - caso real pendiente]"
 ---
 
 ## Servicio de Reparacion de Techo Peugeot 307 en Quilmes

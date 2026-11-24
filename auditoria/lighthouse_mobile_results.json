@@ -1,0 +1,182 @@
+{
+  "home": {
+    "slug": "home",
+    "url": "http://localhost:4321/",
+    "performanceScore": 84,
+    "FCP": "1.8 s",
+    "LCP": "4.3 s",
+    "CLS": "0",
+    "TBT": "0 ms",
+    "SI": "1.8 s",
+    "opportunities": [
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "displayValue": "Est savings of 12 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "displayValue": "Est savings of 266 KiB",
+        "score": 0
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "displayValue": "Est savings of 26 KiB",
+        "score": 0
+      }
+    ]
+  },
+  "capital-federal": {
+    "slug": "capital-federal",
+    "url": "http://localhost:4321/capital-federal/",
+    "performanceScore": 83,
+    "FCP": "1.8 s",
+    "LCP": "4.4 s",
+    "CLS": "0",
+    "TBT": "60 ms",
+    "SI": "1.8 s",
+    "opportunities": [
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "displayValue": "Est savings of 12 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "displayValue": "Est savings of 266 KiB",
+        "score": 0
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "displayValue": "Est savings of 26 KiB",
+        "score": 0
+      }
+    ]
+  },
+  "mar-del-plata": {
+    "slug": "mar-del-plata",
+    "url": "http://localhost:4321/mar-del-plata/",
+    "performanceScore": 84,
+    "FCP": "1.8 s",
+    "LCP": "4.4 s",
+    "CLS": "0",
+    "TBT": "10 ms",
+    "SI": "1.8 s",
+    "opportunities": [
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "displayValue": "Est savings of 12 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "displayValue": "Est savings of 266 KiB",
+        "score": 0
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "displayValue": "Est savings of 26 KiB",
+        "score": 0
+      }
+    ]
+  },
+  "la-plata": {
+    "slug": "la-plata",
+    "url": "http://localhost:4321/la-plata/",
+    "performanceScore": 84,
+    "FCP": "1.8 s",
+    "LCP": "4.3 s",
+    "CLS": "0",
+    "TBT": "0 ms",
+    "SI": "1.8 s",
+    "opportunities": [
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "displayValue": "Est savings of 12 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "displayValue": "Est savings of 266 KiB",
+        "score": 0
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "displayValue": "Est savings of 26 KiB",
+        "score": 0
+      }
+    ]
+  },
+  "blog__por-que-se-cae": {
+    "slug": "blog__por-que-se-cae",
+    "url": "http://localhost:4321/blog/por-que-se-cae-techo-peugeot-307/",
+    "performanceScore": 99,
+    "FCP": "1.6 s",
+    "LCP": "1.6 s",
+    "CLS": "0",
+    "TBT": "0 ms",
+    "SI": "1.6 s",
+    "opportunities": [
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "displayValue": "Est savings of 12 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "displayValue": "Est savings of 266 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "displayValue": "Est savings of 26 KiB",
+        "score": 0.5
+      }
+    ]
+  },
+  "blog__techo-caido-vtv": {
+    "slug": "blog__techo-caido-vtv",
+    "url": "http://localhost:4321/blog/techo-caido-peugeot-307-vtv/",
+    "performanceScore": 86,
+    "FCP": "1.6 s",
+    "LCP": "4.1 s",
+    "CLS": "0",
+    "TBT": "90 ms",
+    "SI": "1.6 s",
+    "opportunities": [
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "displayValue": "Est savings of 12 KiB",
+        "score": 0.5
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "displayValue": "Est savings of 266 KiB",
+        "score": 0
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "displayValue": "Est savings of 26 KiB",
+        "score": 0
+      }
+    ]
+  }
+}

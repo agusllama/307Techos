@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "es,es-ES,en",
+  "import": [
+    "@cspell/dict-es-es/cspell-ext.json"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./cspell-custom.txt"
+    }
+  ],
+  "dictionaries": [
+    "custom-words",
+    "es-es"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist"
+  ]
+}

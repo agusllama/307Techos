@@ -52,27 +52,34 @@ const WA_BASE = 'https://wa.me/' + whatsappNumber;
 
 const isZone = Boolean(props.zona?.nombreZona);
 const zoneName = props.zona?.nombreZona;
+const isInterior = props.zona?.slug === 'interior-buenos-aires';
 const trackingZone = isZone && zoneName ? zoneName : 'general';
 const showHeader = props.showHeader ?? (!props.isHomepage && !isZone);
 
 const headerWaUrl = WA_BASE + '?text=' + encodeURIComponent(
   isZone && zoneName
-    ? `Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en ${zoneName}.`
-    : 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307.'
+    ? (isInterior
+        ? 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en el Interior de Buenos Aires. Soy de (ciudad/localidad): ... Te adjunto foto:'
+        : `Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en ${zoneName}. Te adjunto foto:`)
+    : 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307. Te adjunto foto:'
 );
 const headerWaHandler = waClickHandler(trackingZone, 'header');
 
 const footerWaUrl = WA_BASE + '?text=' + encodeURIComponent(
   isZone && zoneName
-    ? `Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en ${zoneName}.`
-    : 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307.'
+    ? (isInterior
+        ? 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en el Interior de Buenos Aires. Soy de (ciudad/localidad): ... Te adjunto foto:'
+        : `Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307 en ${zoneName}. Te adjunto foto:`)
+    : 'Hola! Quiero pedir presupuesto para el techo de mi Peugeot 307. Te adjunto foto:'
 );
 const footerWaHandler = waClickHandler(trackingZone, 'footer');
 
 const stickyWaUrl = WA_BASE + '?text=' + encodeURIComponent(
   isZone && zoneName
-    ? `Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307 en ${zoneName}.`
-    : 'Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307.'
+    ? (isInterior
+        ? 'Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307 en el Interior de Bs. As. Soy de (ciudad/localidad): ... Te adjunto foto del techo:'
+        : `Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307 en ${zoneName}. Te adjunto foto del techo:`)
+    : 'Hola! Consulto disponibilidad a domicilio para retapizar el techo de mi Peugeot 307. Te adjunto foto del techo:'
 );
 const stickyWaHandler = waClickHandler(trackingZone, 'sticky-bar');
 
@@ -138,112 +145,94 @@ const displayPhone = formatPhone(whatsappNumber);
     </main>
 
     <footer class="bg-[#111827] text-[#9CA3AF] pt-12 pb-28 md:pb-12 border-t border-[#374151]">
-      <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-2">
-        <!-- NAP Block semantico con <address> -->
+      <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3">
+        <!-- Columna 1: NAP Block semantico con <address> -->
         <address class="not-italic space-y-3">
           <p class="font-black text-[#FFFFFF] text-xl tracking-tighter uppercase">{businessName}</p>
           <p class="text-[#9CA3AF] text-sm">Retapizado y Reparacion de Techo Caido a Domicilio</p>
-          <p class="pt-2">
-            <a href={"tel:+" + whatsappNumber} class="text-base text-[#FFFFFF] hover:text-[#25D366] transition-colors inline-flex items-center gap-2 py-1.5 min-h-[44px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" style="aspect-ratio: 1/1;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              {displayPhone}
-            </a>
-          </p>
-          <p>
-            <a
-              href={footerWaUrl}
-              class="text-[#25D366] hover:underline font-bold transition-colors inline-flex items-center gap-2 py-1.5 min-h-[44px]"
-              target="_blank"
-              rel="noopener noreferrer"
-              onclick={footerWaHandler}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="aspect-ratio: 1/1;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-              WhatsApp: {displayPhone}
-            </a>
-          </p>
-          <p class="text-sm text-[#9CA3AF]">CABA, Gran Buenos Aires y La Plata</p>
+          <div class="pt-2 space-y-1 text-sm">
+            <p>
+              <a
+                href={footerWaUrl}
+                class="text-[#25D366] hover:underline font-bold transition-colors inline-flex items-center gap-2 py-1 min-h-[44px]"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick={footerWaHandler}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="aspect-ratio: 1/1;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <span>Enviar mensaje por WhatsApp: {displayPhone}</span>
+              </a>
+            </p>
+            <p>
+              <a href={"tel:+" + whatsappNumber} class="text-[#FFFFFF] hover:text-[#25D366] transition-colors inline-flex items-center gap-2 py-1 min-h-[44px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" style="aspect-ratio: 1/1;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                <span>Llamar directamente: {displayPhone}</span>
+              </a>
+            </p>
+          </div>
+          <p class="text-sm text-[#9CA3AF]">CABA, Gran Buenos Aires, La Plata, Costa Atlántica e Interior de Buenos Aires</p>
           <p class="text-sm text-[#9CA3AF]">Lunes a Sabado, 8:00 a 19:00 hs</p>
         </address>
 
-        <!-- Zonas de cobertura organizadas por región -->
-        <nav aria-label="Zonas de cobertura" class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div>
-            <p class="font-black text-[#FFFFFF] mb-3 text-sm tracking-tighter uppercase">CABA y Zona Norte</p>
-            <ul class="space-y-1 text-xs text-[#9CA3AF]">
-              <li><a href="/reparacion-techo-peugeot-307/capital-federal/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Capital Federal</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/vicente-lopez/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Vicente López</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/san-isidro/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">San Isidro</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/general-san-martin/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Gral. San Martín</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/tigre/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Tigre</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/pilar/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Pilar</a></li>
-            </ul>
-          </div>
-          <div>
-            <p class="font-black text-[#FFFFFF] mb-3 text-sm tracking-tighter uppercase">Zona Oeste</p>
-            <ul class="space-y-1 text-xs text-[#9CA3AF]">
-              <li><a href="/reparacion-techo-peugeot-307/la-matanza/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">La Matanza</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/moron/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Morón</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/tres-de-febrero/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Tres de Febrero</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/ituzaingo/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Ituzaingó</a></li>
-            </ul>
-          </div>
-          <div>
-            <p class="font-black text-[#FFFFFF] mb-3 text-sm tracking-tighter uppercase">Zona Sur y La Plata</p>
-            <ul class="space-y-1 text-xs text-[#9CA3AF]">
-              <li><a href="/reparacion-techo-peugeot-307/avellaneda/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Avellaneda</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/lanus/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Lanús</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/lomas-de-zamora/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Lomas de Zamora</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/quilmes/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Quilmes</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/berazategui/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Berazategui</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/almirante-brown/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Almirante Brown</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/esteban-echeverria/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Esteban Echeverría</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/ezeiza-canning/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Ezeiza / Canning</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/florencio-varela/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">Florencio Varela</a></li>
-              <li><a href="/reparacion-techo-peugeot-307/la-plata/" class="hover:text-[#FFFFFF] transition-colors py-1 block min-h-[44px] flex items-center">La Plata</a></li>
-            </ul>
-          </div>
-          <a href="/reparacion-techo-peugeot-307/" class="sm:col-span-3 text-xs font-bold uppercase tracking-tight text-[#25D366] hover:underline inline-flex items-center min-h-[44px] py-1">
-            Ver todas las zonas de cobertura
+        <!-- Columna 2: Regiones de Cobertura -->
+        <nav aria-label="Regiones de cobertura" class="space-y-3">
+          <p class="font-black text-[#FFFFFF] text-xs uppercase tracking-wider mb-3">Regiones de Cobertura</p>
+          <ul class="space-y-1 text-xs text-[#9CA3AF]">
+            <li>
+              <a href="/capital-federal/" class="hover:text-[#FFFFFF] transition-colors py-1 flex items-center justify-between min-h-[44px]">
+                <span>CABA y Zona Norte</span>
+                <span class="text-[10px] text-[#25D366]">6 zonas →</span>
+              </a>
+            </li>
+            <li>
+              <a href="/la-matanza/" class="hover:text-[#FFFFFF] transition-colors py-1 flex items-center justify-between min-h-[44px]">
+                <span>Zona Oeste</span>
+                <span class="text-[10px] text-[#25D366]">4 zonas →</span>
+              </a>
+            </li>
+            <li>
+              <a href="/la-plata/" class="hover:text-[#FFFFFF] transition-colors py-1 flex items-center justify-between min-h-[44px]">
+                <span>Zona Sur y Gran La Plata</span>
+                <span class="text-[10px] text-[#25D366]">10 zonas →</span>
+              </a>
+            </li>
+            <li>
+              <a href="/mar-del-plata/" class="hover:text-[#FFFFFF] transition-colors py-1 flex items-center justify-between min-h-[44px]">
+                <span>Costa Atlántica</span>
+                <span class="text-[10px] text-[#25D366]">6 zonas →</span>
+              </a>
+            </li>
+            <li>
+              <a href="/interior-buenos-aires/" class="hover:text-[#FFFFFF] transition-colors py-1 flex items-center justify-between min-h-[44px]">
+                <span>Interior de Buenos Aires</span>
+                <span class="text-[10px] text-[#25D366]">Corredores →</span>
+              </a>
+            </li>
+          </ul>
+          <a href="/#zonas" class="text-xs font-bold uppercase tracking-tight text-[#25D366] hover:underline inline-flex items-center min-h-[44px] py-1">
+            Ver las 27 zonas en el selector →
           </a>
+        </nav>
+
+        <!-- Columna 3: Guías Técnicas y Recursos -->
+        <nav aria-label="Guías técnicas y blog" class="space-y-3">
+          <p class="font-black text-[#FFFFFF] text-xs uppercase tracking-wider mb-3">Guías Técnicas y Blog</p>
+          <p class="text-xs text-[#9CA3AF] leading-relaxed">
+            Diagnósticos prácticos sobre causas del desprendimiento de tela, VTV y cuidados para el techo solar de tu Peugeot 307.
+          </p>
+          <div class="pt-2">
+            <a
+              href="/blog/"
+              class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-tight text-white hover:text-[#25D366] transition-colors py-2 px-3 rounded-lg border border-[#374151] hover:border-white/30 min-h-[44px]"
+            >
+              <span>Ver todas las guías del Blog</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </nav>
       </div>
 
-      <!-- Guías Técnicas y Blog -->
-      <nav aria-label="Guías técnicas y blog" class="max-w-5xl mx-auto px-4 mt-8 pt-8 border-t border-[#374151]">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-          <div>
-            <p class="font-black text-[#FFFFFF] text-base tracking-tighter uppercase">Guías Técnicas y Blog Especializado</p>
-            <p class="text-xs text-[#9CA3AF]">Diagnósticos técnicos de caída de tela, cuidados para techo solar y soluciones para Peugeot 307.</p>
-          </div>
-          <a href="/blog/" class="text-xs font-bold uppercase tracking-tight text-white hover:underline inline-flex items-center min-h-[44px] py-1">
-            Ver todas las guías del blog
-          </a>
-        </div>
-        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-[#9CA3AF]">
-          <li>
-            <a href="/blog/techo-caido-peugeot-307-vtv/" class="hover:text-white transition-colors py-1 min-h-[44px] flex items-center">
-              ¿Te pueden rebotar la VTV por el techo caído en un 307?
-            </a>
-          </li>
-          <li>
-            <a href="/blog/por-que-se-cae-techo-peugeot-307/" class="hover:text-white transition-colors py-1 min-h-[44px] flex items-center">
-              ¿Por qué se cae el techo del Peugeot 307 y cómo solucionarlo definitivamente?
-            </a>
-          </li>
-          <li>
-            <a href="/blog/techo-solar-panoramico-peugeot-307-tapizado/" class="hover:text-white transition-colors py-1 min-h-[44px] flex items-center">
-              Techo solar del 307 Hatchback: cuidados y tapizado
-            </a>
-          </li>
-        </ul>
-        <div class="mt-3 pt-3 border-t border-[#374151]">
-          <a href="/blog/" class="text-xs font-bold text-white hover:underline transition-colors inline-flex items-center min-h-[44px] py-1">
-            ¿Más dudas? Ver todas las guías y preguntas frecuentes
-          </a>
-        </div>
-      </nav>
-
-      <div class="max-w-5xl mx-auto px-4 mt-8 pt-6 border-t border-[#374151] text-xs text-[#6B7280] flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="max-w-5xl mx-auto px-4 mt-10 pt-6 border-t border-[#374151] text-xs text-[#798191] flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
         <p>&copy; {new Date().getFullYear()} {businessName}. Todos los derechos reservados.</p>
         <p>Servicio especializado para Peugeot 307 Hatchback (variantes 3 y 5 puertas, con y sin techo solar).</p>
       </div>
@@ -252,7 +241,7 @@ const displayPhone = formatPhone(whatsappNumber);
     <!-- Botón flotante persistente en mobile (Oculta en primer viewport, aparece al hacer scroll) -->
     <div
       id="mobile-sticky-bar"
-      class="md:hidden fixed inset-x-3 bottom-3 z-50 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none flex justify-center"
+      class="md:hidden fixed inset-x-3 bottom-[calc(0.75rem+env(safe-area-inset-bottom,0px))] z-50 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none flex justify-center"
     >
       <a
         href={stickyWaUrl}
