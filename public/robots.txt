@@ -1,4 +1,4 @@
-﻿# robots.txt - 307 Techos
+# robots.txt - 307 Techos
 # https://307techos.com.ar/robots.txt
 
 # Motores de busqueda tradicionales

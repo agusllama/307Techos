@@ -17,6 +17,10 @@
 /favicon.svg
   Cache-Control: public, max-age=86400
 
+# Evitar que el subdominio temporal workers.dev indexe como duplicado en Google
+https://307techos.agusllama1.workers.dev/*
+  X-Robots-Tag: noindex, nofollow
+
 # HTML pages: sin cache en CDN (Cloudflare gestiona con su caché inteligente)
 /*
   X-Content-Type-Options: nosniff
