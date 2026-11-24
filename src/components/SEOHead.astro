@@ -62,6 +62,10 @@ const {
   faq = false,
 } = Astro.props;
 
+// Entorno de indexación: si PUBLIC_INDEXABLE está configurado como 'false', se bloquea la indexación para evitar canibalización en staging/preview
+const isIndexableEnv = import.meta.env.PUBLIC_INDEXABLE !== 'false';
+const shouldNoindex = noindex || !isIndexableEnv;
+
 // Sin ID real no se carga gtag: evita un request invalido en produccion.
 const gaMeasurementId = gtagId && !gtagId.includes('XXXX') ? gtagId : '';
 
@@ -372,7 +376,7 @@ const jsonLdString = JSON.stringify(jsonLd);
 <meta name="twitter:image" content={ogImageAbsolute} />
 
 <!-- Robots -->
-<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
+<meta name="robots" content={shouldNoindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
 
 <!-- Geo Meta -->
 <meta name="geo.region" content={geoRegion} />
